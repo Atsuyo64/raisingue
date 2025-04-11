@@ -1,7 +1,0 @@
-# compile vhdl design source files
-vhdl xil_defaultlib  \
-"../../../../raisingue.srcs/sources_1/new/Register_File.vhd" \
-"../../../../raisingue.srcs/sim_1/new/sim_register_file.vhd" \
-
-# Do not sort compile order
-nosort
