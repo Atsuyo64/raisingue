@@ -5,19 +5,11 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.std_logic_unsigned.all;
 
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
 use IEEE.NUMERIC_STD.ALL;
-
--- Uncomment the following library declaration if instantiating
--- any Xilinx leaf cells in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
 
 entity ALU is
     Port ( A : in STD_LOGIC_VECTOR (7 downto 0);
            B : in STD_LOGIC_VECTOR (7 downto 0);
---           sw          : in std_logic_vector(15 downto 0);
            S : out STD_LOGIC_VECTOR (7 downto 0);
            Opcode : in STD_LOGIC_VECTOR (2 downto 0);
            Carry : out STD_LOGIC;
@@ -26,10 +18,8 @@ entity ALU is
 end ALU;
 
 architecture data_flow of ALU is
-    --type OP is (add_op,mult_op,sub_op,and_op,or_op,xor_op,not_op);
     signal aux : std_logic_vector  (15 downto 0);
 begin
-    --wait on A,B,Opcode;
     aux <= (A * B);
     with opcode select
     S <= A + B when "000",
