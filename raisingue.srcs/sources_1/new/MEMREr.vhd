@@ -1,19 +1,25 @@
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
 
-entity MEMREr is
-    Port ( INA : in STD_LOGIC_VECTOR (7 downto 0);
-           INB : in STD_LOGIC_VECTOR (7 downto 0);
-           INOP : in STD_LOGIC_VECTOR (7 downto 0);
-           OUTA : out STD_LOGIC_VECTOR (7 downto 0);
-           OUTB : out STD_LOGIC_VECTOR (7 downto 0);
-           OUTOP : out STD_LOGIC_VECTOR (7 downto 0)
+ENTITY MEMREr IS
+    PORT (
+        CLK : IN STD_LOGIC;
+        INA : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
+        INB : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
+        INOP : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
+        OUTA : OUT STD_LOGIC_VECTOR (7 DOWNTO 0);
+        OUTB : OUT STD_LOGIC_VECTOR (7 DOWNTO 0);
+        OUTOP : OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
     );
-end MEMREr;
+END MEMREr;
 
-architecture Behavioral of MEMREr is
-begin
-    OUTA <= INA;
-    OUTB <= INB;
-    OUTOP <= INOP;
-end Behavioral;
+ARCHITECTURE Behavioral OF MEMREr IS
+BEGIN
+    PROCESS
+    BEGIN
+        WAIT UNTIL CLK'Event AND CLK = '1';
+        OUTA <= INA;
+        OUTB <= INB;
+        OUTOP <= INOP;
+    END PROCESS;
+END Behavioral;

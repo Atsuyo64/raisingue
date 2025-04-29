@@ -1,0 +1,156 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+
+ENTITY Main IS
+    PORT (
+        CLK : IN STD_LOGIC;
+        RST : IN STD_LOGIC);
+END Main;
+
+ARCHITECTURE Structural OF Main IS
+    SIGNAL pc, jmp_val : STD_LOGIC_VECTOR (7 DOWNTO 0) := (OTHERS => '0');
+    SIGNAL instruction : STD_LOGIC_VECTOR (31 DOWNTO 0) := (OTHERS => '0');
+    SIGNAL DIA, DIB, DIC, DIOP,
+    EXA, EXB, EXC, EXOP,
+    MEMA, MEMB, MEMOP,
+    REA, REB, REOP : STD_LOGIC_VECTOR (7 DOWNTO 0) := (OTHERS => '0');
+
+    SIGNAL REG_QA, REG_QB, POST_RF_MUX_B : STD_LOGIC_VECTOR (7 DOWNTO 0) := (OTHERS => '0');
+    SIGNAL ALU_OP : STD_LOGIC_VECTOR (2 DOWNTO 0);
+
+    SIGNAL ALU_OUT, POST_ALU_CALC_B : STD_LOGIC_VECTOR (7 DOWNTO 0) := (OTHERS => '0');
+
+    SIGNAL MEM_ADDR, MEM_OUT, POST_MEM_B : STD_LOGIC_VECTOR (7 DOWNTO 0) := (OTHERS => '0');
+    SIGNAL MEM_RW : STD_LOGIC;
+
+    SIGNAL RFW : STD_LOGIC;
+BEGIN
+    u_pc : ENTITY work.PC
+        PORT MAP(
+            CLK => CLK,
+            SET => '0',
+            EN => '1',
+            INPUT => jmp_val,
+            PC => pc
+        );
+    u_instruction_memory : ENTITY work.Instruction_Memory
+        PORT MAP(
+            addr => pc,
+            CLK => CLK,
+            Dout => instruction
+        );
+    u_decoder : ENTITY work.Decoder
+        PORT MAP(
+            instr => instruction,
+            A => DIA,
+            B => DIB,
+            C => DIC,
+            OP => DIOP
+        );
+    u_register_file : ENTITY work.Register_File
+        PORT MAP(
+            addA => DIB,
+            addB => DIC,
+            addW => REA,
+            W => RFW,
+            DATA => REB,
+            RST => RST,
+            CLK => CLK,
+            QA => REG_QA,
+            QB => REG_QB
+        );
+    u_mux_rf_afc : ENTITY work.MUX_RF_AFC
+        PORT MAP(
+            OP => DIOP,
+            B => DIB,
+            QA => REG_QA,
+            DOUT => POST_RF_MUX_B
+        );
+    u_diex : ENTITY work.DIEXer
+        PORT MAP(
+            CLK => CLK,
+            INA => DIA,
+            INB => POST_RF_MUX_B,
+            INC => REG_QB,
+            INOP => DIOP,
+            OUTA => EXA,
+            OUTB => EXB,
+            OUTC => EXC,
+            OUTOP => EXOP
+        );
+    u_op_to_aluop : ENTITY work.OP_to_ALUOP
+        PORT MAP(
+            OP => EXOP,
+            ALUOP => ALU_OP
+        );
+    u_alu : ENTITY work.ALU
+        PORT MAP(
+            A => EXB,
+            B => EXC,
+            S => ALU_OUT,
+            Opcode => ALU_OP,
+            Carry => OPEN, --TODO:
+            Overflow => OPEN,
+            Negative => OPEN
+        );
+    u_mux_alu_calc : ENTITY work.MUX_ALU_CALC
+        PORT MAP(
+            OP => EXOP,
+            B => EXB,
+            ALU_OUT => ALU_OUT,
+            DOUT => POST_ALU_CALC_B
+        );
+    u_exmem : ENTITY work.EXMEMer
+        PORT MAP(
+            CLK => CLK,
+            INA => EXA,
+            INB => POST_ALU_CALC_B,
+            INOP => EXOP,
+            OUTA => MEMA,
+            OUTB => MEMB,
+            OUTOP => MEMOP
+        );
+    u_mux_ab_mem : ENTITY work.MUX_AB_MEM
+        PORT MAP(
+            OP => MEMOP,
+            A => MEMA,
+            B => MEMB,
+            DOUT => MEM_ADDR
+        );
+    u_op_to_memop : ENTITY work.OP_TO_MEMOP
+        PORT MAP(
+            OP => MEMOP,
+            RW => MEM_RW
+        );
+    u_data_memory : ENTITY work.Data_Memory
+        PORT MAP(
+            addr => MEM_ADDR,
+            Din => MEMB,
+            RW => MEM_RW,
+            RST => RST,
+            CLK => CLK,
+            Dout => MEM_OUT
+        );
+    u_mux_mem_b : ENTITY work.MUX_MEM_B
+        PORT MAP(
+            OP => MEMOP,
+            MEM => MEM_OUT,
+            B => MEMB,
+            DOUT => POST_MEM_B
+        );
+    u_memre : ENTITY work.MEMREr
+        PORT MAP(
+            CLK => CLK,
+            INA => MEMA,
+            INB => POST_MEM_B,
+            INOP => MEMOP,
+            OUTA => REA,
+            OUTB => REB,
+            OUTOP => REOP
+        );
+    u_op_to_rfw : ENTITY work.OP_TO_RFW
+        PORT MAP(
+            OP => REOP,
+            RFW => RFW
+        );
+END Structural;

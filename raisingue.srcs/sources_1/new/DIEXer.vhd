@@ -1,22 +1,28 @@
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
 
-entity DIEXer is
-    Port ( INA : in STD_LOGIC_VECTOR (7 downto 0);
-           INB : in STD_LOGIC_VECTOR (7 downto 0);
-           INC : in STD_LOGIC_VECTOR (7 downto 0);
-           INOP : in STD_LOGIC_VECTOR (7 downto 0);
-           OUTA : out STD_LOGIC_VECTOR (7 downto 0);
-           OUTB : out STD_LOGIC_VECTOR (7 downto 0);
-           OUTC : out STD_LOGIC_VECTOR (7 downto 0);
-           OUTOP : out STD_LOGIC_VECTOR (7 downto 0)
+ENTITY DIEXer IS
+    PORT (
+        CLK : IN STD_LOGIC;
+        INA : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
+        INB : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
+        INC : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
+        INOP : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
+        OUTA : OUT STD_LOGIC_VECTOR (7 DOWNTO 0);
+        OUTB : OUT STD_LOGIC_VECTOR (7 DOWNTO 0);
+        OUTC : OUT STD_LOGIC_VECTOR (7 DOWNTO 0);
+        OUTOP : OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
     );
-end DIEXer;
+END DIEXer;
 
-architecture Behavioral of DIEXer is
-begin
-    OUTA <= INA;
-    OUTB <= INB;
-    OUTC <= INC;
-    OUTOP <= INOP;
-end Behavioral;
+ARCHITECTURE Behavioral OF DIEXer IS
+BEGIN
+    PROCESS
+    BEGIN
+        WAIT UNTIL CLK'Event AND CLK = '1';
+        OUTA <= INA;
+        OUTB <= INB;
+        OUTC <= INC;
+        OUTOP <= INOP;
+    END PROCESS;
+END Behavioral;
