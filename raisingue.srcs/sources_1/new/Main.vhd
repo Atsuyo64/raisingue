@@ -8,22 +8,38 @@ ENTITY Main IS
 END Main;
 
 ARCHITECTURE Structural OF Main IS
-    SIGNAL pc, jmp_val : STD_LOGIC_VECTOR (7 DOWNTO 0) := (OTHERS => '0');
+    SIGNAL pc : STD_LOGIC_VECTOR (7 DOWNTO 0) := (OTHERS => '0');
+    SIGNAL jmp_val : STD_LOGIC_VECTOR (7 DOWNTO 0) := (OTHERS => '0');
     SIGNAL instruction : STD_LOGIC_VECTOR (31 DOWNTO 0) := (OTHERS => '0');
-    SIGNAL DIA, DIB, DIC, DIOP,
-    EXA, EXB, EXC, EXOP,
-    MEMA, MEMB, MEMOP,
-    REA, REB, REOP : STD_LOGIC_VECTOR (7 DOWNTO 0) := (OTHERS => '0');
+    SIGNAL DIA : STD_LOGIC_VECTOR (7 DOWNTO 0) := (OTHERS => '0');
+    SIGNAL DIB : STD_LOGIC_VECTOR(7 DOWNTO 0) := (OTHERS => '0');
+    SIGNAL DIC : STD_LOGIC_VECTOR(7 DOWNTO 0) := (OTHERS => '0');
+    SIGNAL DIOP : STD_LOGIC_VECTOR(7 DOWNTO 0) := (OTHERS => '0');
+    SIGNAL EXA : STD_LOGIC_VECTOR(7 DOWNTO 0) := (OTHERS => '0');
+    SIGNAL EXB : STD_LOGIC_VECTOR(7 DOWNTO 0) := (OTHERS => '0');
+    SIGNAL EXC : STD_LOGIC_VECTOR(7 DOWNTO 0) := (OTHERS => '0');
+    SIGNAL EXOP : STD_LOGIC_VECTOR(7 DOWNTO 0) := (OTHERS => '0');
+    SIGNAL MEMA : STD_LOGIC_VECTOR(7 DOWNTO 0) := (OTHERS => '0');
+    SIGNAL MEMB : STD_LOGIC_VECTOR(7 DOWNTO 0) := (OTHERS => '0');
+    SIGNAL MEMOP : STD_LOGIC_VECTOR(7 DOWNTO 0) := (OTHERS => '0');
+    SIGNAL REB : STD_LOGIC_VECTOR(7 DOWNTO 0) := (OTHERS => '0');
+    SIGNAL REOP : STD_LOGIC_VECTOR(7 DOWNTO 0) := (OTHERS => '0');
+    SIGNAL REA : STD_LOGIC_VECTOR (3 DOWNTO 0) := (OTHERS => '0');
 
-    SIGNAL REG_QA, REG_QB, POST_RF_MUX_B : STD_LOGIC_VECTOR (7 DOWNTO 0) := (OTHERS => '0');
-    SIGNAL ALU_OP : STD_LOGIC_VECTOR (2 DOWNTO 0);
+    SIGNAL REG_QA : STD_LOGIC_VECTOR (7 DOWNTO 0) := (OTHERS => '0');
+    SIGNAL REG_QB : STD_LOGIC_VECTOR (7 DOWNTO 0) := (OTHERS => '0');
+    SIGNAL POST_RF_MUX_B : STD_LOGIC_VECTOR (7 DOWNTO 0) := (OTHERS => '0');
+    SIGNAL ALU_OP : STD_LOGIC_VECTOR (2 DOWNTO 0) := (OTHERS => '0');
 
-    SIGNAL ALU_OUT, POST_ALU_CALC_B : STD_LOGIC_VECTOR (7 DOWNTO 0) := (OTHERS => '0');
+    SIGNAL ALU_OUT : STD_LOGIC_VECTOR (7 DOWNTO 0) := (OTHERS => '0');
+    SIGNAL POST_ALU_CALC_B : STD_LOGIC_VECTOR (7 DOWNTO 0) := (OTHERS => '0');
 
-    SIGNAL MEM_ADDR, MEM_OUT, POST_MEM_B : STD_LOGIC_VECTOR (7 DOWNTO 0) := (OTHERS => '0');
-    SIGNAL MEM_RW : STD_LOGIC;
+    SIGNAL MEM_ADDR : STD_LOGIC_VECTOR (7 DOWNTO 0) := (OTHERS => '0');
+    SIGNAL MEM_OUT : STD_LOGIC_VECTOR (7 DOWNTO 0) := (OTHERS => '0');
+    SIGNAL POST_MEM_B : STD_LOGIC_VECTOR (7 DOWNTO 0) := (OTHERS => '0');
+    SIGNAL MEM_RW : STD_LOGIC := '0';
 
-    SIGNAL RFW : STD_LOGIC;
+    SIGNAL RFW : STD_LOGIC := '0';
 BEGIN
     u_pc : ENTITY work.PC
         PORT MAP(
@@ -42,6 +58,7 @@ BEGIN
     u_decoder : ENTITY work.Decoder
         PORT MAP(
             instr => instruction,
+            CLK=>CLK,
             A => DIA,
             B => DIB,
             C => DIC,
@@ -49,8 +66,8 @@ BEGIN
         );
     u_register_file : ENTITY work.Register_File
         PORT MAP(
-            addA => DIB,
-            addB => DIC,
+            addA => DIB(3 DOWNTO 0),
+            addB => DIC(3 DOWNTO 0),
             addW => REA,
             W => RFW,
             DATA => REB,

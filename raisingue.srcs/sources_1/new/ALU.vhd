@@ -28,8 +28,9 @@ begin
         A and B when "011",
         A or B when "100",
         A xor B when "101",
-        not A when "110",
-        std_logic_vector(to_unsigned(to_integer(unsigned(A))/to_integer(unsigned(B)),8)) when "111"; --Division
+        A when "110",
+        std_logic_vector(to_unsigned(to_integer(unsigned(A))/to_integer(unsigned(B)),8)) when "111", --Division
+        A when others;
     Carry <= '1' when Opcode = "000" and (A + B) < B else '0';
     Overflow <= '1' when Opcode = "001" and aux > 255 else '0';
     Negative <= '1' when Opcode = "010" and B > A else '0';

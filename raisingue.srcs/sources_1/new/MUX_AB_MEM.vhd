@@ -13,5 +13,5 @@ begin
     with OP select
         DOUT <= A when x"0a", --store
         B when x"0b",         --load
-        x"0" when others;
+        x"00" when others;
 end Behavioral;

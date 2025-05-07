@@ -7,7 +7,7 @@ ENTITY MEMREr IS
         INA : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
         INB : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
         INOP : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
-        OUTA : OUT STD_LOGIC_VECTOR (7 DOWNTO 0);
+        OUTA : OUT STD_LOGIC_VECTOR (3 DOWNTO 0);
         OUTB : OUT STD_LOGIC_VECTOR (7 DOWNTO 0);
         OUTOP : OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
     );
@@ -18,7 +18,7 @@ BEGIN
     PROCESS
     BEGIN
         WAIT UNTIL CLK'Event AND CLK = '1';
-        OUTA <= INA;
+        OUTA <= INA(3 downto 0);
         OUTB <= INB;
         OUTOP <= INOP;
     END PROCESS;

@@ -1,7 +1,0 @@
-# compile vhdl design source files
-vhdl xil_defaultlib  \
-"../../../../raisingue.srcs/sources_1/new/Data_Memory.vhd" \
-"../../../../raisingue.srcs/sim_1/new/sim_data_memory.vhd" \
-
-# Do not sort compile order
-nosort

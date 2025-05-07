@@ -1,0 +1,23 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../raisingue.srcs/sources_1/new/ALU.vhd" \
+"../../../../raisingue.srcs/sources_1/new/DIEXer.vhd" \
+"../../../../raisingue.srcs/sources_1/new/Data_Memory.vhd" \
+"../../../../raisingue.srcs/sources_1/new/Decoder.vhd" \
+"../../../../raisingue.srcs/sources_1/new/EXMEMer.vhd" \
+"../../../../raisingue.srcs/sources_1/new/Instruction_Memory.vhd" \
+"../../../../raisingue.srcs/sources_1/new/MEMREr.vhd" \
+"../../../../raisingue.srcs/sources_1/new/MUX_AB_MEM.vhd" \
+"../../../../raisingue.srcs/sources_1/new/MUX_ALU_CALC.vhd" \
+"../../../../raisingue.srcs/sources_1/new/MUX_MEM_B.vhd" \
+"../../../../raisingue.srcs/sources_1/new/MUX_RF_AFC.vhd" \
+"../../../../raisingue.srcs/sources_1/new/PC.vhd" \
+"../../../../raisingue.srcs/sources_1/new/Register_File.vhd" \
+"../../../../raisingue.srcs/sources_1/new/OP_to_ALUOP.vhd" \
+"../../../../raisingue.srcs/sources_1/new/OP_TO_MEMOP.vhd" \
+"../../../../raisingue.srcs/sources_1/new/OP_TO_RFW.vhd" \
+"../../../../raisingue.srcs/sources_1/new/Main.vhd" \
+"../../../../raisingue.srcs/sim_1/new/testbench.vhd" \
+
+# Do not sort compile order
+nosort
