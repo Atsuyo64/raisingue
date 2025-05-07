@@ -18,7 +18,7 @@ architecture Behavioral of Instruction_Memory is
 begin
     process
     begin
-        Dout <= x"deadbeef";
+--        Dout <= x"deadbeef";
         wait until CLK'event and CLK = '1';
         Dout <= mem(TO_INTEGER(unsigned(addr)));
     end process;

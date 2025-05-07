@@ -58,7 +58,7 @@ BEGIN
     u_decoder : ENTITY work.Decoder
         PORT MAP(
             instr => instruction,
-            CLK=>CLK,
+--            CLK=>CLK,
             A => DIA,
             B => DIB,
             C => DIC,
