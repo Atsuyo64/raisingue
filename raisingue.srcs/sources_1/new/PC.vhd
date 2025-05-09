@@ -5,8 +5,8 @@ USE IEEE.std_logic_unsigned.ALL;
 ENTITY PC IS
     PORT (
         CLK : IN STD_LOGIC;
-        SET : IN STD_LOGIC;
-        EN : IN STD_LOGIC;
+        SET : IN STD_LOGIC; -- EN if not SET
+        --EN : IN STD_LOGIC;
         INPUT: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
         PC : OUT STD_LOGIC_VECTOR (7 DOWNTO 0);
         FLUSH : OUT STD_LOGIC);
@@ -25,7 +25,7 @@ BEGIN
             cnt <= INPUT + 1;
             aleasFreeCnt <= cnt;
             FLUSH <= '1';
-        ELSIF EN = '1' THEN
+        ELSE --EN = '1' THEN
             IF modulo5 = x"04" THEN
                 modulo5 <= x"00";
                 cnt <= cnt + '1';

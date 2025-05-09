@@ -43,12 +43,13 @@ ARCHITECTURE Structural OF Main IS
     SIGNAL FLUSH_CMD : STD_LOGIC := '0';
 
     SIGNAL RFW : STD_LOGIC := '0';
+    SIGNAL SET_PC : STD_LOGIC := '0';
 BEGIN
     u_pc : ENTITY work.PC
         PORT MAP(
             CLK => CLK,
-            SET => '0',
-            EN => '1',
+            SET => SET_PC,
+            --EN => '1',
             INPUT => jmp_val,
             PC => pc,
             FLUSH => FLUSH_CMD
@@ -66,6 +67,9 @@ BEGIN
             A => DIA,
             B => DIB,
             C => DIC,
+            NOZ_FLAG => NOZ_MEM_FLAG,
+            SET_PC => SET_PC,
+            PC_VALUE => jmp_val,
             OP => DIOP
         );
     u_register_file : ENTITY work.Register_File
