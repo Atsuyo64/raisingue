@@ -38,6 +38,8 @@ ARCHITECTURE Structural OF Main IS
     SIGNAL MEM_OUT : STD_LOGIC_VECTOR (7 DOWNTO 0) := (OTHERS => '0');
     SIGNAL POST_MEM_B : STD_LOGIC_VECTOR (7 DOWNTO 0) := (OTHERS => '0');
     SIGNAL MEM_RW : STD_LOGIC := '0';
+    SIGNAL NOZ_ALU : STD_LOGIC := '0';
+    SIGNAL NOZ_MEM_FLAG : STD_LOGIC := '0';
 
     SIGNAL RFW : STD_LOGIC := '0';
 BEGIN
@@ -106,10 +108,21 @@ BEGIN
             B => EXC,
             S => ALU_OUT,
             Opcode => ALU_OP,
+            NozFlag => NOZ_ALU,
             Carry => OPEN, --TODO:
             Overflow => OPEN,
             Negative => OPEN
         );
+        
+    u_nozflag : ENTITY work.Flag_Memory
+        PORT MAP(
+            input => NOZ_ALU,
+            OP => EXOP,
+            RST => '1',
+            CLK => CLK,
+            output => NOZ_MEM_FLAG
+        );
+        
     u_mux_alu_calc : ENTITY work.MUX_ALU_CALC
         PORT MAP(
             OP => EXOP,
