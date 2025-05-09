@@ -15,23 +15,35 @@ architecture Behavioral of Instruction_Memory is
     subtype data_t is std_logic_vector(31 downto 0);
     type mem_t is array (0 to 255) of data_t;
     signal mem : mem_t := (x"00000000", -- NEVER CHANGE THIS !
-x"06000500",
+x"0600fe00",
 x"0a020000",
 x"0b010200",
 x"0a010100",
+x"0b030100",
+x"09000300",
+x"08100000",
+x"06000100",
+x"0a030000",
+x"0b010100",
+x"0b020300",
+x"01000102",
+x"0a020000",
+x"0b010200",
+x"0a010100",
+x"07040000",
+x"06006800",
+x"0a030000",
+x"0b010300",
+x"0a020100",
 x"06000100",
 x"0a040000",
-x"0b010100",
+x"0b010200",
 x"0b020400",
 x"01000102",
 x"0a030000",
 x"0b010300",
 x"0a020100",
-x"0b010100",
-x"0b020400",
-x"01000102",
-x"0a010000",
-x"070d0000",
+
 
 others=>(others=>'0'));
 begin

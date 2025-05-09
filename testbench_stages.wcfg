@@ -10,9 +10,9 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="1,494.224 ns"></ZoomStartTime>
-      <ZoomEndTime time="1,601.425 ns"></ZoomEndTime>
-      <Cursor1Time time="895.690 ns"></Cursor1Time>
+      <ZoomStartTime time="5,107.833 ns"></ZoomStartTime>
+      <ZoomEndTime time="5,218.434 ns"></ZoomEndTime>
+      <Cursor1Time time="5,200.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="133"></NameColumnWidth>
@@ -31,9 +31,9 @@
       <obj_property name="ElementShortName">FLUSH</obj_property>
       <obj_property name="ObjectShortName">FLUSH</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/testbench/uut/u_pc/modulo5">
-      <obj_property name="ElementShortName">modulo5[7:0]</obj_property>
-      <obj_property name="ObjectShortName">modulo5[7:0]</obj_property>
+   <wvobject type="logic" fp_name="/testbench/uut/NOZ_MEM_FLAG">
+      <obj_property name="ElementShortName">NOZ_MEM_FLAG</obj_property>
+      <obj_property name="ObjectShortName">NOZ_MEM_FLAG</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/testbench/uut/u_pc/cnt">
       <obj_property name="ElementShortName">cnt[7:0]</obj_property>
