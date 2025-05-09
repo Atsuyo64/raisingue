@@ -22,7 +22,7 @@ ARCHITECTURE Behavioral OF Data_Memory IS
 BEGIN
     PROCESS
     BEGIN
-        WAIT UNTIL CLK'event AND CLK = '1';
+        WAIT UNTIL CLK'event AND CLK = '0';
         IF RW = '0' THEN -- Writing
             mem(TO_INTEGER(unsigned(addr))) <= Din;
         ELSE -- Reading
