@@ -30,7 +30,7 @@ architecture Behavioral of Register_File is
 begin
     process --(CLK) --Note to self: trigger on both edges
     begin
-        wait until CLK'event and CLK = '1';
+        wait until CLK'event and CLK = '0';
         
         if W = '1' then
             mem(to_integer(unsigned(addW))) <= DATA;
