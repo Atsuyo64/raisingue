@@ -12,16 +12,27 @@ ENTITY PC IS
 END PC;
 
 ARCHITECTURE Behavioral OF PC IS
-    SIGNAL cnt : STD_LOGIC_VECTOR (7 DOWNTO 0) := (OTHERS => '0');
+    SIGNAL cnt : STD_LOGIC_VECTOR (7 DOWNTO 0) := x"00";
+    SIGNAL modulo5 : STD_LOGIC_VECTOR (7 DOWNTO 0) := x"04";
+    SIGNAL aleasFreeCnt :  STD_LOGIC_VECTOR (7 DOWNTO 0) := x"00";
 BEGIN
     PROCESS
     BEGIN
         WAIT UNTIL CLK'Event AND CLK = '1';
         IF SET = '1' THEN
-            cnt <= INPUT;
+            modulo5 <= x"00";
+            cnt <= INPUT + 1;
+            aleasFreeCnt <= cnt;
         ELSIF EN = '1' THEN
-            cnt <= cnt + '1';
+            IF modulo5 = x"04" THEN
+                modulo5 <= x"00";
+                cnt <= cnt + '1';
+                aleasFreeCnt <= cnt;
+            ELSE
+                modulo5 <= modulo5 + 1;
+                aleasFreeCnt <= x"00";
+            END IF;
         END IF;
     END PROCESS;
-    PC <= cnt;
+    PC <= aleasFreeCnt;
 END Behavioral;
