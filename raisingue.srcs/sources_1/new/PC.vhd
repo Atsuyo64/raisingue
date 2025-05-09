@@ -8,7 +8,8 @@ ENTITY PC IS
         SET : IN STD_LOGIC;
         EN : IN STD_LOGIC;
         INPUT: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
-        PC : OUT STD_LOGIC_VECTOR (7 DOWNTO 0));
+        PC : OUT STD_LOGIC_VECTOR (7 DOWNTO 0);
+        FLUSH : OUT STD_LOGIC);
 END PC;
 
 ARCHITECTURE Behavioral OF PC IS
@@ -23,6 +24,7 @@ BEGIN
             modulo5 <= x"00";
             cnt <= INPUT + 1;
             aleasFreeCnt <= cnt;
+            FLUSH <= '1';
         ELSIF EN = '1' THEN
             IF modulo5 = x"04" THEN
                 modulo5 <= x"00";
@@ -32,6 +34,7 @@ BEGIN
                 modulo5 <= modulo5 + 1;
                 aleasFreeCnt <= x"00";
             END IF;
+            FLUSH <= '0';
         END IF;
     END PROCESS;
     PC <= aleasFreeCnt;

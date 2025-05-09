@@ -40,6 +40,7 @@ ARCHITECTURE Structural OF Main IS
     SIGNAL MEM_RW : STD_LOGIC := '0';
     SIGNAL NOZ_ALU : STD_LOGIC := '0';
     SIGNAL NOZ_MEM_FLAG : STD_LOGIC := '0';
+    SIGNAL FLUSH_CMD : STD_LOGIC := '0';
 
     SIGNAL RFW : STD_LOGIC := '0';
 BEGIN
@@ -49,7 +50,8 @@ BEGIN
             SET => '0',
             EN => '1',
             INPUT => jmp_val,
-            PC => pc
+            PC => pc,
+            FLUSH => FLUSH_CMD
         );
     u_instruction_memory : ENTITY work.Instruction_Memory
         PORT MAP(
@@ -88,6 +90,7 @@ BEGIN
     u_diex : ENTITY work.DIEXer
         PORT MAP(
             CLK => CLK,
+            FLUSH => FLUSH_CMD,
             INA => DIA,
             INB => POST_RF_MUX_B,
             INC => REG_QB,
@@ -133,6 +136,7 @@ BEGIN
     u_exmem : ENTITY work.EXMEMer
         PORT MAP(
             CLK => CLK,
+            FLUSH => FLUSH_CMD,
             INA => EXA,
             INB => POST_ALU_CALC_B,
             INOP => EXOP,
@@ -171,6 +175,7 @@ BEGIN
     u_memre : ENTITY work.MEMREr
         PORT MAP(
             CLK => CLK,
+            FLUSH => FLUSH_CMD,
             INA => MEMA,
             INB => POST_MEM_B,
             INOP => MEMOP,
