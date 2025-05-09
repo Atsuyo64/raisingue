@@ -10,5 +10,9 @@ end MUX_RF_AFC;
 
 architecture Behavioral of MUX_RF_AFC is
 begin
-    DOUT <= B when OP = x"06" else QA;
+    --DOUT <= B when OP = x"06" else QA;
+    with OP select
+        DOUT <= B when x"06", --AFC
+        B when x"0b",         --load
+        QA when others;
 end Behavioral;
