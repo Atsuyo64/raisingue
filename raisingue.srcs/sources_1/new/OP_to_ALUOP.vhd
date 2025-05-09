@@ -13,5 +13,6 @@ begin
             "001" when x"02",      --mul
             "010" when x"03",      --sub
             "111" when x"04",      --div
+            "101" when x"09",      --noz
             "110" when others;
 end Behavioral;
