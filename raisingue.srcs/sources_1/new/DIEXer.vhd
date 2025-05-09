@@ -21,7 +21,7 @@ BEGIN
     PROCESS
     BEGIN
         WAIT UNTIL CLK'Event AND CLK = '1';
-        IF FLUSH = '1' THEN
+        IF FLUSH = '0' THEN
             OUTA <= INA;
             OUTB <= INB;
             OUTC <= INC;
