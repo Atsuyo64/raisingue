@@ -10,18 +10,42 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="657.666 ns"></ZoomStartTime>
-      <ZoomEndTime time="768.467 ns"></ZoomEndTime>
-      <Cursor1Time time="750.000 ns"></Cursor1Time>
+      <ZoomStartTime time="1,494.224 ns"></ZoomStartTime>
+      <ZoomEndTime time="1,601.425 ns"></ZoomEndTime>
+      <Cursor1Time time="895.690 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="133"></NameColumnWidth>
-      <ValueColumnWidth column_width="79"></ValueColumnWidth>
+      <ValueColumnWidth column_width="75"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="20" />
+   <WVObjectSize size="21" />
    <wvobject type="logic" fp_name="/testbench/CLK">
       <obj_property name="ElementShortName">CLK</obj_property>
       <obj_property name="ObjectShortName">CLK</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench/uut/SET_PC">
+      <obj_property name="ElementShortName">SET_PC</obj_property>
+      <obj_property name="ObjectShortName">SET_PC</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench/uut/u_pc/FLUSH">
+      <obj_property name="ElementShortName">FLUSH</obj_property>
+      <obj_property name="ObjectShortName">FLUSH</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench/uut/u_pc/modulo5">
+      <obj_property name="ElementShortName">modulo5[7:0]</obj_property>
+      <obj_property name="ObjectShortName">modulo5[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench/uut/u_pc/cnt">
+      <obj_property name="ElementShortName">cnt[7:0]</obj_property>
+      <obj_property name="ObjectShortName">cnt[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench/uut/u_pc/aleasFreeCnt">
+      <obj_property name="ElementShortName">aleasFreeCnt[7:0]</obj_property>
+      <obj_property name="ObjectShortName">aleasFreeCnt[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench/uut/jmp_val">
+      <obj_property name="ElementShortName">jmp_val[7:0]</obj_property>
+      <obj_property name="ObjectShortName">jmp_val[7:0]</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/testbench/uut/DIOP">
       <obj_property name="ElementShortName">DIOP[7:0]</obj_property>
@@ -51,37 +75,13 @@
       <obj_property name="ElementShortName">MEMA[7:0]</obj_property>
       <obj_property name="ObjectShortName">MEMA[7:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/testbench/uut/u_data_memory/addr">
-      <obj_property name="ElementShortName">addr[7:0]</obj_property>
-      <obj_property name="ObjectShortName">addr[7:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench/uut/u_register_file/addA">
-      <obj_property name="ElementShortName">addA[3:0]</obj_property>
-      <obj_property name="ObjectShortName">addA[3:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench/uut/u_register_file/QA">
-      <obj_property name="ElementShortName">QA[7:0]</obj_property>
-      <obj_property name="ObjectShortName">QA[7:0]</obj_property>
-   </wvobject>
    <wvobject type="array" fp_name="/testbench/uut/DIB">
       <obj_property name="ElementShortName">DIB[7:0]</obj_property>
       <obj_property name="ObjectShortName">DIB[7:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/testbench/uut/u_mux_rf_afc/DOUT">
-      <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="ElementShortName">DOUT[7:0]</obj_property>
-      <obj_property name="ObjectShortName">DOUT[7:0]</obj_property>
-      <obj_property name="label">DOUT[7:0]rfmux</obj_property>
-   </wvobject>
    <wvobject type="array" fp_name="/testbench/uut/EXB">
       <obj_property name="ElementShortName">EXB[7:0]</obj_property>
       <obj_property name="ObjectShortName">EXB[7:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench/uut/u_mux_alu_calc/DOUT">
-      <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="ElementShortName">DOUT[7:0]</obj_property>
-      <obj_property name="ObjectShortName">DOUT[7:0]</obj_property>
-      <obj_property name="label">DOUT[7:0] mcal</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/testbench/uut/MEMB">
       <obj_property name="ElementShortName">MEMB[7:0]</obj_property>

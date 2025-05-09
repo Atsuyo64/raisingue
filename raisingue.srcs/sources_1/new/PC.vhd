@@ -22,7 +22,7 @@ BEGIN
         WAIT UNTIL CLK'Event AND CLK = '1';
         IF SET = '1' THEN
             modulo5 <= x"00";
-            cnt <= INPUT + 1;
+            cnt <= INPUT;
             aleasFreeCnt <= cnt;
             FLUSH <= '1';
         ELSE --EN = '1' THEN
