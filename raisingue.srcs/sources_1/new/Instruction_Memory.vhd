@@ -73,10 +73,10 @@ x"0b010400",
 x"0a030100",
 others=>(others=>'0'));
 begin
-    process
-    begin
---        Dout <= x"deadbeef";
-        wait until CLK'event and CLK = '1';
+    --process
+    --begin
+--        Dout <= x"deadbeef"; --AKA steak haché
+        --wait until CLK'event and CLK = '1';
         Dout <= mem(TO_INTEGER(unsigned(addr)));
-    end process;
+    --end process;
 end Behavioral;
