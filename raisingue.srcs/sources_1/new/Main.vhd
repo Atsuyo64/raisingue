@@ -44,6 +44,8 @@ ARCHITECTURE Structural OF Main IS
 
     SIGNAL RFW : STD_LOGIC := '0';
     SIGNAL SET_PC : STD_LOGIC := '0';
+    
+    SIGNAL IS_REG_WRITE_OP : STD_LOGIC := '0';
 BEGIN
     u_pc : ENTITY work.PC
         PORT MAP(
@@ -51,6 +53,7 @@ BEGIN
             SET => SET_PC,
             --EN => '1',
             INPUT => jmp_val,
+            SHOULD_INJECT_NOZ => IS_REG_WRITE_OP,
             PC => pc,
             FLUSH => FLUSH_CMD
         );
@@ -70,6 +73,7 @@ BEGIN
             NOZ_FLAG => NOZ_MEM_FLAG,
             SET_PC => SET_PC,
             PC_VALUE => jmp_val,
+            IS_REG_WRITE_OP => IS_REG_WRITE_OP,
             OP => DIOP
         );
     u_register_file : ENTITY work.Register_File
@@ -123,11 +127,11 @@ BEGIN
         
     u_nozflag : ENTITY work.Flag_Memory
         PORT MAP(
-            input => NOZ_ALU,
+            INPUT => NOZ_ALU,
             OP => EXOP,
             RST => '1',
             CLK => CLK,
-            output => NOZ_MEM_FLAG
+            OUTPUT => NOZ_MEM_FLAG
         );
         
     u_mux_alu_calc : ENTITY work.MUX_ALU_CALC

@@ -8,6 +8,7 @@ ENTITY PC IS
         SET : IN STD_LOGIC; -- EN if not SET
         --EN : IN STD_LOGIC;
         INPUT: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
+        SHOULD_INJECT_NOZ: IN STD_LOGIC;
         PC : OUT STD_LOGIC_VECTOR (7 DOWNTO 0);
         FLUSH : OUT STD_LOGIC);
 END PC;
@@ -26,7 +27,7 @@ BEGIN
             aleasFreeCnt <= cnt;
             FLUSH <= '1';
         ELSE --EN = '1' THEN
-            IF modulo5 = x"04" THEN
+            IF modulo5 = x"04" OR SHOULD_INJECT_NOZ = '0' THEN
                 modulo5 <= x"00";
                 cnt <= cnt + '1';
                 aleasFreeCnt <= cnt;
