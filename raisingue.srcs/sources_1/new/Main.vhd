@@ -8,6 +8,7 @@ ENTITY Main IS
     PORT (
         PCLOCK : IN STD_LOGIC;
         IRST : IN STD_LOGIC;
+        sw          : in std_logic_vector(15 downto 0);
         PC_out : out std_logic_vector (7 downto 0);
         OUT0 : out STD_LOGIC_VECTOR(7 downto 0);
         ss_seg      : out STD_LOGIC_VECTOR(6 downto 0);

@@ -10,7 +10,7 @@ architecture Behavioral of testbench is
 begin
     uut: entity work.main
     generic map (g_num_bits => 1)
-    port map(PCLOCK=>CLK,IRST=>'0', PC_out=>open, OUT0=>open,ss_seg=>open, ss_an=>open);
+    port map(PCLOCK=>CLK,IRST=>'0',sw=>x"0000",PC_out=>open, OUT0=>open,ss_seg=>open, ss_an=>open);
     simu: process
     begin
         while true loop
