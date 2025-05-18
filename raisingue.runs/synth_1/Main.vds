@@ -3,227 +3,26 @@
 # SW Build 3865809 on Sun May  7 15:04:56 MDT 2023
 # IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
 # SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
-# Start of session at: Wed May  7 13:50:35 2025
-# Process ID: 22446
-# Current directory: /home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.runs/synth_1
+# Start of session at: Sun May 18 13:04:40 2025
+# Process ID: 158527
+# Current directory: /home/user/INSA/S8/projetSude/raisingue/raisingue.runs/synth_1
 # Command line: vivado -log Main.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Main.tcl
-# Log file: /home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.runs/synth_1/Main.vds
-# Journal file: /home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.runs/synth_1/vivado.jou
-# Running On: insa-11292, OS: Linux, CPU Frequency: 4305.614 MHz, CPU Physical cores: 6, Host memory: 67247 MB
+# Log file: /home/user/INSA/S8/projetSude/raisingue/raisingue.runs/synth_1/Main.vds
+# Journal file: /home/user/INSA/S8/projetSude/raisingue/raisingue.runs/synth_1/vivado.jou
+# Running On: totoshe, OS: Linux, CPU Frequency: 2693.873 MHz, CPU Physical cores: 2, Host memory: 6080 MB
 #-----------------------------------------------------------
 source Main.tcl -notrace
-create_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1332.879 ; gain = 0.023 ; free physical = 54153 ; free virtual = 58052
+create_project: Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1254.402 ; gain = 37.023 ; free physical = 141 ; free virtual = 859
+Command: read_checkpoint -auto_incremental -incremental /home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/utils_1/imports/synth_1/Main.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from /home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/utils_1/imports/synth_1/Main.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
 Command: synth_design -top Main -part xc7a35tcpg236-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 22490
----------------------------------------------------------------------------------
-Starting Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1695.711 ; gain = 362.832 ; free physical = 53527 ; free virtual = 57430
----------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'Main' [/home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.srcs/sources_1/new/Main.vhd:10]
-INFO: [Synth 8-638] synthesizing module 'PC' [/home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.srcs/sources_1/new/PC.vhd:14]
-INFO: [Synth 8-256] done synthesizing module 'PC' (0#1) [/home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.srcs/sources_1/new/PC.vhd:14]
-INFO: [Synth 8-638] synthesizing module 'Instruction_Memory' [/home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.srcs/sources_1/new/Instruction_Memory.vhd:14]
-INFO: [Synth 8-256] done synthesizing module 'Instruction_Memory' (0#1) [/home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.srcs/sources_1/new/Instruction_Memory.vhd:14]
-INFO: [Synth 8-638] synthesizing module 'Decoder' [/home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.srcs/sources_1/new/Decoder.vhd:14]
-INFO: [Synth 8-256] done synthesizing module 'Decoder' (0#1) [/home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.srcs/sources_1/new/Decoder.vhd:14]
-INFO: [Synth 8-638] synthesizing module 'Register_File' [/home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.srcs/sources_1/new/Register_File.vhd:26]
-INFO: [Synth 8-256] done synthesizing module 'Register_File' (0#1) [/home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.srcs/sources_1/new/Register_File.vhd:26]
-INFO: [Synth 8-638] synthesizing module 'MUX_RF_AFC' [/home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.srcs/sources_1/new/MUX_RF_AFC.vhd:11]
-INFO: [Synth 8-256] done synthesizing module 'MUX_RF_AFC' (0#1) [/home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.srcs/sources_1/new/MUX_RF_AFC.vhd:11]
-INFO: [Synth 8-638] synthesizing module 'DIEXer' [/home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.srcs/sources_1/new/DIEXer.vhd:18]
-INFO: [Synth 8-256] done synthesizing module 'DIEXer' (0#1) [/home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.srcs/sources_1/new/DIEXer.vhd:18]
-INFO: [Synth 8-638] synthesizing module 'OP_to_ALUOP' [/home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.srcs/sources_1/new/OP_to_ALUOP.vhd:9]
-INFO: [Synth 8-256] done synthesizing module 'OP_to_ALUOP' (0#1) [/home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.srcs/sources_1/new/OP_to_ALUOP.vhd:9]
-INFO: [Synth 8-638] synthesizing module 'ALU' [/home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.srcs/sources_1/new/ALU.vhd:20]
-INFO: [Synth 8-226] default block is never used [/home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.srcs/sources_1/new/ALU.vhd:24]
-INFO: [Synth 8-256] done synthesizing module 'ALU' (0#1) [/home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.srcs/sources_1/new/ALU.vhd:20]
-INFO: [Synth 8-638] synthesizing module 'MUX_ALU_CALC' [/home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.srcs/sources_1/new/MUX_ALU_CALC.vhd:11]
-INFO: [Synth 8-256] done synthesizing module 'MUX_ALU_CALC' (0#1) [/home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.srcs/sources_1/new/MUX_ALU_CALC.vhd:11]
-INFO: [Synth 8-638] synthesizing module 'EXMEMer' [/home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.srcs/sources_1/new/EXMEMer.vhd:16]
-INFO: [Synth 8-256] done synthesizing module 'EXMEMer' (0#1) [/home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.srcs/sources_1/new/EXMEMer.vhd:16]
-INFO: [Synth 8-638] synthesizing module 'MUX_AB_MEM' [/home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.srcs/sources_1/new/MUX_AB_MEM.vhd:11]
-INFO: [Synth 8-256] done synthesizing module 'MUX_AB_MEM' (0#1) [/home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.srcs/sources_1/new/MUX_AB_MEM.vhd:11]
-INFO: [Synth 8-638] synthesizing module 'OP_TO_MEMOP' [/home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.srcs/sources_1/new/OP_TO_MEMOP.vhd:9]
-INFO: [Synth 8-256] done synthesizing module 'OP_TO_MEMOP' (0#1) [/home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.srcs/sources_1/new/OP_TO_MEMOP.vhd:9]
-INFO: [Synth 8-638] synthesizing module 'Data_Memory' [/home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.srcs/sources_1/new/Data_Memory.vhd:18]
-INFO: [Synth 8-256] done synthesizing module 'Data_Memory' (0#1) [/home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.srcs/sources_1/new/Data_Memory.vhd:18]
-INFO: [Synth 8-638] synthesizing module 'MUX_MEM_B' [/home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.srcs/sources_1/new/MUX_MEM_B.vhd:11]
-INFO: [Synth 8-256] done synthesizing module 'MUX_MEM_B' (0#1) [/home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.srcs/sources_1/new/MUX_MEM_B.vhd:11]
-INFO: [Synth 8-638] synthesizing module 'MEMREr' [/home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.srcs/sources_1/new/MEMREr.vhd:16]
-INFO: [Synth 8-256] done synthesizing module 'MEMREr' (0#1) [/home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.srcs/sources_1/new/MEMREr.vhd:16]
-INFO: [Synth 8-638] synthesizing module 'OP_TO_RFW' [/home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.srcs/sources_1/new/OP_TO_RFW.vhd:9]
-INFO: [Synth 8-256] done synthesizing module 'OP_TO_RFW' (0#1) [/home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.srcs/sources_1/new/OP_TO_RFW.vhd:9]
-INFO: [Synth 8-256] done synthesizing module 'Main' (0#1) [/home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.srcs/sources_1/new/Main.vhd:10]
-WARNING: [Synth 8-7129] Port INA[7] in module MEMREr is either unconnected or has no load
-WARNING: [Synth 8-7129] Port INA[6] in module MEMREr is either unconnected or has no load
-WARNING: [Synth 8-7129] Port INA[5] in module MEMREr is either unconnected or has no load
-WARNING: [Synth 8-7129] Port INA[4] in module MEMREr is either unconnected or has no load
----------------------------------------------------------------------------------
-Finished Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1810.680 ; gain = 477.801 ; free physical = 53384 ; free virtual = 57291
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1822.555 ; gain = 489.676 ; free physical = 53397 ; free virtual = 57303
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Loading Part and Timing Information
----------------------------------------------------------------------------------
-Loading part: xc7a35tcpg236-1
-INFO: [Device 21-403] Loading part xc7a35tcpg236-1
----------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1830.559 ; gain = 497.680 ; free physical = 53396 ; free virtual = 57303
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1855.480 ; gain = 522.602 ; free physical = 53342 ; free virtual = 57266
----------------------------------------------------------------------------------
-No constraint files found.
----------------------------------------------------------------------------------
-Start RTL Component Statistics 
----------------------------------------------------------------------------------
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input    8 Bit       Adders := 2     
-	   3 Input    8 Bit       Adders := 1     
-+---XORs : 
-	   2 Input      8 Bit         XORs := 1     
-+---Registers : 
-	               32 Bit    Registers := 1     
-	                8 Bit    Registers := 285   
-	                4 Bit    Registers := 1     
-+---Muxes : 
-	 257 Input   32 Bit        Muxes := 1     
-	   2 Input    8 Bit        Muxes := 6     
-	   5 Input    8 Bit        Muxes := 1     
-	   2 Input    3 Bit        Muxes := 1     
-	   5 Input    3 Bit        Muxes := 1     
-	   2 Input    1 Bit        Muxes := 274   
----------------------------------------------------------------------------------
-Finished RTL Component Statistics 
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Part Resource Summary
----------------------------------------------------------------------------------
-Part Resources:
-DSPs: 90 (col length:60)
-BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
----------------------------------------------------------------------------------
-Finished Part Resource Summary
----------------------------------------------------------------------------------
-No constraint files found.
----------------------------------------------------------------------------------
-Start Cross Boundary and Area Optimization
----------------------------------------------------------------------------------
-WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
----------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:17 . Memory (MB): peak = 1926.012 ; gain = 593.133 ; free physical = 53283 ; free virtual = 57220
----------------------------------------------------------------------------------
-No constraint files found.
----------------------------------------------------------------------------------
-Start Timing Optimization
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:17 . Memory (MB): peak = 1926.012 ; gain = 593.133 ; free physical = 53277 ; free virtual = 57214
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Technology Mapping
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:11 ; elapsed = 00:00:17 . Memory (MB): peak = 1926.012 ; gain = 593.133 ; free physical = 53277 ; free virtual = 57214
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start IO Insertion
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Flattening Before IO Insertion
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Flattening Before IO Insertion
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Final Netlist Cleanup
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Final Netlist Cleanup
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:14 ; elapsed = 00:00:19 . Memory (MB): peak = 1926.012 ; gain = 593.133 ; free physical = 53277 ; free virtual = 57214
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Renaming Generated Instances
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:14 ; elapsed = 00:00:19 . Memory (MB): peak = 1926.012 ; gain = 593.133 ; free physical = 53277 ; free virtual = 57214
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Rebuilding User Hierarchy
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:14 ; elapsed = 00:00:19 . Memory (MB): peak = 1926.012 ; gain = 593.133 ; free physical = 53277 ; free virtual = 57214
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Renaming Generated Ports
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:14 ; elapsed = 00:00:19 . Memory (MB): peak = 1926.012 ; gain = 593.133 ; free physical = 53277 ; free virtual = 57214
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Handling Custom Attributes
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:19 . Memory (MB): peak = 1926.012 ; gain = 593.133 ; free physical = 53277 ; free virtual = 57214
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Renaming Generated Nets
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:14 ; elapsed = 00:00:19 . Memory (MB): peak = 1926.012 ; gain = 593.133 ; free physical = 53276 ; free virtual = 57214
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Writing Synthesis Report
----------------------------------------------------------------------------------
-
-Report BlackBoxes: 
-+-+--------------+----------+
-| |BlackBox name |Instances |
-+-+--------------+----------+
-+-+--------------+----------+
-
-Report Cell Usage: 
-+-+-----+------+
-| |Cell |Count |
-+-+-----+------+
-+-+-----+------+
-
-Report Instance Areas: 
-+------+---------+-------+------+
-|      |Instance |Module |Cells |
-+------+---------+-------+------+
-|1     |top      |       |     0|
-+------+---------+-------+------+
----------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:14 ; elapsed = 00:00:19 . Memory (MB): peak = 1926.012 ; gain = 593.133 ; free physical = 53276 ; free virtual = 57214
----------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 5 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:14 ; elapsed = 00:00:19 . Memory (MB): peak = 1926.012 ; gain = 593.133 ; free physical = 53276 ; free virtual = 57214
-Synthesis Optimization Complete : Time (s): cpu = 00:00:14 ; elapsed = 00:00:19 . Memory (MB): peak = 1926.020 ; gain = 593.133 ; free physical = 53276 ; free virtual = 57214
-INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1926.020 ; gain = 0.000 ; free physical = 53341 ; free virtual = 57281
-INFO: [Project 1-570] Preparing netlist for logic optimization
-INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2010.605 ; gain = 0.000 ; free physical = 53462 ; free virtual = 57416
-INFO: [Project 1-111] Unisim Transformation Summary:
-No Unisim elements were transformed.
-
-Synth Design complete | Checksum: 89db6fd6
-INFO: [Common 17-83] Releasing license: Synthesis
-45 Infos, 5 Warnings, 0 Critical Warnings and 0 Errors encountered.
-synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:17 ; elapsed = 00:00:21 . Memory (MB): peak = 2010.605 ; gain = 677.727 ; free physical = 53462 ; free virtual = 57416
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1494.088; main = 1320.259; forked = 383.521
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 2833.434; main = 2010.609; forked = 977.949
-INFO: [Common 17-1381] The checkpoint '/home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.runs/synth_1/Main.dcp' has been generated.
-INFO: [runtcl-4] Executing : report_utilization -file Main_utilization_synth.rpt -pb Main_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed May  7 13:51:12 2025...
+INFO: [Synth 8-7075] Helper process launched with PID 163896
