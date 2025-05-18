@@ -4,7 +4,8 @@ USE IEEE.STD_LOGIC_1164.ALL;
 ENTITY Main IS
     PORT (
         CLK : IN STD_LOGIC;
-        RST : IN STD_LOGIC);
+        RST : IN STD_LOGIC;
+        PC_out : out std_logic_vector (7 downto 0));
 END Main;
 
 ARCHITECTURE Structural OF Main IS
@@ -47,6 +48,7 @@ ARCHITECTURE Structural OF Main IS
     
     SIGNAL IS_REG_WRITE_OP : STD_LOGIC := '0';
 BEGIN
+    PC_out <= PC;
     u_pc : ENTITY work.PC
         PORT MAP(
             CLK => CLK,

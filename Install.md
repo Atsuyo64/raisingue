@@ -2,6 +2,7 @@
 sudo pacman -S ncurses
 sudo pacman -S libxcrypt-compat
 sudo pacman -S ncurses5-compat-libs
+yay -S ncurses5-compat-libs
 
 cat /etc/default/grub
 ```
