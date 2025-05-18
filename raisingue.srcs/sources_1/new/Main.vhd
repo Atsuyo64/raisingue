@@ -3,12 +3,13 @@ USE IEEE.STD_LOGIC_1164.ALL;
 
 ENTITY Main IS
     PORT (
-        CLK : IN STD_LOGIC;
+        PCLOCK : IN STD_LOGIC;
         RST : IN STD_LOGIC;
         PC_out : out std_logic_vector (7 downto 0));
 END Main;
 
 ARCHITECTURE Structural OF Main IS
+    signal CLK : std_logic := '0';
     SIGNAL pc : STD_LOGIC_VECTOR (7 DOWNTO 0) := (OTHERS => '0');
     SIGNAL jmp_val : STD_LOGIC_VECTOR (7 DOWNTO 0) := (OTHERS => '0');
     SIGNAL instruction : STD_LOGIC_VECTOR (31 DOWNTO 0) := (OTHERS => '0');
@@ -49,6 +50,12 @@ ARCHITECTURE Structural OF Main IS
     SIGNAL IS_REG_WRITE_OP : STD_LOGIC := '0';
 BEGIN
     PC_out <= PC;
+    div: entity work.prescaler
+    generic map (g_num_bits => 21)
+    port map(
+        ClockIn=>PCLOCK,
+        ClockOut=>CLK
+        );
     u_pc : ENTITY work.PC
         PORT MAP(
             CLK => CLK,

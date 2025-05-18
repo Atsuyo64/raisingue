@@ -98,6 +98,7 @@ read_vhdl -library xil_defaultlib {
   /home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/sources_1/new/MUX_ALU_CALC.vhd
   /home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/sources_1/new/MUX_MEM_B.vhd
   /home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/sources_1/new/MUX_RF_AFC.vhd
+  /home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/sources_1/new/prescaler.vhd
   /home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/sources_1/new/PC.vhd
   /home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/sources_1/new/Register_File.vhd
   /home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/sources_1/new/OP_to_ALUOP.vhd

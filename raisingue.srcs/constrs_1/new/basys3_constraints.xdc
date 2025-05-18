@@ -3,8 +3,8 @@
 
 ## Horloge
 #set_property -dict { PACKAGE_PIN W5   IOSTANDARD LVCMOS33 } [get_ports { CLK }]; # Horloge 100MHz
-set_property -dict {PACKAGE_PIN W5 IOSTANDARD LVCMOS33 } [get_ports {CLK} ]
-create_clock -add -name sysclk_pin -period 10.00 -waveform { 0 5 } [get_ports {CLK} ]
+set_property -dict {PACKAGE_PIN W5 IOSTANDARD LVCMOS33 } [get_ports {PCLOCK} ]
+create_clock -add -name sysclk_pin -period 10.00 -waveform { 0 5 } [get_ports {PCLOCK} ]
 
 ## Bouton Reset
 set_property PACKAGE_PIN W19 [get_ports {RST}]
