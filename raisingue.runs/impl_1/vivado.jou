@@ -3,12 +3,12 @@
 # SW Build 3865809 on Sun May  7 15:04:56 MDT 2023
 # IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
 # SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
-# Start of session at: Sun May 18 15:44:26 2025
-# Process ID: 374750
+# Start of session at: Sun May 18 16:17:10 2025
+# Process ID: 491470
 # Current directory: /home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.runs/impl_1
 # Command line: vivado -log Main.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source Main.tcl -notrace
 # Log file: /home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.runs/impl_1/Main.vdi
 # Journal file: /home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.runs/impl_1/vivado.jou
-# Running On: georges, OS: Linux, CPU Frequency: 4200.274 MHz, CPU Physical cores: 6, Host memory: 16565 MB
+# Running On: georges, OS: Linux, CPU Frequency: 4188.228 MHz, CPU Physical cores: 6, Host memory: 16565 MB
 #-----------------------------------------------------------
 source Main.tcl -notrace

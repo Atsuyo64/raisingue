@@ -10,18 +10,26 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="5,107.833 ns"></ZoomStartTime>
-      <ZoomEndTime time="5,218.434 ns"></ZoomEndTime>
-      <Cursor1Time time="5,200.000 ns"></Cursor1Time>
+      <ZoomStartTime time="750.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="1,158.001 ns"></ZoomEndTime>
+      <Cursor1Time time="1,000.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="133"></NameColumnWidth>
-      <ValueColumnWidth column_width="75"></ValueColumnWidth>
+      <ValueColumnWidth column_width="71"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="21" />
-   <wvobject type="logic" fp_name="/testbench/CLK">
+   <WVObjectSize size="23" />
+   <wvobject type="logic" fp_name="/testbench/uut/PCLOCK">
+      <obj_property name="ElementShortName">PCLOCK</obj_property>
+      <obj_property name="ObjectShortName">PCLOCK</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench/uut/CLK">
       <obj_property name="ElementShortName">CLK</obj_property>
       <obj_property name="ObjectShortName">CLK</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench/uut/pc">
+      <obj_property name="ElementShortName">pc[7:0]</obj_property>
+      <obj_property name="ObjectShortName">pc[7:0]</obj_property>
    </wvobject>
    <wvobject type="logic" fp_name="/testbench/uut/SET_PC">
       <obj_property name="ElementShortName">SET_PC</obj_property>
