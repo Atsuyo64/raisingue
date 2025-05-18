@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
-| Date         : Sun May 18 16:16:59 2025
+| Date         : Sun May 18 16:28:13 2025
 | Host         : georges running 64-bit Arch Linux
 | Command      : report_utilization -file Main_utilization_synth.rpt -pb Main_utilization_synth.pb
 | Design       : Main
@@ -31,8 +31,8 @@ Table of Contents
 +-------------------------+------+-------+------------+-----------+-------+
 |        Site Type        | Used | Fixed | Prohibited | Available | Util% |
 +-------------------------+------+-------+------------+-----------+-------+
-| Slice LUTs*             |  499 |     0 |          0 |     20800 |  2.40 |
-|   LUT as Logic          |  499 |     0 |          0 |     20800 |  2.40 |
+| Slice LUTs*             |  498 |     0 |          0 |     20800 |  2.39 |
+|   LUT as Logic          |  498 |     0 |          0 |     20800 |  2.39 |
 |   LUT as Memory         |    0 |     0 |          0 |      9600 |  0.00 |
 | Slice Registers         |  772 |     0 |          0 |     41600 |  1.86 |
 |   Register as Flip Flop |  772 |     0 |          0 |     41600 |  1.86 |
@@ -153,11 +153,11 @@ Warning! LUT value is adjusted to account for LUT combining.
 +----------+------+---------------------+
 | FDRE     |  772 |        Flop & Latch |
 | LUT6     |  317 |                 LUT |
-| LUT3     |   84 |                 LUT |
+| LUT3     |   82 |                 LUT |
 | MUXF7    |   64 |               MuxFx |
 | LUT5     |   55 |                 LUT |
 | LUT4     |   54 |                 LUT |
-| LUT2     |   52 |                 LUT |
+| LUT2     |   53 |                 LUT |
 | CARRY4   |   37 |          CarryLogic |
 | MUXF8    |   32 |               MuxFx |
 | OBUF     |    8 |                  IO |

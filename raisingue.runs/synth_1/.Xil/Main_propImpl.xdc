@@ -2,7 +2,7 @@ set_property SRC_FILE_INFO {cfile:/home/user/Documents/Scolaire/S7/projetSude/ra
 set_property src_info {type:XDC file:1 line:6 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict {PACKAGE_PIN W5 IOSTANDARD LVCMOS33 } [get_ports {PCLOCK} ]
 set_property src_info {type:XDC file:1 line:13 export:INPUT save:INPUT read:READ} [current_design]
-set_property PACKAGE_PIN W19 [get_ports {RST}]
+set_property PACKAGE_PIN W19 [get_ports {IRST}]
 set_property src_info {type:XDC file:1 line:18 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN U16  IOSTANDARD LVCMOS33 } [get_ports { PC_out[0] }]; # LED0
 set_property src_info {type:XDC file:1 line:19 export:INPUT save:INPUT read:READ} [current_design]
