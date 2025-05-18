@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
-| Date         : Mon May 19 00:12:21 2025
+| Date         : Mon May 19 00:17:28 2025
 | Host         : georges running 64-bit Arch Linux
 | Command      : report_control_sets -verbose -file Main_control_sets_placed.rpt
 | Design       : Main
@@ -27,7 +27,7 @@ Table of Contents
 |    Minimum number of control sets                        |    60 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |    27 |
+| Unused register locations in slices containing registers |    29 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -58,12 +58,12 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              47 |           16 |
+| No           | No                    | No                     |              45 |           15 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |              94 |           33 |
+| No           | Yes                   | No                     |              94 |           31 |
 | Yes          | No                    | No                     |               0 |            0 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |             424 |          125 |
+| Yes          | Yes                   | No                     |             424 |          119 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
@@ -76,62 +76,62 @@ Table of Contents
 | ~CLK_BUFG         |                           |                              |                1 |              1 |         1.00 |
 |  CLK_BUFG         |                           |                              |                2 |              2 |         1.00 |
 |  CLK_BUFG         |                           | u_pc/modulo50_in[1]          |                2 |              7 |         3.50 |
-| ~CLK_BUFG         | u_exmem/OUTA_reg[1]_2[0]  | IRST_IBUF                    |                2 |              8 |         4.00 |
-| ~CLK_BUFG         | u_diex/OUTC_reg[1]_0[0]   | IRST_IBUF                    |                2 |              8 |         4.00 |
-| ~CLK_BUFG         | u_exmem/OUTA_reg[1]_1[0]  | IRST_IBUF                    |                2 |              8 |         4.00 |
-| ~CLK_BUFG         | u_exmem/OUTA_reg[1]_0[0]  | IRST_IBUF                    |                1 |              8 |         8.00 |
-| ~CLK_BUFG         | u_exmem/OUTA_reg[0]_0[0]  | IRST_IBUF                    |                2 |              8 |         4.00 |
-| ~CLK_BUFG         | u_memre/OUTA_reg[0]_0[0]  | IRST_IBUF                    |                1 |              8 |         8.00 |
-| ~CLK_BUFG         | u_exmem/OUTOP_reg[2]_5[0] | IRST_IBUF                    |                1 |              8 |         8.00 |
-| ~CLK_BUFG         | u_memre/E[0]              | IRST_IBUF                    |                1 |              8 |         8.00 |
-| ~CLK_BUFG         | u_exmem/OUTOP_reg[0]_8[0] | IRST_IBUF                    |                6 |              8 |         1.33 |
-| ~CLK_BUFG         | u_exmem/OUTOP_reg[0]_1[0] | IRST_IBUF                    |                6 |              8 |         1.33 |
-| ~CLK_BUFG         | u_exmem/OUTOP_reg[0]_7[0] | IRST_IBUF                    |                1 |              8 |         8.00 |
-| ~CLK_BUFG         | u_exmem/OUTOP_reg[0]_3[0] | IRST_IBUF                    |                7 |              8 |         1.14 |
-| ~CLK_BUFG         | u_exmem/OUTOP_reg[0]_5[0] | IRST_IBUF                    |                3 |              8 |         2.67 |
-| ~CLK_BUFG         | u_exmem/OUTOP_reg[0]_6[0] | IRST_IBUF                    |                2 |              8 |         4.00 |
-| ~CLK_BUFG         | u_exmem/OUTA_reg[1]_3[0]  | IRST_IBUF                    |                3 |              8 |         2.67 |
-| ~CLK_BUFG         | u_exmem/OUTA_reg[1]_4[0]  | IRST_IBUF                    |                4 |              8 |         2.00 |
-| ~CLK_BUFG         | u_exmem/OUTA_reg[1]_5[0]  | IRST_IBUF                    |                2 |              8 |         4.00 |
-| ~CLK_BUFG         | u_exmem/OUTA_reg[3]_0[0]  | IRST_IBUF                    |                3 |              8 |         2.67 |
-| ~CLK_BUFG         | u_exmem/OUTA_reg[3]_1[0]  | IRST_IBUF                    |                1 |              8 |         8.00 |
-| ~CLK_BUFG         | u_exmem/OUTA_reg[3]_2[0]  | IRST_IBUF                    |                3 |              8 |         2.67 |
-| ~CLK_BUFG         | u_exmem/OUTA_reg[3]_3[0]  | IRST_IBUF                    |                1 |              8 |         8.00 |
-| ~CLK_BUFG         | u_exmem/OUTA_reg[3]_4[0]  | IRST_IBUF                    |                1 |              8 |         8.00 |
-| ~CLK_BUFG         | u_exmem/OUTA_reg[5]_0[0]  | IRST_IBUF                    |                3 |              8 |         2.67 |
-| ~CLK_BUFG         | u_exmem/OUTA_reg[5]_1[0]  | IRST_IBUF                    |                1 |              8 |         8.00 |
-| ~CLK_BUFG         | u_exmem/OUTA_reg[5]_2[0]  | IRST_IBUF                    |                2 |              8 |         4.00 |
-| ~CLK_BUFG         | u_exmem/OUTA_reg[5]_3[0]  | IRST_IBUF                    |                3 |              8 |         2.67 |
-| ~CLK_BUFG         | u_exmem/OUTB_reg[0]_0[0]  | IRST_IBUF                    |                4 |              8 |         2.00 |
-| ~CLK_BUFG         | u_exmem/OUTOP_reg[0]_0[0] | IRST_IBUF                    |                1 |              8 |         8.00 |
-| ~CLK_BUFG         | u_exmem/OUTOP_reg[2]_7[0] | IRST_IBUF                    |                2 |              8 |         4.00 |
-|  CLK_BUFG         | u_pc/cnt[7]_i_1_n_0       | IRST_IBUF                    |                4 |              8 |         2.00 |
-| ~CLK_BUFG         | u_exmem/E[0]              | IRST_IBUF                    |                2 |              8 |         4.00 |
-| ~CLK_BUFG         | u_exmem/OUTOP_reg[2]_8[0] | IRST_IBUF                    |                1 |              8 |         8.00 |
-| ~CLK_BUFG         | u_exmem/OUTOP_reg[0]_2    | IRST_IBUF                    |                3 |              8 |         2.67 |
-| ~CLK_BUFG         | u_exmem/OUTOP_reg[0]_4[0] | IRST_IBUF                    |                1 |              8 |         8.00 |
-| ~CLK_BUFG         | u_exmem/OUTOP_reg[2]_4[0] | IRST_IBUF                    |                3 |              8 |         2.67 |
-| ~CLK_BUFG         | u_memre/OUTA_reg[1]_5[0]  | IRST_IBUF                    |                4 |              8 |         2.00 |
-| ~CLK_BUFG         | u_memre/OUTA_reg[1]_6[0]  | IRST_IBUF                    |                1 |              8 |         8.00 |
-| ~CLK_BUFG         | u_memre/OUTA_reg[1]_7[0]  | IRST_IBUF                    |                2 |              8 |         4.00 |
+| ~CLK_BUFG         | u_memre/OUTA_reg[1]_7[0]  | IRST_IBUF                    |                4 |              8 |         2.00 |
+| ~CLK_BUFG         | u_exmem/OUTA_reg[5]_3[0]  | IRST_IBUF                    |                2 |              8 |         4.00 |
+| ~CLK_BUFG         | u_memre/OUTA_reg[1]_6[0]  | IRST_IBUF                    |                3 |              8 |         2.67 |
+| ~CLK_BUFG         | u_memre/OUTA_reg[1]_5[0]  | IRST_IBUF                    |                2 |              8 |         4.00 |
+| ~CLK_BUFG         | u_exmem/OUTOP_reg[2]_7[0] | IRST_IBUF                    |                1 |              8 |         8.00 |
+| ~CLK_BUFG         | u_exmem/OUTOP_reg[2]_6[0] | IRST_IBUF                    |                2 |              8 |         4.00 |
+| ~CLK_BUFG         | u_diex/E[0]               | IRST_IBUF                    |                3 |              8 |         2.67 |
+| ~CLK_BUFG         | u_memre/OUTA_reg[0]_1[0]  | IRST_IBUF                    |                2 |              8 |         4.00 |
+| ~CLK_BUFG         | u_exmem/OUTOP_reg[2]_4[0] | IRST_IBUF                    |                2 |              8 |         4.00 |
+| ~CLK_BUFG         | u_diex/OUTOP_reg[3]_1[0]  | IRST_IBUF                    |                3 |              8 |         2.67 |
+| ~CLK_BUFG         | u_exmem/OUTOP_reg[0]_6[0] | IRST_IBUF                    |                1 |              8 |         8.00 |
+| ~CLK_BUFG         | u_exmem/OUTOP_reg[0]_0[0] | IRST_IBUF                    |                3 |              8 |         2.67 |
+| ~CLK_BUFG         | u_exmem/OUTB_reg[0]_0[0]  | IRST_IBUF                    |                3 |              8 |         2.67 |
+| ~CLK_BUFG         | u_memre/OUTA_reg[0]_0[0]  | IRST_IBUF                    |                2 |              8 |         4.00 |
 | ~CLK_BUFG         | u_memre/OUTA_reg[1]_8[0]  | IRST_IBUF                    |                2 |              8 |         4.00 |
-| ~CLK_BUFG         | u_memre/OUTA_reg[3]_0[0]  | IRST_IBUF                    |                4 |              8 |         2.00 |
+| ~CLK_BUFG         | u_memre/OUTA_reg[3]_0[0]  | IRST_IBUF                    |                2 |              8 |         4.00 |
 | ~CLK_BUFG         | u_memre/OUTA_reg[3]_1[0]  | IRST_IBUF                    |                2 |              8 |         4.00 |
 | ~CLK_BUFG         | u_memre/OUTA_reg[3]_2[0]  | IRST_IBUF                    |                2 |              8 |         4.00 |
 | ~CLK_BUFG         | u_memre/OUTA_reg[3]_3[0]  | IRST_IBUF                    |                1 |              8 |         8.00 |
-| ~CLK_BUFG         | u_memre/OUTA_reg[0]_2[0]  | IRST_IBUF                    |                3 |              8 |         2.67 |
-| ~CLK_BUFG         | u_memre/OUTA_reg[1]_1[0]  | IRST_IBUF                    |                2 |              8 |         4.00 |
-| ~CLK_BUFG         | u_memre/OUTA_reg[1]_2[0]  | IRST_IBUF                    |                2 |              8 |         4.00 |
-| ~CLK_BUFG         | u_memre/OUTA_reg[1]_3[0]  | IRST_IBUF                    |                3 |              8 |         2.67 |
-| ~CLK_BUFG         | u_memre/OUTA_reg[1]_4[0]  | IRST_IBUF                    |                2 |              8 |         4.00 |
 | ~CLK_BUFG         | u_exmem/OUTOP_reg[0]_9[0] | IRST_IBUF                    |                1 |              8 |         8.00 |
-| ~CLK_BUFG         | u_diex/OUTOP_reg[3]_1[0]  | IRST_IBUF                    |                2 |              8 |         4.00 |
-| ~CLK_BUFG         | u_memre/OUTA_reg[0]_1[0]  | IRST_IBUF                    |                2 |              8 |         4.00 |
-| ~CLK_BUFG         | u_exmem/OUTOP_reg[2]_6[0] | IRST_IBUF                    |                2 |              8 |         4.00 |
-| ~CLK_BUFG         | u_diex/E[0]               | IRST_IBUF                    |                3 |              8 |         2.67 |
+| ~CLK_BUFG         | u_diex/OUTC_reg[1]_0[0]   | IRST_IBUF                    |                3 |              8 |         2.67 |
+| ~CLK_BUFG         | u_exmem/OUTOP_reg[0]_5[0] | IRST_IBUF                    |                4 |              8 |         2.00 |
+| ~CLK_BUFG         | u_exmem/OUTOP_reg[0]_3[0] | IRST_IBUF                    |                7 |              8 |         1.14 |
+| ~CLK_BUFG         | u_exmem/OUTOP_reg[0]_7[0] | IRST_IBUF                    |                1 |              8 |         8.00 |
+| ~CLK_BUFG         | u_exmem/OUTOP_reg[0]_1[0] | IRST_IBUF                    |                2 |              8 |         4.00 |
+| ~CLK_BUFG         | u_exmem/OUTOP_reg[0]_8[0] | IRST_IBUF                    |                4 |              8 |         2.00 |
+| ~CLK_BUFG         | u_memre/E[0]              | IRST_IBUF                    |                3 |              8 |         2.67 |
+| ~CLK_BUFG         | u_exmem/OUTOP_reg[2]_5[0] | IRST_IBUF                    |                1 |              8 |         8.00 |
+| ~CLK_BUFG         | u_exmem/OUTA_reg[5]_1[0]  | IRST_IBUF                    |                2 |              8 |         4.00 |
+|  CLK_BUFG         | u_pc/cnt[7]_i_1_n_0       | IRST_IBUF                    |                3 |              8 |         2.67 |
+| ~CLK_BUFG         | u_exmem/E[0]              | IRST_IBUF                    |                2 |              8 |         4.00 |
+| ~CLK_BUFG         | u_exmem/OUTOP_reg[2]_8[0] | IRST_IBUF                    |                2 |              8 |         4.00 |
+| ~CLK_BUFG         | u_exmem/OUTOP_reg[0]_2    | IRST_IBUF                    |                4 |              8 |         2.00 |
+| ~CLK_BUFG         | u_exmem/OUTOP_reg[0]_4[0] | IRST_IBUF                    |                1 |              8 |         8.00 |
+| ~CLK_BUFG         | u_memre/OUTA_reg[0]_2[0]  | IRST_IBUF                    |                1 |              8 |         8.00 |
+| ~CLK_BUFG         | u_memre/OUTA_reg[1]_1[0]  | IRST_IBUF                    |                2 |              8 |         4.00 |
+| ~CLK_BUFG         | u_memre/OUTA_reg[1]_2[0]  | IRST_IBUF                    |                1 |              8 |         8.00 |
+| ~CLK_BUFG         | u_memre/OUTA_reg[1]_3[0]  | IRST_IBUF                    |                2 |              8 |         4.00 |
+| ~CLK_BUFG         | u_memre/OUTA_reg[1]_4[0]  | IRST_IBUF                    |                1 |              8 |         8.00 |
+| ~CLK_BUFG         | u_exmem/OUTA_reg[0]_0[0]  | IRST_IBUF                    |                1 |              8 |         8.00 |
+| ~CLK_BUFG         | u_exmem/OUTA_reg[1]_0[0]  | IRST_IBUF                    |                1 |              8 |         8.00 |
+| ~CLK_BUFG         | u_exmem/OUTA_reg[1]_1[0]  | IRST_IBUF                    |                1 |              8 |         8.00 |
+| ~CLK_BUFG         | u_exmem/OUTA_reg[1]_2[0]  | IRST_IBUF                    |                1 |              8 |         8.00 |
+| ~CLK_BUFG         | u_exmem/OUTA_reg[1]_3[0]  | IRST_IBUF                    |                4 |              8 |         2.00 |
+| ~CLK_BUFG         | u_exmem/OUTA_reg[1]_4[0]  | IRST_IBUF                    |                6 |              8 |         1.33 |
+| ~CLK_BUFG         | u_exmem/OUTA_reg[1]_5[0]  | IRST_IBUF                    |                1 |              8 |         8.00 |
+| ~CLK_BUFG         | u_exmem/OUTA_reg[3]_0[0]  | IRST_IBUF                    |                3 |              8 |         2.67 |
+| ~CLK_BUFG         | u_exmem/OUTA_reg[3]_1[0]  | IRST_IBUF                    |                2 |              8 |         4.00 |
+| ~CLK_BUFG         | u_exmem/OUTA_reg[3]_2[0]  | IRST_IBUF                    |                3 |              8 |         2.67 |
+| ~CLK_BUFG         | u_exmem/OUTA_reg[3]_3[0]  | IRST_IBUF                    |                2 |              8 |         4.00 |
+| ~CLK_BUFG         | u_exmem/OUTA_reg[3]_4[0]  | IRST_IBUF                    |                1 |              8 |         8.00 |
+| ~CLK_BUFG         | u_exmem/OUTA_reg[5]_0[0]  | IRST_IBUF                    |                3 |              8 |         2.67 |
+| ~CLK_BUFG         | u_exmem/OUTA_reg[5]_2[0]  | IRST_IBUF                    |                1 |              8 |         8.00 |
 |  CLK_BUFG         |                           | u_pc/aleasFreeCnt[7]_i_1_n_0 |                4 |             13 |         3.25 |
-| ~CLK_BUFG         |                           | IRST_IBUF                    |                7 |             16 |         2.29 |
-|  PCLOCK_IBUF_BUFG |                           |                              |               13 |             44 |         3.38 |
+| ~CLK_BUFG         |                           | IRST_IBUF                    |                5 |             16 |         3.20 |
+|  PCLOCK_IBUF_BUFG |                           |                              |               12 |             42 |         3.50 |
 |  CLK_BUFG         |                           | u_pc/FLUSH_CMD               |               20 |             58 |         2.90 |
 +-------------------+---------------------------+------------------------------+------------------+----------------+--------------+
 

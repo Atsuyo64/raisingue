@@ -3,7 +3,7 @@ USE IEEE.STD_LOGIC_1164.ALL;
 
 ENTITY Main IS
     GENERIC (
-        g_num_bits : INTEGER := 21
+        g_num_bits : INTEGER := 19 --21 is nice
     );
     PORT (
         PCLOCK : IN STD_LOGIC;
