@@ -11,6 +11,7 @@ vhdl xil_defaultlib  \
 "../../../../raisingue.srcs/sources_1/new/MUX_ALU_CALC.vhd" \
 "../../../../raisingue.srcs/sources_1/new/MUX_MEM_B.vhd" \
 "../../../../raisingue.srcs/sources_1/new/MUX_RF_AFC.vhd" \
+"../../../../raisingue.srcs/sources_1/new/prescaler.vhd" \
 "../../../../raisingue.srcs/sources_1/new/PC.vhd" \
 "../../../../raisingue.srcs/sources_1/new/Register_File.vhd" \
 "../../../../raisingue.srcs/sources_1/new/OP_to_ALUOP.vhd" \

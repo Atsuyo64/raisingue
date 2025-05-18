@@ -8,7 +8,9 @@ architecture Behavioral of testbench is
     signal CLK : std_logic := '0';
     constant period : time := 10 ns;
 begin
-    uut: entity work.main port map(CLK=>CLK,RST=>'1');
+    uut: entity work.main
+    generic map (g_num_bits => 1)
+    port map(PCLOCK=>CLK,RST=>'1', PC_out=>open);
     simu: process
     begin
         while true loop

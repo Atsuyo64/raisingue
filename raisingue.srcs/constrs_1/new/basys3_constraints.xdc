@@ -7,6 +7,9 @@ set_property -dict {PACKAGE_PIN W5 IOSTANDARD LVCMOS33 } [get_ports {PCLOCK} ]
 create_clock -add -name sysclk_pin -period 10.00 -waveform { 0 5 } [get_ports {PCLOCK} ]
 
 ## Bouton Reset
+
+#set_property PACKAGE_PIN U18 [get_ports {Opcode[1]}]
+#	set_property IOSTANDARD LVCMOS33 [get_ports {Opcode[1]}]
 set_property PACKAGE_PIN W19 [get_ports {RST}]
 	set_property IOSTANDARD LVCMOS33 [get_ports {RST}]
 #set_property -dict { PACKAGE_PIN R2  IOSTANDARD LVCMOS33 } [get_ports { RST }]; # Bouton Reset (BTNU)

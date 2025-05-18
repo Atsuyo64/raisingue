@@ -2,6 +2,9 @@ LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
 
 ENTITY Main IS
+    GENERIC (
+        g_num_bits : INTEGER := 21
+    );
     PORT (
         PCLOCK : IN STD_LOGIC;
         RST : IN STD_LOGIC;
@@ -10,6 +13,7 @@ END Main;
 
 ARCHITECTURE Structural OF Main IS
     signal CLK : std_logic := '0';
+    --signal RSTCOUNT : std_logic := '0';
     SIGNAL pc : STD_LOGIC_VECTOR (7 DOWNTO 0) := (OTHERS => '0');
     SIGNAL jmp_val : STD_LOGIC_VECTOR (7 DOWNTO 0) := (OTHERS => '0');
     SIGNAL instruction : STD_LOGIC_VECTOR (31 DOWNTO 0) := (OTHERS => '0');
@@ -51,7 +55,7 @@ ARCHITECTURE Structural OF Main IS
 BEGIN
     PC_out <= PC;
     div: entity work.prescaler
-    generic map (g_num_bits => 21)
+    generic map (g_num_bits => g_num_bits)
     port map(
         ClockIn=>PCLOCK,
         ClockOut=>CLK
