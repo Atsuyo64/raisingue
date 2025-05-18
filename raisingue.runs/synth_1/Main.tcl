@@ -108,6 +108,7 @@ read_vhdl -library xil_defaultlib {
   /home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/sources_1/new/OP_TO_RFW.vhd
   /home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/sources_1/new/stdout.vhd
   /home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/sources_1/new/seven_seg_controller.vhd
+  /home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/sources_1/new/stdin.vhd
   /home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/sources_1/new/Main.vhd
 }
 OPTRACE "Adding files" END { }

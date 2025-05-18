@@ -26,6 +26,6 @@ begin
             C <= instr(7 downto 0);
             SET_PC <= '1' when instr(31 downto 24) = x"07" or (instr(31 downto 24) = x"08" and NOZ_FLAG = '0') else '0';
             PC_VALUE <= instr(23 downto 16) when instr(31 downto 24) = x"07" or (instr(31 downto 24) = x"08" and NOZ_FLAG = '0') else x"00";
-            IS_REG_WRITE_OP <= '0' when instr(31 downto 24) = x"0a" or instr(31 downto 24) = "UUUUUUUU" or instr(31 downto 24) = x"09" else '1';
+            IS_REG_WRITE_OP <= '0' when instr(31 downto 24) = x"0a" or instr(31 downto 24) = x"0c" or instr(31 downto 24) = "UUUUUUUU" or instr(31 downto 24) = x"09" else '1';
 --    end process;
 end Behavioral;

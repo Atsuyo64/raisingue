@@ -57,6 +57,9 @@ ARCHITECTURE Structural OF Main IS
     SIGNAL SET_PC : STD_LOGIC := '0';
     
     SIGNAL IS_REG_WRITE_OP : STD_LOGIC := '0';
+    
+    
+    SIGNAL post_stdin : STD_LOGIC_VECTOR(7 DOWNTO 0) := (OTHERS => '0');
 
     --SIGNAL OUT0 : STD_LOGIC_VECTOR(7 DOWNTO 0) := (OTHERS => '0');
     SIGNAL OUT1 : STD_LOGIC_VECTOR(7 DOWNTO 0) := (OTHERS => '0');
@@ -164,6 +167,7 @@ BEGIN
             OP => EXOP,
             B => EXB,
             ALU_OUT => ALU_OUT,
+            stdinput => post_stdin,
             DOUT => POST_ALU_CALC_B
         );
     u_exmem : ENTITY work.EXMEMer
@@ -239,5 +243,13 @@ BEGIN
             left_in  => OUT2,
             seg      => ss_seg,
             an       => ss_an
+        );
+        
+    stdin: ENTITY work.stdin
+        PORT MAP(
+           OP => EXOP,
+           sw => sw,
+           offset => EXB,
+           DOUT => post_stdin
         );
 END Structural;

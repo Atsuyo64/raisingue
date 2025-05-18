@@ -10,15 +10,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="750.000 ns"></ZoomStartTime>
-      <ZoomEndTime time="1,158.001 ns"></ZoomEndTime>
-      <Cursor1Time time="1,000.000 ns"></Cursor1Time>
+      <ZoomStartTime time="2,438.088 ns"></ZoomStartTime>
+      <ZoomEndTime time="2,973.494 ns"></ZoomEndTime>
+      <Cursor1Time time="6,200.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="133"></NameColumnWidth>
-      <ValueColumnWidth column_width="71"></ValueColumnWidth>
+      <ValueColumnWidth column_width="63"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="23" />
+   <WVObjectSize size="31" />
    <wvobject type="logic" fp_name="/testbench/uut/PCLOCK">
       <obj_property name="ElementShortName">PCLOCK</obj_property>
       <obj_property name="ObjectShortName">PCLOCK</obj_property>
@@ -110,5 +110,43 @@
    <wvobject type="array" fp_name="/testbench/uut/u_data_memory/mem">
       <obj_property name="ElementShortName">mem[0:255][7:0]</obj_property>
       <obj_property name="ObjectShortName">mem[0:255][7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench/uut/stdout/OP">
+      <obj_property name="ElementShortName">OP[7:0]</obj_property>
+      <obj_property name="ObjectShortName">OP[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench/uut/stdout/cell">
+      <obj_property name="ElementShortName">cell[7:0]</obj_property>
+      <obj_property name="ObjectShortName">cell[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench/uut/stdout/input">
+      <obj_property name="ElementShortName">input[7:0]</obj_property>
+      <obj_property name="ObjectShortName">input[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench/uut/OUT1">
+      <obj_property name="ElementShortName">OUT1[7:0]</obj_property>
+      <obj_property name="ObjectShortName">OUT1[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench/uut/OUT2">
+      <obj_property name="ElementShortName">OUT2[7:0]</obj_property>
+      <obj_property name="ObjectShortName">OUT2[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench/uut/stdin/offset">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">offset[7:0]</obj_property>
+      <obj_property name="ObjectShortName">offset[7:0]</obj_property>
+      <obj_property name="label">sdinoffset</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench/uut/stdin/DOUT">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">DOUT[7:0]</obj_property>
+      <obj_property name="ObjectShortName">DOUT[7:0]</obj_property>
+      <obj_property name="label">stdindout</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench/uut/u_mux_alu_calc/DOUT">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">DOUT[7:0]</obj_property>
+      <obj_property name="ObjectShortName">DOUT[7:0]</obj_property>
+      <obj_property name="label">muxalu_dout</obj_property>
    </wvobject>
 </wave_config>
