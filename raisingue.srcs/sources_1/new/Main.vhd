@@ -60,6 +60,7 @@ BEGIN
         PORT MAP(
             CLK => CLK,
             SET => SET_PC,
+            RST => RST,
             --EN => '1',
             INPUT => jmp_val,
             SHOULD_INJECT_NOZ => IS_REG_WRITE_OP,

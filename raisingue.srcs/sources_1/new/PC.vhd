@@ -5,6 +5,7 @@ USE IEEE.std_logic_unsigned.ALL;
 ENTITY PC IS
     PORT (
         CLK : IN STD_LOGIC;
+        RST : IN STD_LOGIC;
         SET : IN STD_LOGIC; -- EN if not SET
         --EN : IN STD_LOGIC;
         INPUT: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
@@ -21,21 +22,29 @@ BEGIN
     PROCESS
     BEGIN
         WAIT UNTIL CLK'Event AND CLK = '1';
-        IF SET = '1' THEN
-            modulo5 <= x"00";
-            cnt <= INPUT + 1;
-            aleasFreeCnt <= cnt;
+        IF RST = '0' THEN
+            cnt <= x"00";
+            modulo5 <= x"04";
+            aleasFreeCnt <= x"00";
             FLUSH <= '1';
-        ELSE --EN = '1' THEN
-            IF modulo5 = x"04" OR SHOULD_INJECT_NOZ = '0' THEN
+            --PC <= x"00";
+        ELSE
+            IF SET = '1' THEN
                 modulo5 <= x"00";
-                cnt <= cnt + '1';
+                cnt <= INPUT + 1;
                 aleasFreeCnt <= cnt;
-            ELSE
-                modulo5 <= modulo5 + 1;
-                aleasFreeCnt <= x"00";
+                FLUSH <= '1';
+            ELSE --EN = '1' THEN
+                IF modulo5 = x"04" OR SHOULD_INJECT_NOZ = '0' THEN
+                    modulo5 <= x"00";
+                    cnt <= cnt + '1';
+                    aleasFreeCnt <= cnt;
+                ELSE
+                    modulo5 <= modulo5 + 1;
+                    aleasFreeCnt <= x"00";
+                END IF;
+                FLUSH <= '0';
             END IF;
-            FLUSH <= '0';
         END IF;
     END PROCESS;
     PC <= aleasFreeCnt;
