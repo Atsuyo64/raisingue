@@ -8,7 +8,10 @@ ENTITY Main IS
     PORT (
         PCLOCK : IN STD_LOGIC;
         IRST : IN STD_LOGIC;
-        PC_out : out std_logic_vector (7 downto 0));
+        PC_out : out std_logic_vector (7 downto 0);
+        OUT0 : out STD_LOGIC_VECTOR(7 downto 0);
+        ss_seg      : out STD_LOGIC_VECTOR(6 downto 0);
+        ss_an       : out STD_LOGIC_VECTOR(3 downto 0));
 END Main;
 
 ARCHITECTURE Structural OF Main IS
@@ -53,9 +56,14 @@ ARCHITECTURE Structural OF Main IS
     SIGNAL SET_PC : STD_LOGIC := '0';
     
     SIGNAL IS_REG_WRITE_OP : STD_LOGIC := '0';
+
+    --SIGNAL OUT0 : STD_LOGIC_VECTOR(7 DOWNTO 0) := (OTHERS => '0');
+    SIGNAL OUT1 : STD_LOGIC_VECTOR(7 DOWNTO 0) := (OTHERS => '0');
+    SIGNAL OUT2 : STD_LOGIC_VECTOR(7 DOWNTO 0) := (OTHERS => '0');
 BEGIN
     RST <= not IRST;
     PC_out <= PC;
+    --OUT0 <= PC;
     div: entity work.prescaler
     generic map (g_num_bits => g_num_bits)
     port map(
@@ -211,5 +219,24 @@ BEGIN
         PORT MAP(
             OP => REOP,
             RFW => RFW
+        );
+    stdout : ENTITY work.stdout
+        PORT MAP(
+        input => MEMB,
+        cell => MEMA,
+        OP => MEMOP,
+        RST => RST,
+        CLK => CLK,
+        output0 => OUT0,
+        output1 => OUT1,
+        output2 => OUT2
+        );
+    sevenseg : ENTITY work.seven_seg_controller
+        PORT MAP(
+            clk      => PCLOCK,
+            right_in => OUT1,
+            left_in  => OUT2,
+            seg      => ss_seg,
+            an       => ss_an
         );
 END Structural;

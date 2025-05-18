@@ -49,16 +49,16 @@ BEGIN
         END IF;
 
         IF RST = '0' THEN
-            mem0 <= (others=>'0');
+            --mem0 <= (others=>'0');
             --mem1 <= (others=>'0');
+            --mem2 <= (others=>'0');
+            mem0 <= x"ff";
             mem1 <= x"69";
-            mem2 <= (others=>'0');
-            output0 <= x"0";
-            output1 <= x"0";
-            output2 <= x"0";
+            mem2 <= x"42";
+            output0 <= x"00";
+            output1 <= x"00";
+            output2 <= x"00";
         END IF;
     END PROCESS;
-begin
-
 
 end Behavioral;
