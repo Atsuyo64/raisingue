@@ -50,7 +50,8 @@ BEGIN
 
         IF RST = '0' THEN
             mem0 <= (others=>'0');
-            mem1 <= (others=>'0');
+            --mem1 <= (others=>'0');
+            mem1 <= x"69";
             mem2 <= (others=>'0');
             output0 <= x"0";
             output1 <= x"0";
