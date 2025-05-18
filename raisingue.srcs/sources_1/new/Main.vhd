@@ -222,9 +222,9 @@ BEGIN
         );
     stdout : ENTITY work.stdout
         PORT MAP(
-        input => MEMB,
-        cell => MEMA,
-        OP => MEMOP,
+        input => EXB,
+        cell => EXC,
+        OP => EXOP,
         RST => RST,
         CLK => CLK,
         output0 => OUT0,

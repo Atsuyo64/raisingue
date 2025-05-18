@@ -52,9 +52,9 @@ BEGIN
             --mem0 <= (others=>'0');
             --mem1 <= (others=>'0');
             --mem2 <= (others=>'0');
-            mem0 <= x"ff";
-            mem1 <= x"69";
-            mem2 <= x"42";
+            mem0 <= x"00";
+            mem1 <= x"00";
+            mem2 <= x"00";
             output0 <= x"00";
             output1 <= x"00";
             output2 <= x"00";
