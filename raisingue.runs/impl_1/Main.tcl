@@ -17,7 +17,7 @@ proc create_report { reportName command } {
   }
 }
 namespace eval ::optrace {
-  variable script "/home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.runs/impl_1/Main.tcl"
+  variable script "/home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.runs/impl_1/Main.tcl"
   variable category "vivado_impl"
 }
 
@@ -115,7 +115,6 @@ proc step_failed { step } {
 OPTRACE "impl_1" END { }
 }
 
-set_msg_config -id {Common 17-41} -limit 10000000
 
 OPTRACE "impl_1" START { ROLLUP_1 }
 OPTRACE "Phase: Init Design" START { ROLLUP_AUTO }
@@ -125,22 +124,22 @@ set rc [catch {
   create_msg_db init_design.pb
   set_param xicom.use_bs_reader 1
   set_param chipscope.maxJobs 3
-  set_param runs.launchOptions { -jobs 6  }
+  set_param runs.launchOptions { -jobs 11  }
 OPTRACE "create in-memory project" START { }
   create_project -in_memory -part xc7a35tcpg236-1
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
 OPTRACE "create in-memory project" END { }
 OPTRACE "set parameters" START { }
-  set_property webtalk.parent_dir /home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.cache/wt [current_project]
-  set_property parent.project_path /home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.xpr [current_project]
-  set_property ip_output_repo /home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.cache/ip [current_project]
+  set_property webtalk.parent_dir /home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.cache/wt [current_project]
+  set_property parent.project_path /home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.xpr [current_project]
+  set_property ip_output_repo /home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
-  add_files -quiet /home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.runs/synth_1/Main.dcp
+  add_files -quiet /home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.runs/synth_1/Main.dcp
 OPTRACE "read constraints: implementation" START { }
-  read_xdc /home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/constrs_1/new/basys3_constraints.xdc
+  read_xdc /home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.srcs/constrs_1/new/basys3_constraints.xdc
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "add files" END { }
 OPTRACE "link_design" START { }

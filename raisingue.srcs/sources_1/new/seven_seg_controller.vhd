@@ -28,7 +28,7 @@ begin
     -- Processus de comptage pour le multiplexage
     process(clk)
     begin
-        if rising_edge(clk) then
+        if rising_edge(clk) then -- not necessary ?
             counter <= counter + 1;
             if counter = 0 then
                 digit_sel <= (digit_sel + 1) mod 4;
