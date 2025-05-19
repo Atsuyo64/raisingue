@@ -3,12 +3,12 @@
 # SW Build 3865809 on Sun May  7 15:04:56 MDT 2023
 # IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
 # SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
-# Start of session at: Mon May 19 15:09:17 2025
-# Process ID: 63646
-# Current directory: /home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.runs/synth_1
+# Start of session at: Mon May 19 16:53:16 2025
+# Process ID: 10863
+# Current directory: /home/user/INSA/S8/projetSude/raisingue/raisingue.runs/synth_1
 # Command line: vivado -log Main.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Main.tcl
-# Log file: /home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.runs/synth_1/Main.vds
-# Journal file: /home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.runs/synth_1/vivado.jou
-# Running On: insa-11278, OS: Linux, CPU Frequency: 4299.464 MHz, CPU Physical cores: 6, Host memory: 67247 MB
+# Log file: /home/user/INSA/S8/projetSude/raisingue/raisingue.runs/synth_1/Main.vds
+# Journal file: /home/user/INSA/S8/projetSude/raisingue/raisingue.runs/synth_1/vivado.jou
+# Running On: totoshe, OS: Linux, CPU Frequency: 2583.465 MHz, CPU Physical cores: 2, Host memory: 6080 MB
 #-----------------------------------------------------------
 source Main.tcl -notrace

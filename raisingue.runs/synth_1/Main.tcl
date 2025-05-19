@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "/home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.runs/synth_1/Main.tcl"
+  variable script "/home/user/INSA/S8/projetSude/raisingue/raisingue.runs/synth_1/Main.tcl"
   variable category "vivado_synth"
 }
 
@@ -70,45 +70,43 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param xicom.use_bs_reader 1
-set_param chipscope.maxJobs 3
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a35tcpg236-1
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir /home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.cache/wt [current_project]
-set_property parent.project_path /home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.xpr [current_project]
+set_property webtalk.parent_dir /home/user/INSA/S8/projetSude/raisingue/raisingue.cache/wt [current_project]
+set_property parent.project_path /home/user/INSA/S8/projetSude/raisingue/raisingue.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
-set_property ip_output_repo /home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.cache/ip [current_project]
+set_property ip_output_repo /home/user/INSA/S8/projetSude/raisingue/raisingue.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_vhdl -library xil_defaultlib {
-  /home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.srcs/sources_1/new/ALU.vhd
-  /home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.srcs/sources_1/new/DIEXer.vhd
-  /home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.srcs/sources_1/new/Data_Memory.vhd
-  /home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.srcs/sources_1/new/Decoder.vhd
-  /home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.srcs/sources_1/new/EXMEMer.vhd
-  /home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.srcs/sources_1/new/Instruction_Memory.vhd
-  /home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.srcs/sources_1/new/MEMREr.vhd
-  /home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.srcs/sources_1/new/MUX_AB_MEM.vhd
-  /home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.srcs/sources_1/new/MUX_ALU_CALC.vhd
-  /home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.srcs/sources_1/new/MUX_MEM_B.vhd
-  /home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.srcs/sources_1/new/MUX_RF_AFC.vhd
-  /home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.srcs/sources_1/new/prescaler.vhd
-  /home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.srcs/sources_1/new/PC.vhd
-  /home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.srcs/sources_1/new/Register_File.vhd
-  /home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.srcs/sources_1/new/OP_to_ALUOP.vhd
-  /home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.srcs/sources_1/new/flagMemory.vhd
-  /home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.srcs/sources_1/new/OP_TO_MEMOP.vhd
-  /home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.srcs/sources_1/new/OP_TO_RFW.vhd
-  /home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.srcs/sources_1/new/stdout.vhd
-  /home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.srcs/sources_1/new/seven_seg_controller.vhd
-  /home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.srcs/sources_1/new/stdin.vhd
-  /home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.srcs/sources_1/new/Main.vhd
+  /home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/sources_1/new/ALU.vhd
+  /home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/sources_1/new/DIEXer.vhd
+  /home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/sources_1/new/Data_Memory.vhd
+  /home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/sources_1/new/Decoder.vhd
+  /home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/sources_1/new/EXMEMer.vhd
+  /home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/sources_1/new/Instruction_Memory.vhd
+  /home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/sources_1/new/MEMREr.vhd
+  /home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/sources_1/new/MUX_AB_MEM.vhd
+  /home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/sources_1/new/MUX_ALU_CALC.vhd
+  /home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/sources_1/new/MUX_MEM_B.vhd
+  /home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/sources_1/new/MUX_RF_AFC.vhd
+  /home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/sources_1/new/prescaler.vhd
+  /home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/sources_1/new/PC.vhd
+  /home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/sources_1/new/Register_File.vhd
+  /home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/sources_1/new/OP_to_ALUOP.vhd
+  /home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/sources_1/new/flagMemory.vhd
+  /home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/sources_1/new/OP_TO_MEMOP.vhd
+  /home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/sources_1/new/OP_TO_RFW.vhd
+  /home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/sources_1/new/stdout.vhd
+  /home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/sources_1/new/seven_seg_controller.vhd
+  /home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/sources_1/new/stdin.vhd
+  /home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/sources_1/new/Main.vhd
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -119,12 +117,12 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc /home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.srcs/constrs_1/new/basys3_constraints.xdc
-set_property used_in_implementation false [get_files /home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.srcs/constrs_1/new/basys3_constraints.xdc]
+read_xdc /home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/constrs_1/new/basys3_constraints.xdc
+set_property used_in_implementation false [get_files /home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/constrs_1/new/basys3_constraints.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 
-read_checkpoint -auto_incremental -incremental /home/v_lasser/Documents/4A-System-S2/raisingue/raisingue.srcs/utils_1/imports/synth_1/Main.dcp
+read_checkpoint -auto_incremental -incremental /home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/utils_1/imports/synth_1/Main.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }
