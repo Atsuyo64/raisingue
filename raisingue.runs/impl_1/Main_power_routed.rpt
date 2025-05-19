@@ -1,8 +1,8 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
-| Date             : Mon May 19 16:56:07 2025
-| Host             : totoshe running 64-bit unknown
+| Date             : Mon May 19 19:35:16 2025
+| Host             : georges running 64-bit Arch Linux
 | Command          : report_power -file Main_power_routed.rpt -pb Main_power_summary_routed.pb -rpx Main_power_routed.rpx
 | Design           : Main
 | Device           : xc7a35tcpg236-1
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+----------------------------------+
-| Total On-Chip Power (W)  | 43.208 (Junction temp exceeded!) |
+| Total On-Chip Power (W)  | 41.708 (Junction temp exceeded!) |
 | Design Power Budget (W)  | Unspecified*                     |
 | Power Budget Margin (W)  | NA                               |
-| Dynamic (W)              | 42.722                           |
+| Dynamic (W)              | 41.222                           |
 | Device Static (W)        | 0.486                            |
 | Effective TJA (C/W)      | 5.0                              |
 | Max Ambient (C)          | 0.0                              |
@@ -52,17 +52,17 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Slice Logic    |    11.269 |     4208 |       --- |             --- |
-|   LUT as Logic |    10.285 |     1230 |     20800 |            5.91 |
-|   F7/F8 Muxes  |     0.645 |      468 |     32600 |            1.44 |
-|   CARRY4       |     0.200 |       40 |      8150 |            0.49 |
-|   Register     |     0.127 |     2373 |     41600 |            5.70 |
+| Slice Logic    |    10.761 |     4202 |       --- |             --- |
+|   LUT as Logic |     9.861 |     1236 |     20800 |            5.94 |
+|   F7/F8 Muxes  |     0.576 |      468 |     32600 |            1.44 |
+|   CARRY4       |     0.188 |       35 |      8150 |            0.43 |
+|   Register     |     0.124 |     2364 |     41600 |            5.68 |
 |   BUFG         |     0.012 |        2 |        32 |            6.25 |
 |   Others       |     0.000 |       13 |       --- |             --- |
-| Signals        |    20.039 |     3166 |       --- |             --- |
+| Signals        |    19.048 |     3151 |       --- |             --- |
 | I/O            |    11.413 |       45 |       106 |           42.45 |
 | Static Power   |     0.486 |          |           |                 |
-| Total          |    43.208 |          |           |                 |
+| Total          |    41.708 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -72,7 +72,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |    31.717 |      31.376 |      0.341 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |    30.217 |      29.876 |      0.341 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.469 |       0.416 |      0.053 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     3.212 |       3.211 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -139,22 +139,22 @@ Table of Contents
 +-------------------+-----------+
 | Name              | Power (W) |
 +-------------------+-----------+
-| Main              |    42.722 |
-|   div             |     0.047 |
-|   sevenseg        |     0.080 |
-|   u_data_memory   |     6.528 |
-|   u_diex          |     4.187 |
-|   u_exmem         |    11.098 |
-|   u_memre         |     1.099 |
-|   u_mux_ab_mem    |     4.127 |
-|   u_mux_alu_calc  |     0.375 |
-|   u_mux_mem_b     |     0.098 |
-|   u_mux_rf_afc    |     0.104 |
-|   u_op_to_aluop   |     0.072 |
-|   u_op_to_memop   |     0.568 |
-|   u_op_to_rfw     |     0.050 |
+| Main              |    41.222 |
+|   div             |     0.051 |
+|   sevenseg        |     0.117 |
+|   u_data_memory   |     5.727 |
+|   u_diex          |     4.242 |
+|   u_exmem         |    10.899 |
+|   u_memre         |     1.164 |
+|   u_mux_ab_mem    |     3.449 |
+|   u_mux_alu_calc  |     0.364 |
+|   u_mux_mem_b     |     0.096 |
+|   u_mux_rf_afc    |     0.113 |
+|   u_op_to_aluop   |     0.058 |
+|   u_op_to_memop   |     0.635 |
+|   u_op_to_rfw     |     0.046 |
 |   u_pc            |     1.919 |
-|   u_register_file |     0.689 |
+|   u_register_file |     0.669 |
 +-------------------+-----------+
 
 

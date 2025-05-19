@@ -13,7 +13,7 @@ entity seven_seg_controller is
 end seven_seg_controller;
 
 architecture Behavioral of seven_seg_controller is
-    signal counter     : unsigned(19 downto 0) := (others => '0');  -- Compteur pour le multiplexage
+    signal counter     : unsigned(10 downto 0) := (others => '0');  -- Compteur pour le multiplexage
     signal digit_sel   : integer range 0 to 3 := 0;                -- Sélection de l'afficheur actif
     signal bcd_digit   : STD_LOGIC_VECTOR(3 downto 0);              -- Chiffre BCD à afficher
     signal right_bcd   : STD_LOGIC_VECTOR(7 downto 0);              -- Valeur de droite en BCD

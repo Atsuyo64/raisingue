@@ -1,8 +1,8 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
-| Date         : Mon May 19 16:56:07 2025
-| Host         : totoshe running 64-bit unknown
+| Date         : Mon May 19 19:35:16 2025
+| Host         : georges running 64-bit Arch Linux
 | Command      : report_timing_summary -max_paths 10 -report_unconstrained -file Main_timing_summary_routed.rpt -pb Main_timing_summary_routed.pb -rpx Main_timing_summary_routed.rpx -warn_on_violation
 | Design       : Main
 | Device       : 7a35t-cpg236
@@ -52,10 +52,10 @@ check_timing report
 
 Table of Contents
 -----------------
-1. checking no_clock (2373)
+1. checking no_clock (2364)
 2. checking constant_clock (0)
 3. checking pulse_width_clock (0)
-4. checking unconstrained_internal_endpoints (6922)
+4. checking unconstrained_internal_endpoints (6913)
 5. checking no_input_delay (17)
 6. checking no_output_delay (27)
 7. checking multiple_clock (0)
@@ -65,9 +65,9 @@ Table of Contents
 11. checking partial_output_delay (0)
 12. checking latch_loops (0)
 
-1. checking no_clock (2373)
+1. checking no_clock (2364)
 ---------------------------
- There are 37 register/latch pins with no clock driven by root clock pin: PCLOCK (HIGH)
+ There are 28 register/latch pins with no clock driven by root clock pin: PCLOCK (HIGH)
 
  There are 2336 register/latch pins with no clock driven by root clock pin: div/ClockOut_reg/Q (HIGH)
 
@@ -82,9 +82,9 @@ Table of Contents
  There are 0 register/latch pins which need pulse_width check
 
 
-4. checking unconstrained_internal_endpoints (6922)
+4. checking unconstrained_internal_endpoints (6913)
 ---------------------------------------------------
- There are 6922 pins that are not constrained for maximum delay. (HIGH)
+ There are 6913 pins that are not constrained for maximum delay. (HIGH)
 
  There are 0 pins that are not constrained for maximum delay due to constant clock.
 
@@ -143,7 +143,7 @@ Table of Contents
 
     WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
     -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
-        inf        0.000                      0                 6949          inf        0.000                      0                 6949           NA           NA                      NA                    NA  
+        inf        0.000                      0                 6940          inf        0.000                      0                 6940           NA           NA                      NA                    NA  
 
 
 There are no user specified timing constraints.
@@ -212,818 +212,832 @@ Path Group:  (none)
 From Clock:  
   To Clock:  
 
-Max Delay          6949 Endpoints
-Min Delay          6949 Endpoints
+Max Delay          6940 Endpoints
+Min Delay          6940 Endpoints
 --------------------------------------------------------------------------------------
 
 
 Max Delay Paths
 --------------------------------------------------------------------------------------
 Slack:                    inf
-  Source:                 u_diex/OUTC_reg[4]/C
-                            (rising edge-triggered cell FDRE)
-  Destination:            u_exmem/OUTB_reg[0]_rep__0/D
-  Path Group:             (none)
-  Path Type:              Max at Slow Process Corner
-  Data Path Delay:        22.345ns  (logic 9.225ns (41.284%)  route 13.120ns (58.716%))
-  Logic Levels:           32  (CARRY4=19 FDRE=1 LUT2=1 LUT3=6 LUT4=2 LUT5=1 LUT6=1 MUXF7=1)
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-    SLICE_X36Y33         FDRE                         0.000     0.000 r  u_diex/OUTC_reg[4]/C
-    SLICE_X36Y33         FDRE (Prop_fdre_C_Q)         0.456     0.456 f  u_diex/OUTC_reg[4]/Q
-                         net (fo=20, routed)          1.637     2.093    u_diex/EXC[4]
-    SLICE_X33Y31         LUT6 (Prop_lut6_I5_O)        0.124     2.217 r  u_diex/OUTB[7]_i_11/O
-                         net (fo=6, routed)           0.853     3.070    u_diex/OUTB[7]_i_11_n_0
-    SLICE_X34Y32         LUT4 (Prop_lut4_I2_O)        0.124     3.194 r  u_diex/OUTB[6]_i_33/O
-                         net (fo=13, routed)          0.916     4.110    u_diex/u_alu/data6[7]
-    SLICE_X34Y33         LUT2 (Prop_lut2_I1_O)        0.156     4.266 r  u_diex/OUTB[6]_i_20/O
-                         net (fo=1, routed)           0.572     4.838    u_diex/OUTB[6]_i_20_n_0
-    SLICE_X35Y33         CARRY4 (Prop_carry4_DI[0]_CO[3])
-                                                      0.757     5.595 r  u_diex/OUTB_reg[6]_i_7/CO[3]
-                         net (fo=1, routed)           0.000     5.595    u_diex/OUTB_reg[6]_i_7_n_0
-    SLICE_X35Y34         CARRY4 (Prop_carry4_CI_CO[0])
-                                                      0.271     5.866 r  u_diex/OUTB_reg[6]_i_4/CO[0]
-                         net (fo=12, routed)          1.173     7.039    u_diex/u_alu/data6[6]
-    SLICE_X36Y32         LUT3 (Prop_lut3_I0_O)        0.373     7.412 r  u_diex/OUTB[5]_i_16/O
-                         net (fo=1, routed)           0.000     7.412    u_diex/OUTB[5]_i_16_n_0
-    SLICE_X36Y32         CARRY4 (Prop_carry4_S[1]_CO[3])
-                                                      0.550     7.962 r  u_diex/OUTB_reg[5]_i_9/CO[3]
-                         net (fo=1, routed)           0.000     7.962    u_diex/OUTB_reg[5]_i_9_n_0
-    SLICE_X36Y33         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     8.076 r  u_diex/OUTB_reg[5]_i_6/CO[3]
-                         net (fo=1, routed)           0.000     8.076    u_diex/OUTB_reg[5]_i_6_n_0
-    SLICE_X36Y34         CARRY4 (Prop_carry4_CI_CO[1])
-                                                      0.157     8.233 r  u_diex/OUTB_reg[5]_i_4/CO[1]
-                         net (fo=12, routed)          1.472     9.705    u_diex/u_alu/data6[5]
-    SLICE_X36Y28         LUT3 (Prop_lut3_I0_O)        0.329    10.034 r  u_diex/OUTB[4]_i_16/O
-                         net (fo=1, routed)           0.000    10.034    u_diex/OUTB[4]_i_16_n_0
-    SLICE_X36Y28         CARRY4 (Prop_carry4_S[1]_CO[3])
-                                                      0.550    10.584 r  u_diex/OUTB_reg[4]_i_9/CO[3]
-                         net (fo=1, routed)           0.000    10.584    u_diex/OUTB_reg[4]_i_9_n_0
-    SLICE_X36Y29         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    10.698 r  u_diex/OUTB_reg[4]_i_6/CO[3]
-                         net (fo=1, routed)           0.000    10.698    u_diex/OUTB_reg[4]_i_6_n_0
-    SLICE_X36Y30         CARRY4 (Prop_carry4_CI_CO[1])
-                                                      0.157    10.855 r  u_diex/OUTB_reg[4]_i_4/CO[1]
-                         net (fo=12, routed)          1.228    12.084    u_diex/u_alu/data6[4]
-    SLICE_X39Y28         LUT3 (Prop_lut3_I0_O)        0.329    12.413 r  u_diex/OUTB[3]_i_26/O
-                         net (fo=1, routed)           0.000    12.413    u_diex/OUTB[3]_i_26_n_0
-    SLICE_X39Y28         CARRY4 (Prop_carry4_S[1]_CO[3])
-                                                      0.550    12.963 r  u_diex/OUTB_reg[3]_i_11/CO[3]
-                         net (fo=1, routed)           0.000    12.963    u_diex/OUTB_reg[3]_i_11_n_0
-    SLICE_X39Y29         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    13.077 r  u_diex/OUTB_reg[3]_i_6/CO[3]
-                         net (fo=1, routed)           0.000    13.077    u_diex/OUTB_reg[3]_i_6_n_0
-    SLICE_X39Y30         CARRY4 (Prop_carry4_CI_CO[1])
-                                                      0.157    13.234 r  u_diex/OUTB_reg[3]_i_4/CO[1]
-                         net (fo=12, routed)          1.065    14.298    u_diex/u_alu/data6[3]
-    SLICE_X40Y29         LUT3 (Prop_lut3_I0_O)        0.329    14.627 r  u_diex/OUTB[2]_i_24/O
-                         net (fo=1, routed)           0.000    14.627    u_diex/OUTB[2]_i_24_n_0
-    SLICE_X40Y29         CARRY4 (Prop_carry4_S[2]_CO[3])
-                                                      0.398    15.025 r  u_diex/OUTB_reg[2]_i_17/CO[3]
-                         net (fo=1, routed)           0.000    15.025    u_diex/OUTB_reg[2]_i_17_n_0
-    SLICE_X40Y30         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    15.139 r  u_diex/OUTB_reg[2]_i_7/CO[3]
-                         net (fo=1, routed)           0.000    15.139    u_diex/OUTB_reg[2]_i_7_n_0
-    SLICE_X40Y31         CARRY4 (Prop_carry4_CI_CO[1])
-                                                      0.157    15.296 r  u_diex/OUTB_reg[2]_i_4__0/CO[1]
-                         net (fo=12, routed)          1.050    16.346    u_diex/u_alu/data6[2]
-    SLICE_X42Y30         LUT3 (Prop_lut3_I0_O)        0.329    16.675 r  u_diex/OUTB[1]_i_15/O
-                         net (fo=1, routed)           0.000    16.675    u_diex/OUTB[1]_i_15_n_0
-    SLICE_X42Y30         CARRY4 (Prop_carry4_S[2]_CO[3])
-                                                      0.380    17.055 r  u_diex/OUTB_reg[1]_i_9/CO[3]
-                         net (fo=1, routed)           0.000    17.055    u_diex/OUTB_reg[1]_i_9_n_0
-    SLICE_X42Y31         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117    17.172 r  u_diex/OUTB_reg[1]_i_6/CO[3]
-                         net (fo=1, routed)           0.000    17.172    u_diex/OUTB_reg[1]_i_6_n_0
-    SLICE_X42Y32         CARRY4 (Prop_carry4_CI_CO[1])
-                                                      0.157    17.329 r  u_diex/OUTB_reg[1]_i_4__0/CO[1]
-                         net (fo=12, routed)          0.899    18.228    u_diex/u_alu/data6[1]
-    SLICE_X43Y33         LUT3 (Prop_lut3_I0_O)        0.332    18.560 r  u_diex/OUTB[0]_i_17/O
-                         net (fo=1, routed)           0.000    18.560    u_diex/OUTB[0]_i_17_n_0
-    SLICE_X43Y33         CARRY4 (Prop_carry4_S[1]_CO[3])
-                                                      0.550    19.110 r  u_diex/OUTB_reg[0]_i_10/CO[3]
-                         net (fo=1, routed)           0.000    19.110    u_diex/OUTB_reg[0]_i_10_n_0
-    SLICE_X43Y34         CARRY4 (Prop_carry4_CI_CO[0])
-                                                      0.271    19.381 r  u_diex/OUTB_reg[0]_i_7/CO[0]
-                         net (fo=1, routed)           0.504    19.886    u_diex/u_alu/data6[0]
-    SLICE_X37Y29         LUT4 (Prop_lut4_I2_O)        0.373    20.259 r  u_diex/OUTB[0]_i_4/O
-                         net (fo=1, routed)           0.639    20.898    u_mux_alu_calc/ALU_OUT[0]
-    SLICE_X37Y30         LUT5 (Prop_lut5_I2_O)        0.124    21.022 r  u_mux_alu_calc/OUTB[0]_i_2/O
-                         net (fo=1, routed)           0.000    21.022    u_mux_alu_calc/OUTB[0]_i_2_n_0
-    SLICE_X37Y30         MUXF7 (Prop_muxf7_I0_O)      0.212    21.234 r  u_mux_alu_calc/OUTB_reg[0]_i_1/O
-                         net (fo=3, routed)           1.111    22.345    u_exmem/POST_ALU_CALC_B[0]
-    SLICE_X36Y34         FDRE                                         r  u_exmem/OUTB_reg[0]_rep__0/D
-  -------------------------------------------------------------------    -------------------
-
-Slack:                    inf
-  Source:                 u_diex/OUTC_reg[4]/C
+  Source:                 u_diex/OUTC_reg[1]/C
                             (rising edge-triggered cell FDRE)
   Destination:            u_exmem/OUTB_reg[0]/D
   Path Group:             (none)
   Path Type:              Max at Slow Process Corner
-  Data Path Delay:        21.983ns  (logic 9.225ns (41.964%)  route 12.758ns (58.036%))
-  Logic Levels:           32  (CARRY4=19 FDRE=1 LUT2=1 LUT3=6 LUT4=2 LUT5=1 LUT6=1 MUXF7=1)
+  Data Path Delay:        22.268ns  (logic 8.653ns (38.858%)  route 13.615ns (61.142%))
+  Logic Levels:           33  (CARRY4=20 FDRE=1 LUT2=1 LUT3=6 LUT4=2 LUT5=1 LUT6=1 MUXF7=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X36Y33         FDRE                         0.000     0.000 r  u_diex/OUTC_reg[4]/C
-    SLICE_X36Y33         FDRE (Prop_fdre_C_Q)         0.456     0.456 f  u_diex/OUTC_reg[4]/Q
-                         net (fo=20, routed)          1.637     2.093    u_diex/EXC[4]
-    SLICE_X33Y31         LUT6 (Prop_lut6_I5_O)        0.124     2.217 r  u_diex/OUTB[7]_i_11/O
-                         net (fo=6, routed)           0.853     3.070    u_diex/OUTB[7]_i_11_n_0
-    SLICE_X34Y32         LUT4 (Prop_lut4_I2_O)        0.124     3.194 r  u_diex/OUTB[6]_i_33/O
-                         net (fo=13, routed)          0.916     4.110    u_diex/u_alu/data6[7]
-    SLICE_X34Y33         LUT2 (Prop_lut2_I1_O)        0.156     4.266 r  u_diex/OUTB[6]_i_20/O
-                         net (fo=1, routed)           0.572     4.838    u_diex/OUTB[6]_i_20_n_0
-    SLICE_X35Y33         CARRY4 (Prop_carry4_DI[0]_CO[3])
-                                                      0.757     5.595 r  u_diex/OUTB_reg[6]_i_7/CO[3]
-                         net (fo=1, routed)           0.000     5.595    u_diex/OUTB_reg[6]_i_7_n_0
-    SLICE_X35Y34         CARRY4 (Prop_carry4_CI_CO[0])
-                                                      0.271     5.866 r  u_diex/OUTB_reg[6]_i_4/CO[0]
-                         net (fo=12, routed)          1.173     7.039    u_diex/u_alu/data6[6]
-    SLICE_X36Y32         LUT3 (Prop_lut3_I0_O)        0.373     7.412 r  u_diex/OUTB[5]_i_16/O
-                         net (fo=1, routed)           0.000     7.412    u_diex/OUTB[5]_i_16_n_0
-    SLICE_X36Y32         CARRY4 (Prop_carry4_S[1]_CO[3])
-                                                      0.550     7.962 r  u_diex/OUTB_reg[5]_i_9/CO[3]
-                         net (fo=1, routed)           0.000     7.962    u_diex/OUTB_reg[5]_i_9_n_0
+    SLICE_X38Y26         FDRE                         0.000     0.000 r  u_diex/OUTC_reg[1]/C
+    SLICE_X38Y26         FDRE (Prop_fdre_C_Q)         0.478     0.478 f  u_diex/OUTC_reg[1]/Q
+                         net (fo=31, routed)          1.523     2.001    u_diex/EXC[1]
+    SLICE_X39Y32         LUT6 (Prop_lut6_I2_O)        0.301     2.302 r  u_diex/OUTB[7]_i_11/O
+                         net (fo=6, routed)           0.680     2.983    u_diex/OUTB[7]_i_11_n_0
+    SLICE_X38Y33         LUT4 (Prop_lut4_I2_O)        0.124     3.107 r  u_diex/OUTB[6]_i_33/O
+                         net (fo=13, routed)          0.638     3.744    u_diex/u_alu/data6[7]
+    SLICE_X38Y34         LUT2 (Prop_lut2_I1_O)        0.124     3.868 r  u_diex/OUTB[6]_i_19/O
+                         net (fo=1, routed)           0.532     4.401    u_diex/OUTB[6]_i_19_n_0
+    SLICE_X37Y34         CARRY4 (Prop_carry4_DI[1]_CO[3])
+                                                      0.507     4.908 r  u_diex/OUTB_reg[6]_i_7/CO[3]
+                         net (fo=1, routed)           0.000     4.908    u_diex/OUTB_reg[6]_i_7_n_0
+    SLICE_X37Y35         CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.271     5.179 r  u_diex/OUTB_reg[6]_i_4/CO[0]
+                         net (fo=12, routed)          1.185     6.364    u_diex/u_alu/data6[6]
+    SLICE_X36Y32         LUT3 (Prop_lut3_I0_O)        0.373     6.737 r  u_diex/OUTB[5]_i_14/O
+                         net (fo=1, routed)           0.000     6.737    u_diex/OUTB[5]_i_14_n_0
+    SLICE_X36Y32         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.401     7.138 r  u_diex/OUTB_reg[5]_i_9/CO[3]
+                         net (fo=1, routed)           0.000     7.138    u_diex/OUTB_reg[5]_i_9_n_0
     SLICE_X36Y33         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     8.076 r  u_diex/OUTB_reg[5]_i_6/CO[3]
-                         net (fo=1, routed)           0.000     8.076    u_diex/OUTB_reg[5]_i_6_n_0
+                                                      0.114     7.252 r  u_diex/OUTB_reg[5]_i_6/CO[3]
+                         net (fo=1, routed)           0.000     7.252    u_diex/OUTB_reg[5]_i_6_n_0
     SLICE_X36Y34         CARRY4 (Prop_carry4_CI_CO[1])
-                                                      0.157     8.233 r  u_diex/OUTB_reg[5]_i_4/CO[1]
-                         net (fo=12, routed)          1.472     9.705    u_diex/u_alu/data6[5]
-    SLICE_X36Y28         LUT3 (Prop_lut3_I0_O)        0.329    10.034 r  u_diex/OUTB[4]_i_16/O
-                         net (fo=1, routed)           0.000    10.034    u_diex/OUTB[4]_i_16_n_0
-    SLICE_X36Y28         CARRY4 (Prop_carry4_S[1]_CO[3])
-                                                      0.550    10.584 r  u_diex/OUTB_reg[4]_i_9/CO[3]
-                         net (fo=1, routed)           0.000    10.584    u_diex/OUTB_reg[4]_i_9_n_0
-    SLICE_X36Y29         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    10.698 r  u_diex/OUTB_reg[4]_i_6/CO[3]
-                         net (fo=1, routed)           0.000    10.698    u_diex/OUTB_reg[4]_i_6_n_0
-    SLICE_X36Y30         CARRY4 (Prop_carry4_CI_CO[1])
-                                                      0.157    10.855 r  u_diex/OUTB_reg[4]_i_4/CO[1]
-                         net (fo=12, routed)          1.228    12.084    u_diex/u_alu/data6[4]
-    SLICE_X39Y28         LUT3 (Prop_lut3_I0_O)        0.329    12.413 r  u_diex/OUTB[3]_i_26/O
-                         net (fo=1, routed)           0.000    12.413    u_diex/OUTB[3]_i_26_n_0
-    SLICE_X39Y28         CARRY4 (Prop_carry4_S[1]_CO[3])
-                                                      0.550    12.963 r  u_diex/OUTB_reg[3]_i_11/CO[3]
-                         net (fo=1, routed)           0.000    12.963    u_diex/OUTB_reg[3]_i_11_n_0
-    SLICE_X39Y29         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    13.077 r  u_diex/OUTB_reg[3]_i_6/CO[3]
-                         net (fo=1, routed)           0.000    13.077    u_diex/OUTB_reg[3]_i_6_n_0
-    SLICE_X39Y30         CARRY4 (Prop_carry4_CI_CO[1])
-                                                      0.157    13.234 r  u_diex/OUTB_reg[3]_i_4/CO[1]
-                         net (fo=12, routed)          1.065    14.298    u_diex/u_alu/data6[3]
-    SLICE_X40Y29         LUT3 (Prop_lut3_I0_O)        0.329    14.627 r  u_diex/OUTB[2]_i_24/O
-                         net (fo=1, routed)           0.000    14.627    u_diex/OUTB[2]_i_24_n_0
-    SLICE_X40Y29         CARRY4 (Prop_carry4_S[2]_CO[3])
-                                                      0.398    15.025 r  u_diex/OUTB_reg[2]_i_17/CO[3]
-                         net (fo=1, routed)           0.000    15.025    u_diex/OUTB_reg[2]_i_17_n_0
-    SLICE_X40Y30         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    15.139 r  u_diex/OUTB_reg[2]_i_7/CO[3]
-                         net (fo=1, routed)           0.000    15.139    u_diex/OUTB_reg[2]_i_7_n_0
-    SLICE_X40Y31         CARRY4 (Prop_carry4_CI_CO[1])
-                                                      0.157    15.296 r  u_diex/OUTB_reg[2]_i_4__0/CO[1]
-                         net (fo=12, routed)          1.050    16.346    u_diex/u_alu/data6[2]
-    SLICE_X42Y30         LUT3 (Prop_lut3_I0_O)        0.329    16.675 r  u_diex/OUTB[1]_i_15/O
-                         net (fo=1, routed)           0.000    16.675    u_diex/OUTB[1]_i_15_n_0
-    SLICE_X42Y30         CARRY4 (Prop_carry4_S[2]_CO[3])
-                                                      0.380    17.055 r  u_diex/OUTB_reg[1]_i_9/CO[3]
-                         net (fo=1, routed)           0.000    17.055    u_diex/OUTB_reg[1]_i_9_n_0
-    SLICE_X42Y31         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117    17.172 r  u_diex/OUTB_reg[1]_i_6/CO[3]
-                         net (fo=1, routed)           0.000    17.172    u_diex/OUTB_reg[1]_i_6_n_0
-    SLICE_X42Y32         CARRY4 (Prop_carry4_CI_CO[1])
-                                                      0.157    17.329 r  u_diex/OUTB_reg[1]_i_4__0/CO[1]
-                         net (fo=12, routed)          0.899    18.228    u_diex/u_alu/data6[1]
-    SLICE_X43Y33         LUT3 (Prop_lut3_I0_O)        0.332    18.560 r  u_diex/OUTB[0]_i_17/O
-                         net (fo=1, routed)           0.000    18.560    u_diex/OUTB[0]_i_17_n_0
-    SLICE_X43Y33         CARRY4 (Prop_carry4_S[1]_CO[3])
-                                                      0.550    19.110 r  u_diex/OUTB_reg[0]_i_10/CO[3]
-                         net (fo=1, routed)           0.000    19.110    u_diex/OUTB_reg[0]_i_10_n_0
-    SLICE_X43Y34         CARRY4 (Prop_carry4_CI_CO[0])
-                                                      0.271    19.381 r  u_diex/OUTB_reg[0]_i_7/CO[0]
-                         net (fo=1, routed)           0.504    19.886    u_diex/u_alu/data6[0]
-    SLICE_X37Y29         LUT4 (Prop_lut4_I2_O)        0.373    20.259 r  u_diex/OUTB[0]_i_4/O
-                         net (fo=1, routed)           0.639    20.898    u_mux_alu_calc/ALU_OUT[0]
-    SLICE_X37Y30         LUT5 (Prop_lut5_I2_O)        0.124    21.022 r  u_mux_alu_calc/OUTB[0]_i_2/O
-                         net (fo=1, routed)           0.000    21.022    u_mux_alu_calc/OUTB[0]_i_2_n_0
-    SLICE_X37Y30         MUXF7 (Prop_muxf7_I0_O)      0.212    21.234 r  u_mux_alu_calc/OUTB_reg[0]_i_1/O
-                         net (fo=3, routed)           0.749    21.983    u_exmem/POST_ALU_CALC_B[0]
-    SLICE_X36Y33         FDRE                                         r  u_exmem/OUTB_reg[0]/D
+                                                      0.157     7.409 r  u_diex/OUTB_reg[5]_i_4/CO[1]
+                         net (fo=12, routed)          1.636     9.045    u_diex/u_alu/data6[5]
+    SLICE_X37Y29         LUT3 (Prop_lut3_I0_O)        0.329     9.374 r  u_diex/OUTB[4]_i_14/O
+                         net (fo=1, routed)           0.000     9.374    u_diex/OUTB[4]_i_14_n_0
+    SLICE_X37Y29         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.401     9.775 r  u_diex/OUTB_reg[4]_i_9/CO[3]
+                         net (fo=1, routed)           0.000     9.775    u_diex/OUTB_reg[4]_i_9_n_0
+    SLICE_X37Y30         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     9.889 r  u_diex/OUTB_reg[4]_i_6/CO[3]
+                         net (fo=1, routed)           0.000     9.889    u_diex/OUTB_reg[4]_i_6_n_0
+    SLICE_X37Y31         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.157    10.046 r  u_diex/OUTB_reg[4]_i_4/CO[1]
+                         net (fo=12, routed)          1.021    11.067    u_diex/u_alu/data6[4]
+    SLICE_X38Y30         LUT3 (Prop_lut3_I0_O)        0.329    11.396 r  u_diex/OUTB[3]_i_24/O
+                         net (fo=1, routed)           0.000    11.396    u_diex/OUTB[3]_i_24_n_0
+    SLICE_X38Y30         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.376    11.772 r  u_diex/OUTB_reg[3]_i_11/CO[3]
+                         net (fo=1, routed)           0.000    11.772    u_diex/OUTB_reg[3]_i_11_n_0
+    SLICE_X38Y31         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    11.889 r  u_diex/OUTB_reg[3]_i_6/CO[3]
+                         net (fo=1, routed)           0.000    11.889    u_diex/OUTB_reg[3]_i_6_n_0
+    SLICE_X38Y32         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.157    12.046 r  u_diex/OUTB_reg[3]_i_4/CO[1]
+                         net (fo=12, routed)          1.521    13.567    u_diex/u_alu/data6[3]
+    SLICE_X39Y29         LUT3 (Prop_lut3_I0_O)        0.332    13.899 r  u_diex/OUTB[2]_i_24/O
+                         net (fo=1, routed)           0.000    13.899    u_diex/OUTB[2]_i_24_n_0
+    SLICE_X39Y29         CARRY4 (Prop_carry4_S[2]_CO[3])
+                                                      0.398    14.297 r  u_diex/OUTB_reg[2]_i_17/CO[3]
+                         net (fo=1, routed)           0.000    14.297    u_diex/OUTB_reg[2]_i_17_n_0
+    SLICE_X39Y30         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    14.411 r  u_diex/OUTB_reg[2]_i_7/CO[3]
+                         net (fo=1, routed)           0.000    14.411    u_diex/OUTB_reg[2]_i_7_n_0
+    SLICE_X39Y31         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.157    14.568 r  u_diex/OUTB_reg[2]_i_4__0/CO[1]
+                         net (fo=12, routed)          1.313    15.882    u_diex/u_alu/data6[2]
+    SLICE_X41Y28         LUT3 (Prop_lut3_I0_O)        0.329    16.211 r  u_diex/OUTB[1]_i_14/O
+                         net (fo=1, routed)           0.000    16.211    u_diex/OUTB[1]_i_14_n_0
+    SLICE_X41Y28         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.401    16.612 r  u_diex/OUTB_reg[1]_i_9/CO[3]
+                         net (fo=1, routed)           0.000    16.612    u_diex/OUTB_reg[1]_i_9_n_0
+    SLICE_X41Y29         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    16.726 r  u_diex/OUTB_reg[1]_i_6/CO[3]
+                         net (fo=1, routed)           0.000    16.726    u_diex/OUTB_reg[1]_i_6_n_0
+    SLICE_X41Y30         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.157    16.883 r  u_diex/OUTB_reg[1]_i_4__0/CO[1]
+                         net (fo=12, routed)          1.345    18.228    u_diex/u_alu/data6[1]
+    SLICE_X40Y27         LUT3 (Prop_lut3_I0_O)        0.329    18.557 r  u_diex/OUTB[0]_i_23/O
+                         net (fo=1, routed)           0.000    18.557    u_diex/OUTB[0]_i_23_n_0
+    SLICE_X40Y27         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.401    18.958 r  u_diex/OUTB_reg[0]_i_14/CO[3]
+                         net (fo=1, routed)           0.000    18.958    u_diex/OUTB_reg[0]_i_14_n_0
+    SLICE_X40Y28         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    19.072 r  u_diex/OUTB_reg[0]_i_10/CO[3]
+                         net (fo=1, routed)           0.000    19.072    u_diex/OUTB_reg[0]_i_10_n_0
+    SLICE_X40Y29         CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.271    19.343 r  u_diex/OUTB_reg[0]_i_7/CO[0]
+                         net (fo=1, routed)           0.816    20.159    u_diex/u_alu/data6[0]
+    SLICE_X42Y29         LUT4 (Prop_lut4_I2_O)        0.373    20.532 r  u_diex/OUTB[0]_i_4/O
+                         net (fo=1, routed)           0.304    20.836    u_mux_alu_calc/ALU_OUT[0]
+    SLICE_X42Y28         LUT5 (Prop_lut5_I2_O)        0.124    20.960 r  u_mux_alu_calc/OUTB[0]_i_2/O
+                         net (fo=1, routed)           0.000    20.960    u_mux_alu_calc/OUTB[0]_i_2_n_0
+    SLICE_X42Y28         MUXF7 (Prop_muxf7_I0_O)      0.209    21.169 r  u_mux_alu_calc/OUTB_reg[0]_i_1/O
+                         net (fo=3, routed)           1.099    22.268    u_exmem/POST_ALU_CALC_B[0]
+    SLICE_X41Y23         FDRE                                         r  u_exmem/OUTB_reg[0]/D
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 u_diex/OUTC_reg[4]/C
+  Source:                 u_diex/OUTC_reg[1]/C
                             (rising edge-triggered cell FDRE)
   Destination:            u_exmem/OUTB_reg[0]_rep/D
   Path Group:             (none)
   Path Type:              Max at Slow Process Corner
-  Data Path Delay:        21.786ns  (logic 9.225ns (42.344%)  route 12.561ns (57.656%))
-  Logic Levels:           32  (CARRY4=19 FDRE=1 LUT2=1 LUT3=6 LUT4=2 LUT5=1 LUT6=1 MUXF7=1)
+  Data Path Delay:        22.079ns  (logic 8.653ns (39.191%)  route 13.426ns (60.809%))
+  Logic Levels:           33  (CARRY4=20 FDRE=1 LUT2=1 LUT3=6 LUT4=2 LUT5=1 LUT6=1 MUXF7=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X36Y33         FDRE                         0.000     0.000 r  u_diex/OUTC_reg[4]/C
-    SLICE_X36Y33         FDRE (Prop_fdre_C_Q)         0.456     0.456 f  u_diex/OUTC_reg[4]/Q
-                         net (fo=20, routed)          1.637     2.093    u_diex/EXC[4]
-    SLICE_X33Y31         LUT6 (Prop_lut6_I5_O)        0.124     2.217 r  u_diex/OUTB[7]_i_11/O
-                         net (fo=6, routed)           0.853     3.070    u_diex/OUTB[7]_i_11_n_0
-    SLICE_X34Y32         LUT4 (Prop_lut4_I2_O)        0.124     3.194 r  u_diex/OUTB[6]_i_33/O
-                         net (fo=13, routed)          0.916     4.110    u_diex/u_alu/data6[7]
-    SLICE_X34Y33         LUT2 (Prop_lut2_I1_O)        0.156     4.266 r  u_diex/OUTB[6]_i_20/O
-                         net (fo=1, routed)           0.572     4.838    u_diex/OUTB[6]_i_20_n_0
-    SLICE_X35Y33         CARRY4 (Prop_carry4_DI[0]_CO[3])
-                                                      0.757     5.595 r  u_diex/OUTB_reg[6]_i_7/CO[3]
-                         net (fo=1, routed)           0.000     5.595    u_diex/OUTB_reg[6]_i_7_n_0
-    SLICE_X35Y34         CARRY4 (Prop_carry4_CI_CO[0])
-                                                      0.271     5.866 r  u_diex/OUTB_reg[6]_i_4/CO[0]
-                         net (fo=12, routed)          1.173     7.039    u_diex/u_alu/data6[6]
-    SLICE_X36Y32         LUT3 (Prop_lut3_I0_O)        0.373     7.412 r  u_diex/OUTB[5]_i_16/O
-                         net (fo=1, routed)           0.000     7.412    u_diex/OUTB[5]_i_16_n_0
-    SLICE_X36Y32         CARRY4 (Prop_carry4_S[1]_CO[3])
-                                                      0.550     7.962 r  u_diex/OUTB_reg[5]_i_9/CO[3]
-                         net (fo=1, routed)           0.000     7.962    u_diex/OUTB_reg[5]_i_9_n_0
+    SLICE_X38Y26         FDRE                         0.000     0.000 r  u_diex/OUTC_reg[1]/C
+    SLICE_X38Y26         FDRE (Prop_fdre_C_Q)         0.478     0.478 f  u_diex/OUTC_reg[1]/Q
+                         net (fo=31, routed)          1.523     2.001    u_diex/EXC[1]
+    SLICE_X39Y32         LUT6 (Prop_lut6_I2_O)        0.301     2.302 r  u_diex/OUTB[7]_i_11/O
+                         net (fo=6, routed)           0.680     2.983    u_diex/OUTB[7]_i_11_n_0
+    SLICE_X38Y33         LUT4 (Prop_lut4_I2_O)        0.124     3.107 r  u_diex/OUTB[6]_i_33/O
+                         net (fo=13, routed)          0.638     3.744    u_diex/u_alu/data6[7]
+    SLICE_X38Y34         LUT2 (Prop_lut2_I1_O)        0.124     3.868 r  u_diex/OUTB[6]_i_19/O
+                         net (fo=1, routed)           0.532     4.401    u_diex/OUTB[6]_i_19_n_0
+    SLICE_X37Y34         CARRY4 (Prop_carry4_DI[1]_CO[3])
+                                                      0.507     4.908 r  u_diex/OUTB_reg[6]_i_7/CO[3]
+                         net (fo=1, routed)           0.000     4.908    u_diex/OUTB_reg[6]_i_7_n_0
+    SLICE_X37Y35         CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.271     5.179 r  u_diex/OUTB_reg[6]_i_4/CO[0]
+                         net (fo=12, routed)          1.185     6.364    u_diex/u_alu/data6[6]
+    SLICE_X36Y32         LUT3 (Prop_lut3_I0_O)        0.373     6.737 r  u_diex/OUTB[5]_i_14/O
+                         net (fo=1, routed)           0.000     6.737    u_diex/OUTB[5]_i_14_n_0
+    SLICE_X36Y32         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.401     7.138 r  u_diex/OUTB_reg[5]_i_9/CO[3]
+                         net (fo=1, routed)           0.000     7.138    u_diex/OUTB_reg[5]_i_9_n_0
     SLICE_X36Y33         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     8.076 r  u_diex/OUTB_reg[5]_i_6/CO[3]
-                         net (fo=1, routed)           0.000     8.076    u_diex/OUTB_reg[5]_i_6_n_0
+                                                      0.114     7.252 r  u_diex/OUTB_reg[5]_i_6/CO[3]
+                         net (fo=1, routed)           0.000     7.252    u_diex/OUTB_reg[5]_i_6_n_0
     SLICE_X36Y34         CARRY4 (Prop_carry4_CI_CO[1])
-                                                      0.157     8.233 r  u_diex/OUTB_reg[5]_i_4/CO[1]
-                         net (fo=12, routed)          1.472     9.705    u_diex/u_alu/data6[5]
-    SLICE_X36Y28         LUT3 (Prop_lut3_I0_O)        0.329    10.034 r  u_diex/OUTB[4]_i_16/O
-                         net (fo=1, routed)           0.000    10.034    u_diex/OUTB[4]_i_16_n_0
-    SLICE_X36Y28         CARRY4 (Prop_carry4_S[1]_CO[3])
-                                                      0.550    10.584 r  u_diex/OUTB_reg[4]_i_9/CO[3]
-                         net (fo=1, routed)           0.000    10.584    u_diex/OUTB_reg[4]_i_9_n_0
-    SLICE_X36Y29         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    10.698 r  u_diex/OUTB_reg[4]_i_6/CO[3]
-                         net (fo=1, routed)           0.000    10.698    u_diex/OUTB_reg[4]_i_6_n_0
-    SLICE_X36Y30         CARRY4 (Prop_carry4_CI_CO[1])
-                                                      0.157    10.855 r  u_diex/OUTB_reg[4]_i_4/CO[1]
-                         net (fo=12, routed)          1.228    12.084    u_diex/u_alu/data6[4]
-    SLICE_X39Y28         LUT3 (Prop_lut3_I0_O)        0.329    12.413 r  u_diex/OUTB[3]_i_26/O
-                         net (fo=1, routed)           0.000    12.413    u_diex/OUTB[3]_i_26_n_0
-    SLICE_X39Y28         CARRY4 (Prop_carry4_S[1]_CO[3])
-                                                      0.550    12.963 r  u_diex/OUTB_reg[3]_i_11/CO[3]
-                         net (fo=1, routed)           0.000    12.963    u_diex/OUTB_reg[3]_i_11_n_0
-    SLICE_X39Y29         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    13.077 r  u_diex/OUTB_reg[3]_i_6/CO[3]
-                         net (fo=1, routed)           0.000    13.077    u_diex/OUTB_reg[3]_i_6_n_0
-    SLICE_X39Y30         CARRY4 (Prop_carry4_CI_CO[1])
-                                                      0.157    13.234 r  u_diex/OUTB_reg[3]_i_4/CO[1]
-                         net (fo=12, routed)          1.065    14.298    u_diex/u_alu/data6[3]
-    SLICE_X40Y29         LUT3 (Prop_lut3_I0_O)        0.329    14.627 r  u_diex/OUTB[2]_i_24/O
-                         net (fo=1, routed)           0.000    14.627    u_diex/OUTB[2]_i_24_n_0
-    SLICE_X40Y29         CARRY4 (Prop_carry4_S[2]_CO[3])
-                                                      0.398    15.025 r  u_diex/OUTB_reg[2]_i_17/CO[3]
-                         net (fo=1, routed)           0.000    15.025    u_diex/OUTB_reg[2]_i_17_n_0
-    SLICE_X40Y30         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    15.139 r  u_diex/OUTB_reg[2]_i_7/CO[3]
-                         net (fo=1, routed)           0.000    15.139    u_diex/OUTB_reg[2]_i_7_n_0
-    SLICE_X40Y31         CARRY4 (Prop_carry4_CI_CO[1])
-                                                      0.157    15.296 r  u_diex/OUTB_reg[2]_i_4__0/CO[1]
-                         net (fo=12, routed)          1.050    16.346    u_diex/u_alu/data6[2]
-    SLICE_X42Y30         LUT3 (Prop_lut3_I0_O)        0.329    16.675 r  u_diex/OUTB[1]_i_15/O
-                         net (fo=1, routed)           0.000    16.675    u_diex/OUTB[1]_i_15_n_0
-    SLICE_X42Y30         CARRY4 (Prop_carry4_S[2]_CO[3])
-                                                      0.380    17.055 r  u_diex/OUTB_reg[1]_i_9/CO[3]
-                         net (fo=1, routed)           0.000    17.055    u_diex/OUTB_reg[1]_i_9_n_0
-    SLICE_X42Y31         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117    17.172 r  u_diex/OUTB_reg[1]_i_6/CO[3]
-                         net (fo=1, routed)           0.000    17.172    u_diex/OUTB_reg[1]_i_6_n_0
-    SLICE_X42Y32         CARRY4 (Prop_carry4_CI_CO[1])
-                                                      0.157    17.329 r  u_diex/OUTB_reg[1]_i_4__0/CO[1]
-                         net (fo=12, routed)          0.899    18.228    u_diex/u_alu/data6[1]
-    SLICE_X43Y33         LUT3 (Prop_lut3_I0_O)        0.332    18.560 r  u_diex/OUTB[0]_i_17/O
-                         net (fo=1, routed)           0.000    18.560    u_diex/OUTB[0]_i_17_n_0
-    SLICE_X43Y33         CARRY4 (Prop_carry4_S[1]_CO[3])
-                                                      0.550    19.110 r  u_diex/OUTB_reg[0]_i_10/CO[3]
-                         net (fo=1, routed)           0.000    19.110    u_diex/OUTB_reg[0]_i_10_n_0
-    SLICE_X43Y34         CARRY4 (Prop_carry4_CI_CO[0])
-                                                      0.271    19.381 r  u_diex/OUTB_reg[0]_i_7/CO[0]
-                         net (fo=1, routed)           0.504    19.886    u_diex/u_alu/data6[0]
-    SLICE_X37Y29         LUT4 (Prop_lut4_I2_O)        0.373    20.259 r  u_diex/OUTB[0]_i_4/O
-                         net (fo=1, routed)           0.639    20.898    u_mux_alu_calc/ALU_OUT[0]
-    SLICE_X37Y30         LUT5 (Prop_lut5_I2_O)        0.124    21.022 r  u_mux_alu_calc/OUTB[0]_i_2/O
-                         net (fo=1, routed)           0.000    21.022    u_mux_alu_calc/OUTB[0]_i_2_n_0
-    SLICE_X37Y30         MUXF7 (Prop_muxf7_I0_O)      0.212    21.234 r  u_mux_alu_calc/OUTB_reg[0]_i_1/O
-                         net (fo=3, routed)           0.552    21.786    u_exmem/POST_ALU_CALC_B[0]
-    SLICE_X37Y37         FDRE                                         r  u_exmem/OUTB_reg[0]_rep/D
+                                                      0.157     7.409 r  u_diex/OUTB_reg[5]_i_4/CO[1]
+                         net (fo=12, routed)          1.636     9.045    u_diex/u_alu/data6[5]
+    SLICE_X37Y29         LUT3 (Prop_lut3_I0_O)        0.329     9.374 r  u_diex/OUTB[4]_i_14/O
+                         net (fo=1, routed)           0.000     9.374    u_diex/OUTB[4]_i_14_n_0
+    SLICE_X37Y29         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.401     9.775 r  u_diex/OUTB_reg[4]_i_9/CO[3]
+                         net (fo=1, routed)           0.000     9.775    u_diex/OUTB_reg[4]_i_9_n_0
+    SLICE_X37Y30         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     9.889 r  u_diex/OUTB_reg[4]_i_6/CO[3]
+                         net (fo=1, routed)           0.000     9.889    u_diex/OUTB_reg[4]_i_6_n_0
+    SLICE_X37Y31         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.157    10.046 r  u_diex/OUTB_reg[4]_i_4/CO[1]
+                         net (fo=12, routed)          1.021    11.067    u_diex/u_alu/data6[4]
+    SLICE_X38Y30         LUT3 (Prop_lut3_I0_O)        0.329    11.396 r  u_diex/OUTB[3]_i_24/O
+                         net (fo=1, routed)           0.000    11.396    u_diex/OUTB[3]_i_24_n_0
+    SLICE_X38Y30         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.376    11.772 r  u_diex/OUTB_reg[3]_i_11/CO[3]
+                         net (fo=1, routed)           0.000    11.772    u_diex/OUTB_reg[3]_i_11_n_0
+    SLICE_X38Y31         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    11.889 r  u_diex/OUTB_reg[3]_i_6/CO[3]
+                         net (fo=1, routed)           0.000    11.889    u_diex/OUTB_reg[3]_i_6_n_0
+    SLICE_X38Y32         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.157    12.046 r  u_diex/OUTB_reg[3]_i_4/CO[1]
+                         net (fo=12, routed)          1.521    13.567    u_diex/u_alu/data6[3]
+    SLICE_X39Y29         LUT3 (Prop_lut3_I0_O)        0.332    13.899 r  u_diex/OUTB[2]_i_24/O
+                         net (fo=1, routed)           0.000    13.899    u_diex/OUTB[2]_i_24_n_0
+    SLICE_X39Y29         CARRY4 (Prop_carry4_S[2]_CO[3])
+                                                      0.398    14.297 r  u_diex/OUTB_reg[2]_i_17/CO[3]
+                         net (fo=1, routed)           0.000    14.297    u_diex/OUTB_reg[2]_i_17_n_0
+    SLICE_X39Y30         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    14.411 r  u_diex/OUTB_reg[2]_i_7/CO[3]
+                         net (fo=1, routed)           0.000    14.411    u_diex/OUTB_reg[2]_i_7_n_0
+    SLICE_X39Y31         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.157    14.568 r  u_diex/OUTB_reg[2]_i_4__0/CO[1]
+                         net (fo=12, routed)          1.313    15.882    u_diex/u_alu/data6[2]
+    SLICE_X41Y28         LUT3 (Prop_lut3_I0_O)        0.329    16.211 r  u_diex/OUTB[1]_i_14/O
+                         net (fo=1, routed)           0.000    16.211    u_diex/OUTB[1]_i_14_n_0
+    SLICE_X41Y28         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.401    16.612 r  u_diex/OUTB_reg[1]_i_9/CO[3]
+                         net (fo=1, routed)           0.000    16.612    u_diex/OUTB_reg[1]_i_9_n_0
+    SLICE_X41Y29         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    16.726 r  u_diex/OUTB_reg[1]_i_6/CO[3]
+                         net (fo=1, routed)           0.000    16.726    u_diex/OUTB_reg[1]_i_6_n_0
+    SLICE_X41Y30         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.157    16.883 r  u_diex/OUTB_reg[1]_i_4__0/CO[1]
+                         net (fo=12, routed)          1.345    18.228    u_diex/u_alu/data6[1]
+    SLICE_X40Y27         LUT3 (Prop_lut3_I0_O)        0.329    18.557 r  u_diex/OUTB[0]_i_23/O
+                         net (fo=1, routed)           0.000    18.557    u_diex/OUTB[0]_i_23_n_0
+    SLICE_X40Y27         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.401    18.958 r  u_diex/OUTB_reg[0]_i_14/CO[3]
+                         net (fo=1, routed)           0.000    18.958    u_diex/OUTB_reg[0]_i_14_n_0
+    SLICE_X40Y28         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    19.072 r  u_diex/OUTB_reg[0]_i_10/CO[3]
+                         net (fo=1, routed)           0.000    19.072    u_diex/OUTB_reg[0]_i_10_n_0
+    SLICE_X40Y29         CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.271    19.343 r  u_diex/OUTB_reg[0]_i_7/CO[0]
+                         net (fo=1, routed)           0.816    20.159    u_diex/u_alu/data6[0]
+    SLICE_X42Y29         LUT4 (Prop_lut4_I2_O)        0.373    20.532 r  u_diex/OUTB[0]_i_4/O
+                         net (fo=1, routed)           0.304    20.836    u_mux_alu_calc/ALU_OUT[0]
+    SLICE_X42Y28         LUT5 (Prop_lut5_I2_O)        0.124    20.960 r  u_mux_alu_calc/OUTB[0]_i_2/O
+                         net (fo=1, routed)           0.000    20.960    u_mux_alu_calc/OUTB[0]_i_2_n_0
+    SLICE_X42Y28         MUXF7 (Prop_muxf7_I0_O)      0.209    21.169 r  u_mux_alu_calc/OUTB_reg[0]_i_1/O
+                         net (fo=3, routed)           0.910    22.079    u_exmem/POST_ALU_CALC_B[0]
+    SLICE_X41Y23         FDRE                                         r  u_exmem/OUTB_reg[0]_rep/D
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 u_diex/OUTC_reg[4]/C
+  Source:                 u_diex/OUTC_reg[1]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            u_exmem/OUTB_reg[0]_rep__0/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        21.884ns  (logic 8.653ns (39.540%)  route 13.231ns (60.460%))
+  Logic Levels:           33  (CARRY4=20 FDRE=1 LUT2=1 LUT3=6 LUT4=2 LUT5=1 LUT6=1 MUXF7=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X38Y26         FDRE                         0.000     0.000 r  u_diex/OUTC_reg[1]/C
+    SLICE_X38Y26         FDRE (Prop_fdre_C_Q)         0.478     0.478 f  u_diex/OUTC_reg[1]/Q
+                         net (fo=31, routed)          1.523     2.001    u_diex/EXC[1]
+    SLICE_X39Y32         LUT6 (Prop_lut6_I2_O)        0.301     2.302 r  u_diex/OUTB[7]_i_11/O
+                         net (fo=6, routed)           0.680     2.983    u_diex/OUTB[7]_i_11_n_0
+    SLICE_X38Y33         LUT4 (Prop_lut4_I2_O)        0.124     3.107 r  u_diex/OUTB[6]_i_33/O
+                         net (fo=13, routed)          0.638     3.744    u_diex/u_alu/data6[7]
+    SLICE_X38Y34         LUT2 (Prop_lut2_I1_O)        0.124     3.868 r  u_diex/OUTB[6]_i_19/O
+                         net (fo=1, routed)           0.532     4.401    u_diex/OUTB[6]_i_19_n_0
+    SLICE_X37Y34         CARRY4 (Prop_carry4_DI[1]_CO[3])
+                                                      0.507     4.908 r  u_diex/OUTB_reg[6]_i_7/CO[3]
+                         net (fo=1, routed)           0.000     4.908    u_diex/OUTB_reg[6]_i_7_n_0
+    SLICE_X37Y35         CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.271     5.179 r  u_diex/OUTB_reg[6]_i_4/CO[0]
+                         net (fo=12, routed)          1.185     6.364    u_diex/u_alu/data6[6]
+    SLICE_X36Y32         LUT3 (Prop_lut3_I0_O)        0.373     6.737 r  u_diex/OUTB[5]_i_14/O
+                         net (fo=1, routed)           0.000     6.737    u_diex/OUTB[5]_i_14_n_0
+    SLICE_X36Y32         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.401     7.138 r  u_diex/OUTB_reg[5]_i_9/CO[3]
+                         net (fo=1, routed)           0.000     7.138    u_diex/OUTB_reg[5]_i_9_n_0
+    SLICE_X36Y33         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.252 r  u_diex/OUTB_reg[5]_i_6/CO[3]
+                         net (fo=1, routed)           0.000     7.252    u_diex/OUTB_reg[5]_i_6_n_0
+    SLICE_X36Y34         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.157     7.409 r  u_diex/OUTB_reg[5]_i_4/CO[1]
+                         net (fo=12, routed)          1.636     9.045    u_diex/u_alu/data6[5]
+    SLICE_X37Y29         LUT3 (Prop_lut3_I0_O)        0.329     9.374 r  u_diex/OUTB[4]_i_14/O
+                         net (fo=1, routed)           0.000     9.374    u_diex/OUTB[4]_i_14_n_0
+    SLICE_X37Y29         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.401     9.775 r  u_diex/OUTB_reg[4]_i_9/CO[3]
+                         net (fo=1, routed)           0.000     9.775    u_diex/OUTB_reg[4]_i_9_n_0
+    SLICE_X37Y30         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     9.889 r  u_diex/OUTB_reg[4]_i_6/CO[3]
+                         net (fo=1, routed)           0.000     9.889    u_diex/OUTB_reg[4]_i_6_n_0
+    SLICE_X37Y31         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.157    10.046 r  u_diex/OUTB_reg[4]_i_4/CO[1]
+                         net (fo=12, routed)          1.021    11.067    u_diex/u_alu/data6[4]
+    SLICE_X38Y30         LUT3 (Prop_lut3_I0_O)        0.329    11.396 r  u_diex/OUTB[3]_i_24/O
+                         net (fo=1, routed)           0.000    11.396    u_diex/OUTB[3]_i_24_n_0
+    SLICE_X38Y30         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.376    11.772 r  u_diex/OUTB_reg[3]_i_11/CO[3]
+                         net (fo=1, routed)           0.000    11.772    u_diex/OUTB_reg[3]_i_11_n_0
+    SLICE_X38Y31         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    11.889 r  u_diex/OUTB_reg[3]_i_6/CO[3]
+                         net (fo=1, routed)           0.000    11.889    u_diex/OUTB_reg[3]_i_6_n_0
+    SLICE_X38Y32         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.157    12.046 r  u_diex/OUTB_reg[3]_i_4/CO[1]
+                         net (fo=12, routed)          1.521    13.567    u_diex/u_alu/data6[3]
+    SLICE_X39Y29         LUT3 (Prop_lut3_I0_O)        0.332    13.899 r  u_diex/OUTB[2]_i_24/O
+                         net (fo=1, routed)           0.000    13.899    u_diex/OUTB[2]_i_24_n_0
+    SLICE_X39Y29         CARRY4 (Prop_carry4_S[2]_CO[3])
+                                                      0.398    14.297 r  u_diex/OUTB_reg[2]_i_17/CO[3]
+                         net (fo=1, routed)           0.000    14.297    u_diex/OUTB_reg[2]_i_17_n_0
+    SLICE_X39Y30         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    14.411 r  u_diex/OUTB_reg[2]_i_7/CO[3]
+                         net (fo=1, routed)           0.000    14.411    u_diex/OUTB_reg[2]_i_7_n_0
+    SLICE_X39Y31         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.157    14.568 r  u_diex/OUTB_reg[2]_i_4__0/CO[1]
+                         net (fo=12, routed)          1.313    15.882    u_diex/u_alu/data6[2]
+    SLICE_X41Y28         LUT3 (Prop_lut3_I0_O)        0.329    16.211 r  u_diex/OUTB[1]_i_14/O
+                         net (fo=1, routed)           0.000    16.211    u_diex/OUTB[1]_i_14_n_0
+    SLICE_X41Y28         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.401    16.612 r  u_diex/OUTB_reg[1]_i_9/CO[3]
+                         net (fo=1, routed)           0.000    16.612    u_diex/OUTB_reg[1]_i_9_n_0
+    SLICE_X41Y29         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    16.726 r  u_diex/OUTB_reg[1]_i_6/CO[3]
+                         net (fo=1, routed)           0.000    16.726    u_diex/OUTB_reg[1]_i_6_n_0
+    SLICE_X41Y30         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.157    16.883 r  u_diex/OUTB_reg[1]_i_4__0/CO[1]
+                         net (fo=12, routed)          1.345    18.228    u_diex/u_alu/data6[1]
+    SLICE_X40Y27         LUT3 (Prop_lut3_I0_O)        0.329    18.557 r  u_diex/OUTB[0]_i_23/O
+                         net (fo=1, routed)           0.000    18.557    u_diex/OUTB[0]_i_23_n_0
+    SLICE_X40Y27         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.401    18.958 r  u_diex/OUTB_reg[0]_i_14/CO[3]
+                         net (fo=1, routed)           0.000    18.958    u_diex/OUTB_reg[0]_i_14_n_0
+    SLICE_X40Y28         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    19.072 r  u_diex/OUTB_reg[0]_i_10/CO[3]
+                         net (fo=1, routed)           0.000    19.072    u_diex/OUTB_reg[0]_i_10_n_0
+    SLICE_X40Y29         CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.271    19.343 r  u_diex/OUTB_reg[0]_i_7/CO[0]
+                         net (fo=1, routed)           0.816    20.159    u_diex/u_alu/data6[0]
+    SLICE_X42Y29         LUT4 (Prop_lut4_I2_O)        0.373    20.532 r  u_diex/OUTB[0]_i_4/O
+                         net (fo=1, routed)           0.304    20.836    u_mux_alu_calc/ALU_OUT[0]
+    SLICE_X42Y28         LUT5 (Prop_lut5_I2_O)        0.124    20.960 r  u_mux_alu_calc/OUTB[0]_i_2/O
+                         net (fo=1, routed)           0.000    20.960    u_mux_alu_calc/OUTB[0]_i_2_n_0
+    SLICE_X42Y28         MUXF7 (Prop_muxf7_I0_O)      0.209    21.169 r  u_mux_alu_calc/OUTB_reg[0]_i_1/O
+                         net (fo=3, routed)           0.715    21.884    u_exmem/POST_ALU_CALC_B[0]
+    SLICE_X40Y23         FDRE                                         r  u_exmem/OUTB_reg[0]_rep__0/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 u_diex/OUTC_reg[1]/C
                             (rising edge-triggered cell FDRE)
   Destination:            u_exmem/OUTB_reg[1]/D
   Path Group:             (none)
   Path Type:              Max at Slow Process Corner
-  Data Path Delay:        19.891ns  (logic 7.819ns (39.310%)  route 12.072ns (60.690%))
+  Data Path Delay:        18.840ns  (logic 7.285ns (38.668%)  route 11.555ns (61.332%))
   Logic Levels:           28  (CARRY4=17 FDRE=1 LUT2=1 LUT3=5 LUT4=2 LUT6=2)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X36Y33         FDRE                         0.000     0.000 r  u_diex/OUTC_reg[4]/C
-    SLICE_X36Y33         FDRE (Prop_fdre_C_Q)         0.456     0.456 f  u_diex/OUTC_reg[4]/Q
-                         net (fo=20, routed)          1.637     2.093    u_diex/EXC[4]
-    SLICE_X33Y31         LUT6 (Prop_lut6_I5_O)        0.124     2.217 r  u_diex/OUTB[7]_i_11/O
-                         net (fo=6, routed)           0.853     3.070    u_diex/OUTB[7]_i_11_n_0
-    SLICE_X34Y32         LUT4 (Prop_lut4_I2_O)        0.124     3.194 r  u_diex/OUTB[6]_i_33/O
-                         net (fo=13, routed)          0.916     4.110    u_diex/u_alu/data6[7]
-    SLICE_X34Y33         LUT2 (Prop_lut2_I1_O)        0.156     4.266 r  u_diex/OUTB[6]_i_20/O
-                         net (fo=1, routed)           0.572     4.838    u_diex/OUTB[6]_i_20_n_0
-    SLICE_X35Y33         CARRY4 (Prop_carry4_DI[0]_CO[3])
-                                                      0.757     5.595 r  u_diex/OUTB_reg[6]_i_7/CO[3]
-                         net (fo=1, routed)           0.000     5.595    u_diex/OUTB_reg[6]_i_7_n_0
-    SLICE_X35Y34         CARRY4 (Prop_carry4_CI_CO[0])
-                                                      0.271     5.866 r  u_diex/OUTB_reg[6]_i_4/CO[0]
-                         net (fo=12, routed)          1.173     7.039    u_diex/u_alu/data6[6]
-    SLICE_X36Y32         LUT3 (Prop_lut3_I0_O)        0.373     7.412 r  u_diex/OUTB[5]_i_16/O
-                         net (fo=1, routed)           0.000     7.412    u_diex/OUTB[5]_i_16_n_0
-    SLICE_X36Y32         CARRY4 (Prop_carry4_S[1]_CO[3])
-                                                      0.550     7.962 r  u_diex/OUTB_reg[5]_i_9/CO[3]
-                         net (fo=1, routed)           0.000     7.962    u_diex/OUTB_reg[5]_i_9_n_0
+    SLICE_X38Y26         FDRE                         0.000     0.000 r  u_diex/OUTC_reg[1]/C
+    SLICE_X38Y26         FDRE (Prop_fdre_C_Q)         0.478     0.478 f  u_diex/OUTC_reg[1]/Q
+                         net (fo=31, routed)          1.523     2.001    u_diex/EXC[1]
+    SLICE_X39Y32         LUT6 (Prop_lut6_I2_O)        0.301     2.302 r  u_diex/OUTB[7]_i_11/O
+                         net (fo=6, routed)           0.680     2.983    u_diex/OUTB[7]_i_11_n_0
+    SLICE_X38Y33         LUT4 (Prop_lut4_I2_O)        0.124     3.107 r  u_diex/OUTB[6]_i_33/O
+                         net (fo=13, routed)          0.638     3.744    u_diex/u_alu/data6[7]
+    SLICE_X38Y34         LUT2 (Prop_lut2_I1_O)        0.124     3.868 r  u_diex/OUTB[6]_i_19/O
+                         net (fo=1, routed)           0.532     4.401    u_diex/OUTB[6]_i_19_n_0
+    SLICE_X37Y34         CARRY4 (Prop_carry4_DI[1]_CO[3])
+                                                      0.507     4.908 r  u_diex/OUTB_reg[6]_i_7/CO[3]
+                         net (fo=1, routed)           0.000     4.908    u_diex/OUTB_reg[6]_i_7_n_0
+    SLICE_X37Y35         CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.271     5.179 r  u_diex/OUTB_reg[6]_i_4/CO[0]
+                         net (fo=12, routed)          1.185     6.364    u_diex/u_alu/data6[6]
+    SLICE_X36Y32         LUT3 (Prop_lut3_I0_O)        0.373     6.737 r  u_diex/OUTB[5]_i_14/O
+                         net (fo=1, routed)           0.000     6.737    u_diex/OUTB[5]_i_14_n_0
+    SLICE_X36Y32         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.401     7.138 r  u_diex/OUTB_reg[5]_i_9/CO[3]
+                         net (fo=1, routed)           0.000     7.138    u_diex/OUTB_reg[5]_i_9_n_0
     SLICE_X36Y33         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     8.076 r  u_diex/OUTB_reg[5]_i_6/CO[3]
-                         net (fo=1, routed)           0.000     8.076    u_diex/OUTB_reg[5]_i_6_n_0
+                                                      0.114     7.252 r  u_diex/OUTB_reg[5]_i_6/CO[3]
+                         net (fo=1, routed)           0.000     7.252    u_diex/OUTB_reg[5]_i_6_n_0
     SLICE_X36Y34         CARRY4 (Prop_carry4_CI_CO[1])
-                                                      0.157     8.233 r  u_diex/OUTB_reg[5]_i_4/CO[1]
-                         net (fo=12, routed)          1.472     9.705    u_diex/u_alu/data6[5]
-    SLICE_X36Y28         LUT3 (Prop_lut3_I0_O)        0.329    10.034 r  u_diex/OUTB[4]_i_16/O
-                         net (fo=1, routed)           0.000    10.034    u_diex/OUTB[4]_i_16_n_0
-    SLICE_X36Y28         CARRY4 (Prop_carry4_S[1]_CO[3])
-                                                      0.550    10.584 r  u_diex/OUTB_reg[4]_i_9/CO[3]
-                         net (fo=1, routed)           0.000    10.584    u_diex/OUTB_reg[4]_i_9_n_0
-    SLICE_X36Y29         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    10.698 r  u_diex/OUTB_reg[4]_i_6/CO[3]
-                         net (fo=1, routed)           0.000    10.698    u_diex/OUTB_reg[4]_i_6_n_0
-    SLICE_X36Y30         CARRY4 (Prop_carry4_CI_CO[1])
-                                                      0.157    10.855 r  u_diex/OUTB_reg[4]_i_4/CO[1]
-                         net (fo=12, routed)          1.228    12.084    u_diex/u_alu/data6[4]
-    SLICE_X39Y28         LUT3 (Prop_lut3_I0_O)        0.329    12.413 r  u_diex/OUTB[3]_i_26/O
-                         net (fo=1, routed)           0.000    12.413    u_diex/OUTB[3]_i_26_n_0
-    SLICE_X39Y28         CARRY4 (Prop_carry4_S[1]_CO[3])
-                                                      0.550    12.963 r  u_diex/OUTB_reg[3]_i_11/CO[3]
-                         net (fo=1, routed)           0.000    12.963    u_diex/OUTB_reg[3]_i_11_n_0
-    SLICE_X39Y29         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    13.077 r  u_diex/OUTB_reg[3]_i_6/CO[3]
-                         net (fo=1, routed)           0.000    13.077    u_diex/OUTB_reg[3]_i_6_n_0
-    SLICE_X39Y30         CARRY4 (Prop_carry4_CI_CO[1])
-                                                      0.157    13.234 r  u_diex/OUTB_reg[3]_i_4/CO[1]
-                         net (fo=12, routed)          1.065    14.298    u_diex/u_alu/data6[3]
-    SLICE_X40Y29         LUT3 (Prop_lut3_I0_O)        0.329    14.627 r  u_diex/OUTB[2]_i_24/O
-                         net (fo=1, routed)           0.000    14.627    u_diex/OUTB[2]_i_24_n_0
-    SLICE_X40Y29         CARRY4 (Prop_carry4_S[2]_CO[3])
-                                                      0.398    15.025 r  u_diex/OUTB_reg[2]_i_17/CO[3]
-                         net (fo=1, routed)           0.000    15.025    u_diex/OUTB_reg[2]_i_17_n_0
-    SLICE_X40Y30         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    15.139 r  u_diex/OUTB_reg[2]_i_7/CO[3]
-                         net (fo=1, routed)           0.000    15.139    u_diex/OUTB_reg[2]_i_7_n_0
-    SLICE_X40Y31         CARRY4 (Prop_carry4_CI_CO[1])
-                                                      0.157    15.296 r  u_diex/OUTB_reg[2]_i_4__0/CO[1]
-                         net (fo=12, routed)          1.050    16.346    u_diex/u_alu/data6[2]
-    SLICE_X42Y30         LUT3 (Prop_lut3_I0_O)        0.329    16.675 r  u_diex/OUTB[1]_i_15/O
-                         net (fo=1, routed)           0.000    16.675    u_diex/OUTB[1]_i_15_n_0
-    SLICE_X42Y30         CARRY4 (Prop_carry4_S[2]_CO[3])
-                                                      0.380    17.055 r  u_diex/OUTB_reg[1]_i_9/CO[3]
-                         net (fo=1, routed)           0.000    17.055    u_diex/OUTB_reg[1]_i_9_n_0
-    SLICE_X42Y31         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117    17.172 r  u_diex/OUTB_reg[1]_i_6/CO[3]
-                         net (fo=1, routed)           0.000    17.172    u_diex/OUTB_reg[1]_i_6_n_0
-    SLICE_X42Y32         CARRY4 (Prop_carry4_CI_CO[1])
-                                                      0.157    17.329 r  u_diex/OUTB_reg[1]_i_4__0/CO[1]
-                         net (fo=12, routed)          0.998    18.328    u_diex/u_alu/data6[1]
-    SLICE_X35Y29         LUT4 (Prop_lut4_I2_O)        0.332    18.660 r  u_diex/OUTB[1]_i_2/O
-                         net (fo=3, routed)           1.107    19.767    u_mux_alu_calc/ALU_OUT[1]
-    SLICE_X34Y34         LUT6 (Prop_lut6_I3_O)        0.124    19.891 r  u_mux_alu_calc/OUTB[1]_i_1/O
-                         net (fo=1, routed)           0.000    19.891    u_exmem/POST_ALU_CALC_B[1]
-    SLICE_X34Y34         FDRE                                         r  u_exmem/OUTB_reg[1]/D
+                                                      0.157     7.409 r  u_diex/OUTB_reg[5]_i_4/CO[1]
+                         net (fo=12, routed)          1.636     9.045    u_diex/u_alu/data6[5]
+    SLICE_X37Y29         LUT3 (Prop_lut3_I0_O)        0.329     9.374 r  u_diex/OUTB[4]_i_14/O
+                         net (fo=1, routed)           0.000     9.374    u_diex/OUTB[4]_i_14_n_0
+    SLICE_X37Y29         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.401     9.775 r  u_diex/OUTB_reg[4]_i_9/CO[3]
+                         net (fo=1, routed)           0.000     9.775    u_diex/OUTB_reg[4]_i_9_n_0
+    SLICE_X37Y30         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     9.889 r  u_diex/OUTB_reg[4]_i_6/CO[3]
+                         net (fo=1, routed)           0.000     9.889    u_diex/OUTB_reg[4]_i_6_n_0
+    SLICE_X37Y31         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.157    10.046 r  u_diex/OUTB_reg[4]_i_4/CO[1]
+                         net (fo=12, routed)          1.021    11.067    u_diex/u_alu/data6[4]
+    SLICE_X38Y30         LUT3 (Prop_lut3_I0_O)        0.329    11.396 r  u_diex/OUTB[3]_i_24/O
+                         net (fo=1, routed)           0.000    11.396    u_diex/OUTB[3]_i_24_n_0
+    SLICE_X38Y30         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.376    11.772 r  u_diex/OUTB_reg[3]_i_11/CO[3]
+                         net (fo=1, routed)           0.000    11.772    u_diex/OUTB_reg[3]_i_11_n_0
+    SLICE_X38Y31         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    11.889 r  u_diex/OUTB_reg[3]_i_6/CO[3]
+                         net (fo=1, routed)           0.000    11.889    u_diex/OUTB_reg[3]_i_6_n_0
+    SLICE_X38Y32         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.157    12.046 r  u_diex/OUTB_reg[3]_i_4/CO[1]
+                         net (fo=12, routed)          1.521    13.567    u_diex/u_alu/data6[3]
+    SLICE_X39Y29         LUT3 (Prop_lut3_I0_O)        0.332    13.899 r  u_diex/OUTB[2]_i_24/O
+                         net (fo=1, routed)           0.000    13.899    u_diex/OUTB[2]_i_24_n_0
+    SLICE_X39Y29         CARRY4 (Prop_carry4_S[2]_CO[3])
+                                                      0.398    14.297 r  u_diex/OUTB_reg[2]_i_17/CO[3]
+                         net (fo=1, routed)           0.000    14.297    u_diex/OUTB_reg[2]_i_17_n_0
+    SLICE_X39Y30         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    14.411 r  u_diex/OUTB_reg[2]_i_7/CO[3]
+                         net (fo=1, routed)           0.000    14.411    u_diex/OUTB_reg[2]_i_7_n_0
+    SLICE_X39Y31         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.157    14.568 r  u_diex/OUTB_reg[2]_i_4__0/CO[1]
+                         net (fo=12, routed)          1.313    15.882    u_diex/u_alu/data6[2]
+    SLICE_X41Y28         LUT3 (Prop_lut3_I0_O)        0.329    16.211 r  u_diex/OUTB[1]_i_14/O
+                         net (fo=1, routed)           0.000    16.211    u_diex/OUTB[1]_i_14_n_0
+    SLICE_X41Y28         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.401    16.612 r  u_diex/OUTB_reg[1]_i_9/CO[3]
+                         net (fo=1, routed)           0.000    16.612    u_diex/OUTB_reg[1]_i_9_n_0
+    SLICE_X41Y29         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    16.726 r  u_diex/OUTB_reg[1]_i_6/CO[3]
+                         net (fo=1, routed)           0.000    16.726    u_diex/OUTB_reg[1]_i_6_n_0
+    SLICE_X41Y30         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.157    16.883 r  u_diex/OUTB_reg[1]_i_4__0/CO[1]
+                         net (fo=12, routed)          0.668    17.550    u_diex/u_alu/data6[1]
+    SLICE_X40Y30         LUT4 (Prop_lut4_I2_O)        0.329    17.879 r  u_diex/OUTB[1]_i_2/O
+                         net (fo=3, routed)           0.837    18.716    u_mux_alu_calc/ALU_OUT[1]
+    SLICE_X40Y23         LUT6 (Prop_lut6_I3_O)        0.124    18.840 r  u_mux_alu_calc/OUTB[1]_i_1/O
+                         net (fo=1, routed)           0.000    18.840    u_exmem/POST_ALU_CALC_B[1]
+    SLICE_X40Y23         FDRE                                         r  u_exmem/OUTB_reg[1]/D
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 u_diex/OUTC_reg[4]/C
+  Source:                 u_diex/OUTC_reg[1]/C
                             (rising edge-triggered cell FDRE)
   Destination:            u_exmem/OUTB_reg[1]_rep/D
   Path Group:             (none)
   Path Type:              Max at Slow Process Corner
-  Data Path Delay:        19.813ns  (logic 7.819ns (39.464%)  route 11.994ns (60.536%))
+  Data Path Delay:        18.833ns  (logic 7.285ns (38.682%)  route 11.548ns (61.318%))
   Logic Levels:           28  (CARRY4=17 FDRE=1 LUT2=1 LUT3=5 LUT4=2 LUT6=2)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X36Y33         FDRE                         0.000     0.000 r  u_diex/OUTC_reg[4]/C
-    SLICE_X36Y33         FDRE (Prop_fdre_C_Q)         0.456     0.456 f  u_diex/OUTC_reg[4]/Q
-                         net (fo=20, routed)          1.637     2.093    u_diex/EXC[4]
-    SLICE_X33Y31         LUT6 (Prop_lut6_I5_O)        0.124     2.217 r  u_diex/OUTB[7]_i_11/O
-                         net (fo=6, routed)           0.853     3.070    u_diex/OUTB[7]_i_11_n_0
-    SLICE_X34Y32         LUT4 (Prop_lut4_I2_O)        0.124     3.194 r  u_diex/OUTB[6]_i_33/O
-                         net (fo=13, routed)          0.916     4.110    u_diex/u_alu/data6[7]
-    SLICE_X34Y33         LUT2 (Prop_lut2_I1_O)        0.156     4.266 r  u_diex/OUTB[6]_i_20/O
-                         net (fo=1, routed)           0.572     4.838    u_diex/OUTB[6]_i_20_n_0
-    SLICE_X35Y33         CARRY4 (Prop_carry4_DI[0]_CO[3])
-                                                      0.757     5.595 r  u_diex/OUTB_reg[6]_i_7/CO[3]
-                         net (fo=1, routed)           0.000     5.595    u_diex/OUTB_reg[6]_i_7_n_0
-    SLICE_X35Y34         CARRY4 (Prop_carry4_CI_CO[0])
-                                                      0.271     5.866 r  u_diex/OUTB_reg[6]_i_4/CO[0]
-                         net (fo=12, routed)          1.173     7.039    u_diex/u_alu/data6[6]
-    SLICE_X36Y32         LUT3 (Prop_lut3_I0_O)        0.373     7.412 r  u_diex/OUTB[5]_i_16/O
-                         net (fo=1, routed)           0.000     7.412    u_diex/OUTB[5]_i_16_n_0
-    SLICE_X36Y32         CARRY4 (Prop_carry4_S[1]_CO[3])
-                                                      0.550     7.962 r  u_diex/OUTB_reg[5]_i_9/CO[3]
-                         net (fo=1, routed)           0.000     7.962    u_diex/OUTB_reg[5]_i_9_n_0
+    SLICE_X38Y26         FDRE                         0.000     0.000 r  u_diex/OUTC_reg[1]/C
+    SLICE_X38Y26         FDRE (Prop_fdre_C_Q)         0.478     0.478 f  u_diex/OUTC_reg[1]/Q
+                         net (fo=31, routed)          1.523     2.001    u_diex/EXC[1]
+    SLICE_X39Y32         LUT6 (Prop_lut6_I2_O)        0.301     2.302 r  u_diex/OUTB[7]_i_11/O
+                         net (fo=6, routed)           0.680     2.983    u_diex/OUTB[7]_i_11_n_0
+    SLICE_X38Y33         LUT4 (Prop_lut4_I2_O)        0.124     3.107 r  u_diex/OUTB[6]_i_33/O
+                         net (fo=13, routed)          0.638     3.744    u_diex/u_alu/data6[7]
+    SLICE_X38Y34         LUT2 (Prop_lut2_I1_O)        0.124     3.868 r  u_diex/OUTB[6]_i_19/O
+                         net (fo=1, routed)           0.532     4.401    u_diex/OUTB[6]_i_19_n_0
+    SLICE_X37Y34         CARRY4 (Prop_carry4_DI[1]_CO[3])
+                                                      0.507     4.908 r  u_diex/OUTB_reg[6]_i_7/CO[3]
+                         net (fo=1, routed)           0.000     4.908    u_diex/OUTB_reg[6]_i_7_n_0
+    SLICE_X37Y35         CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.271     5.179 r  u_diex/OUTB_reg[6]_i_4/CO[0]
+                         net (fo=12, routed)          1.185     6.364    u_diex/u_alu/data6[6]
+    SLICE_X36Y32         LUT3 (Prop_lut3_I0_O)        0.373     6.737 r  u_diex/OUTB[5]_i_14/O
+                         net (fo=1, routed)           0.000     6.737    u_diex/OUTB[5]_i_14_n_0
+    SLICE_X36Y32         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.401     7.138 r  u_diex/OUTB_reg[5]_i_9/CO[3]
+                         net (fo=1, routed)           0.000     7.138    u_diex/OUTB_reg[5]_i_9_n_0
     SLICE_X36Y33         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     8.076 r  u_diex/OUTB_reg[5]_i_6/CO[3]
-                         net (fo=1, routed)           0.000     8.076    u_diex/OUTB_reg[5]_i_6_n_0
+                                                      0.114     7.252 r  u_diex/OUTB_reg[5]_i_6/CO[3]
+                         net (fo=1, routed)           0.000     7.252    u_diex/OUTB_reg[5]_i_6_n_0
     SLICE_X36Y34         CARRY4 (Prop_carry4_CI_CO[1])
-                                                      0.157     8.233 r  u_diex/OUTB_reg[5]_i_4/CO[1]
-                         net (fo=12, routed)          1.472     9.705    u_diex/u_alu/data6[5]
-    SLICE_X36Y28         LUT3 (Prop_lut3_I0_O)        0.329    10.034 r  u_diex/OUTB[4]_i_16/O
-                         net (fo=1, routed)           0.000    10.034    u_diex/OUTB[4]_i_16_n_0
-    SLICE_X36Y28         CARRY4 (Prop_carry4_S[1]_CO[3])
-                                                      0.550    10.584 r  u_diex/OUTB_reg[4]_i_9/CO[3]
-                         net (fo=1, routed)           0.000    10.584    u_diex/OUTB_reg[4]_i_9_n_0
-    SLICE_X36Y29         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    10.698 r  u_diex/OUTB_reg[4]_i_6/CO[3]
-                         net (fo=1, routed)           0.000    10.698    u_diex/OUTB_reg[4]_i_6_n_0
-    SLICE_X36Y30         CARRY4 (Prop_carry4_CI_CO[1])
-                                                      0.157    10.855 r  u_diex/OUTB_reg[4]_i_4/CO[1]
-                         net (fo=12, routed)          1.228    12.084    u_diex/u_alu/data6[4]
-    SLICE_X39Y28         LUT3 (Prop_lut3_I0_O)        0.329    12.413 r  u_diex/OUTB[3]_i_26/O
-                         net (fo=1, routed)           0.000    12.413    u_diex/OUTB[3]_i_26_n_0
-    SLICE_X39Y28         CARRY4 (Prop_carry4_S[1]_CO[3])
-                                                      0.550    12.963 r  u_diex/OUTB_reg[3]_i_11/CO[3]
-                         net (fo=1, routed)           0.000    12.963    u_diex/OUTB_reg[3]_i_11_n_0
-    SLICE_X39Y29         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    13.077 r  u_diex/OUTB_reg[3]_i_6/CO[3]
-                         net (fo=1, routed)           0.000    13.077    u_diex/OUTB_reg[3]_i_6_n_0
-    SLICE_X39Y30         CARRY4 (Prop_carry4_CI_CO[1])
-                                                      0.157    13.234 r  u_diex/OUTB_reg[3]_i_4/CO[1]
-                         net (fo=12, routed)          1.065    14.298    u_diex/u_alu/data6[3]
-    SLICE_X40Y29         LUT3 (Prop_lut3_I0_O)        0.329    14.627 r  u_diex/OUTB[2]_i_24/O
-                         net (fo=1, routed)           0.000    14.627    u_diex/OUTB[2]_i_24_n_0
-    SLICE_X40Y29         CARRY4 (Prop_carry4_S[2]_CO[3])
-                                                      0.398    15.025 r  u_diex/OUTB_reg[2]_i_17/CO[3]
-                         net (fo=1, routed)           0.000    15.025    u_diex/OUTB_reg[2]_i_17_n_0
-    SLICE_X40Y30         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    15.139 r  u_diex/OUTB_reg[2]_i_7/CO[3]
-                         net (fo=1, routed)           0.000    15.139    u_diex/OUTB_reg[2]_i_7_n_0
-    SLICE_X40Y31         CARRY4 (Prop_carry4_CI_CO[1])
-                                                      0.157    15.296 r  u_diex/OUTB_reg[2]_i_4__0/CO[1]
-                         net (fo=12, routed)          1.050    16.346    u_diex/u_alu/data6[2]
-    SLICE_X42Y30         LUT3 (Prop_lut3_I0_O)        0.329    16.675 r  u_diex/OUTB[1]_i_15/O
-                         net (fo=1, routed)           0.000    16.675    u_diex/OUTB[1]_i_15_n_0
-    SLICE_X42Y30         CARRY4 (Prop_carry4_S[2]_CO[3])
-                                                      0.380    17.055 r  u_diex/OUTB_reg[1]_i_9/CO[3]
-                         net (fo=1, routed)           0.000    17.055    u_diex/OUTB_reg[1]_i_9_n_0
-    SLICE_X42Y31         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117    17.172 r  u_diex/OUTB_reg[1]_i_6/CO[3]
-                         net (fo=1, routed)           0.000    17.172    u_diex/OUTB_reg[1]_i_6_n_0
-    SLICE_X42Y32         CARRY4 (Prop_carry4_CI_CO[1])
-                                                      0.157    17.329 r  u_diex/OUTB_reg[1]_i_4__0/CO[1]
-                         net (fo=12, routed)          0.998    18.328    u_diex/u_alu/data6[1]
-    SLICE_X35Y29         LUT4 (Prop_lut4_I2_O)        0.332    18.660 r  u_diex/OUTB[1]_i_2/O
-                         net (fo=3, routed)           1.029    19.689    u_mux_alu_calc/ALU_OUT[1]
-    SLICE_X37Y34         LUT6 (Prop_lut6_I3_O)        0.124    19.813 r  u_mux_alu_calc/OUTB[1]_rep_i_1/O
-                         net (fo=1, routed)           0.000    19.813    u_exmem/OUTB_reg[1]_rep_0
-    SLICE_X37Y34         FDRE                                         r  u_exmem/OUTB_reg[1]_rep/D
+                                                      0.157     7.409 r  u_diex/OUTB_reg[5]_i_4/CO[1]
+                         net (fo=12, routed)          1.636     9.045    u_diex/u_alu/data6[5]
+    SLICE_X37Y29         LUT3 (Prop_lut3_I0_O)        0.329     9.374 r  u_diex/OUTB[4]_i_14/O
+                         net (fo=1, routed)           0.000     9.374    u_diex/OUTB[4]_i_14_n_0
+    SLICE_X37Y29         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.401     9.775 r  u_diex/OUTB_reg[4]_i_9/CO[3]
+                         net (fo=1, routed)           0.000     9.775    u_diex/OUTB_reg[4]_i_9_n_0
+    SLICE_X37Y30         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     9.889 r  u_diex/OUTB_reg[4]_i_6/CO[3]
+                         net (fo=1, routed)           0.000     9.889    u_diex/OUTB_reg[4]_i_6_n_0
+    SLICE_X37Y31         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.157    10.046 r  u_diex/OUTB_reg[4]_i_4/CO[1]
+                         net (fo=12, routed)          1.021    11.067    u_diex/u_alu/data6[4]
+    SLICE_X38Y30         LUT3 (Prop_lut3_I0_O)        0.329    11.396 r  u_diex/OUTB[3]_i_24/O
+                         net (fo=1, routed)           0.000    11.396    u_diex/OUTB[3]_i_24_n_0
+    SLICE_X38Y30         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.376    11.772 r  u_diex/OUTB_reg[3]_i_11/CO[3]
+                         net (fo=1, routed)           0.000    11.772    u_diex/OUTB_reg[3]_i_11_n_0
+    SLICE_X38Y31         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    11.889 r  u_diex/OUTB_reg[3]_i_6/CO[3]
+                         net (fo=1, routed)           0.000    11.889    u_diex/OUTB_reg[3]_i_6_n_0
+    SLICE_X38Y32         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.157    12.046 r  u_diex/OUTB_reg[3]_i_4/CO[1]
+                         net (fo=12, routed)          1.521    13.567    u_diex/u_alu/data6[3]
+    SLICE_X39Y29         LUT3 (Prop_lut3_I0_O)        0.332    13.899 r  u_diex/OUTB[2]_i_24/O
+                         net (fo=1, routed)           0.000    13.899    u_diex/OUTB[2]_i_24_n_0
+    SLICE_X39Y29         CARRY4 (Prop_carry4_S[2]_CO[3])
+                                                      0.398    14.297 r  u_diex/OUTB_reg[2]_i_17/CO[3]
+                         net (fo=1, routed)           0.000    14.297    u_diex/OUTB_reg[2]_i_17_n_0
+    SLICE_X39Y30         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    14.411 r  u_diex/OUTB_reg[2]_i_7/CO[3]
+                         net (fo=1, routed)           0.000    14.411    u_diex/OUTB_reg[2]_i_7_n_0
+    SLICE_X39Y31         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.157    14.568 r  u_diex/OUTB_reg[2]_i_4__0/CO[1]
+                         net (fo=12, routed)          1.313    15.882    u_diex/u_alu/data6[2]
+    SLICE_X41Y28         LUT3 (Prop_lut3_I0_O)        0.329    16.211 r  u_diex/OUTB[1]_i_14/O
+                         net (fo=1, routed)           0.000    16.211    u_diex/OUTB[1]_i_14_n_0
+    SLICE_X41Y28         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.401    16.612 r  u_diex/OUTB_reg[1]_i_9/CO[3]
+                         net (fo=1, routed)           0.000    16.612    u_diex/OUTB_reg[1]_i_9_n_0
+    SLICE_X41Y29         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    16.726 r  u_diex/OUTB_reg[1]_i_6/CO[3]
+                         net (fo=1, routed)           0.000    16.726    u_diex/OUTB_reg[1]_i_6_n_0
+    SLICE_X41Y30         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.157    16.883 r  u_diex/OUTB_reg[1]_i_4__0/CO[1]
+                         net (fo=12, routed)          0.668    17.550    u_diex/u_alu/data6[1]
+    SLICE_X40Y30         LUT4 (Prop_lut4_I2_O)        0.329    17.879 r  u_diex/OUTB[1]_i_2/O
+                         net (fo=3, routed)           0.830    18.709    u_mux_alu_calc/ALU_OUT[1]
+    SLICE_X40Y23         LUT6 (Prop_lut6_I3_O)        0.124    18.833 r  u_mux_alu_calc/OUTB[1]_rep_i_1/O
+                         net (fo=1, routed)           0.000    18.833    u_exmem/OUTB_reg[1]_rep_0
+    SLICE_X40Y23         FDRE                                         r  u_exmem/OUTB_reg[1]_rep/D
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 u_diex/OUTC_reg[4]/C
+  Source:                 u_diex/OUTC_reg[1]/C
                             (rising edge-triggered cell FDRE)
   Destination:            u_exmem/OUTB_reg[1]_rep__0/D
   Path Group:             (none)
   Path Type:              Max at Slow Process Corner
-  Data Path Delay:        19.530ns  (logic 7.819ns (40.037%)  route 11.711ns (59.963%))
+  Data Path Delay:        18.829ns  (logic 7.285ns (38.691%)  route 11.544ns (61.309%))
   Logic Levels:           28  (CARRY4=17 FDRE=1 LUT2=1 LUT3=5 LUT4=2 LUT6=2)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X36Y33         FDRE                         0.000     0.000 r  u_diex/OUTC_reg[4]/C
-    SLICE_X36Y33         FDRE (Prop_fdre_C_Q)         0.456     0.456 f  u_diex/OUTC_reg[4]/Q
-                         net (fo=20, routed)          1.637     2.093    u_diex/EXC[4]
-    SLICE_X33Y31         LUT6 (Prop_lut6_I5_O)        0.124     2.217 r  u_diex/OUTB[7]_i_11/O
-                         net (fo=6, routed)           0.853     3.070    u_diex/OUTB[7]_i_11_n_0
-    SLICE_X34Y32         LUT4 (Prop_lut4_I2_O)        0.124     3.194 r  u_diex/OUTB[6]_i_33/O
-                         net (fo=13, routed)          0.916     4.110    u_diex/u_alu/data6[7]
-    SLICE_X34Y33         LUT2 (Prop_lut2_I1_O)        0.156     4.266 r  u_diex/OUTB[6]_i_20/O
-                         net (fo=1, routed)           0.572     4.838    u_diex/OUTB[6]_i_20_n_0
-    SLICE_X35Y33         CARRY4 (Prop_carry4_DI[0]_CO[3])
-                                                      0.757     5.595 r  u_diex/OUTB_reg[6]_i_7/CO[3]
-                         net (fo=1, routed)           0.000     5.595    u_diex/OUTB_reg[6]_i_7_n_0
-    SLICE_X35Y34         CARRY4 (Prop_carry4_CI_CO[0])
-                                                      0.271     5.866 r  u_diex/OUTB_reg[6]_i_4/CO[0]
-                         net (fo=12, routed)          1.173     7.039    u_diex/u_alu/data6[6]
-    SLICE_X36Y32         LUT3 (Prop_lut3_I0_O)        0.373     7.412 r  u_diex/OUTB[5]_i_16/O
-                         net (fo=1, routed)           0.000     7.412    u_diex/OUTB[5]_i_16_n_0
-    SLICE_X36Y32         CARRY4 (Prop_carry4_S[1]_CO[3])
-                                                      0.550     7.962 r  u_diex/OUTB_reg[5]_i_9/CO[3]
-                         net (fo=1, routed)           0.000     7.962    u_diex/OUTB_reg[5]_i_9_n_0
+    SLICE_X38Y26         FDRE                         0.000     0.000 r  u_diex/OUTC_reg[1]/C
+    SLICE_X38Y26         FDRE (Prop_fdre_C_Q)         0.478     0.478 f  u_diex/OUTC_reg[1]/Q
+                         net (fo=31, routed)          1.523     2.001    u_diex/EXC[1]
+    SLICE_X39Y32         LUT6 (Prop_lut6_I2_O)        0.301     2.302 r  u_diex/OUTB[7]_i_11/O
+                         net (fo=6, routed)           0.680     2.983    u_diex/OUTB[7]_i_11_n_0
+    SLICE_X38Y33         LUT4 (Prop_lut4_I2_O)        0.124     3.107 r  u_diex/OUTB[6]_i_33/O
+                         net (fo=13, routed)          0.638     3.744    u_diex/u_alu/data6[7]
+    SLICE_X38Y34         LUT2 (Prop_lut2_I1_O)        0.124     3.868 r  u_diex/OUTB[6]_i_19/O
+                         net (fo=1, routed)           0.532     4.401    u_diex/OUTB[6]_i_19_n_0
+    SLICE_X37Y34         CARRY4 (Prop_carry4_DI[1]_CO[3])
+                                                      0.507     4.908 r  u_diex/OUTB_reg[6]_i_7/CO[3]
+                         net (fo=1, routed)           0.000     4.908    u_diex/OUTB_reg[6]_i_7_n_0
+    SLICE_X37Y35         CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.271     5.179 r  u_diex/OUTB_reg[6]_i_4/CO[0]
+                         net (fo=12, routed)          1.185     6.364    u_diex/u_alu/data6[6]
+    SLICE_X36Y32         LUT3 (Prop_lut3_I0_O)        0.373     6.737 r  u_diex/OUTB[5]_i_14/O
+                         net (fo=1, routed)           0.000     6.737    u_diex/OUTB[5]_i_14_n_0
+    SLICE_X36Y32         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.401     7.138 r  u_diex/OUTB_reg[5]_i_9/CO[3]
+                         net (fo=1, routed)           0.000     7.138    u_diex/OUTB_reg[5]_i_9_n_0
     SLICE_X36Y33         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     8.076 r  u_diex/OUTB_reg[5]_i_6/CO[3]
-                         net (fo=1, routed)           0.000     8.076    u_diex/OUTB_reg[5]_i_6_n_0
+                                                      0.114     7.252 r  u_diex/OUTB_reg[5]_i_6/CO[3]
+                         net (fo=1, routed)           0.000     7.252    u_diex/OUTB_reg[5]_i_6_n_0
     SLICE_X36Y34         CARRY4 (Prop_carry4_CI_CO[1])
-                                                      0.157     8.233 r  u_diex/OUTB_reg[5]_i_4/CO[1]
-                         net (fo=12, routed)          1.472     9.705    u_diex/u_alu/data6[5]
-    SLICE_X36Y28         LUT3 (Prop_lut3_I0_O)        0.329    10.034 r  u_diex/OUTB[4]_i_16/O
-                         net (fo=1, routed)           0.000    10.034    u_diex/OUTB[4]_i_16_n_0
-    SLICE_X36Y28         CARRY4 (Prop_carry4_S[1]_CO[3])
-                                                      0.550    10.584 r  u_diex/OUTB_reg[4]_i_9/CO[3]
-                         net (fo=1, routed)           0.000    10.584    u_diex/OUTB_reg[4]_i_9_n_0
-    SLICE_X36Y29         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    10.698 r  u_diex/OUTB_reg[4]_i_6/CO[3]
-                         net (fo=1, routed)           0.000    10.698    u_diex/OUTB_reg[4]_i_6_n_0
-    SLICE_X36Y30         CARRY4 (Prop_carry4_CI_CO[1])
-                                                      0.157    10.855 r  u_diex/OUTB_reg[4]_i_4/CO[1]
-                         net (fo=12, routed)          1.228    12.084    u_diex/u_alu/data6[4]
-    SLICE_X39Y28         LUT3 (Prop_lut3_I0_O)        0.329    12.413 r  u_diex/OUTB[3]_i_26/O
-                         net (fo=1, routed)           0.000    12.413    u_diex/OUTB[3]_i_26_n_0
-    SLICE_X39Y28         CARRY4 (Prop_carry4_S[1]_CO[3])
-                                                      0.550    12.963 r  u_diex/OUTB_reg[3]_i_11/CO[3]
-                         net (fo=1, routed)           0.000    12.963    u_diex/OUTB_reg[3]_i_11_n_0
-    SLICE_X39Y29         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    13.077 r  u_diex/OUTB_reg[3]_i_6/CO[3]
-                         net (fo=1, routed)           0.000    13.077    u_diex/OUTB_reg[3]_i_6_n_0
-    SLICE_X39Y30         CARRY4 (Prop_carry4_CI_CO[1])
-                                                      0.157    13.234 r  u_diex/OUTB_reg[3]_i_4/CO[1]
-                         net (fo=12, routed)          1.065    14.298    u_diex/u_alu/data6[3]
-    SLICE_X40Y29         LUT3 (Prop_lut3_I0_O)        0.329    14.627 r  u_diex/OUTB[2]_i_24/O
-                         net (fo=1, routed)           0.000    14.627    u_diex/OUTB[2]_i_24_n_0
-    SLICE_X40Y29         CARRY4 (Prop_carry4_S[2]_CO[3])
-                                                      0.398    15.025 r  u_diex/OUTB_reg[2]_i_17/CO[3]
-                         net (fo=1, routed)           0.000    15.025    u_diex/OUTB_reg[2]_i_17_n_0
-    SLICE_X40Y30         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    15.139 r  u_diex/OUTB_reg[2]_i_7/CO[3]
-                         net (fo=1, routed)           0.000    15.139    u_diex/OUTB_reg[2]_i_7_n_0
-    SLICE_X40Y31         CARRY4 (Prop_carry4_CI_CO[1])
-                                                      0.157    15.296 r  u_diex/OUTB_reg[2]_i_4__0/CO[1]
-                         net (fo=12, routed)          1.050    16.346    u_diex/u_alu/data6[2]
-    SLICE_X42Y30         LUT3 (Prop_lut3_I0_O)        0.329    16.675 r  u_diex/OUTB[1]_i_15/O
-                         net (fo=1, routed)           0.000    16.675    u_diex/OUTB[1]_i_15_n_0
-    SLICE_X42Y30         CARRY4 (Prop_carry4_S[2]_CO[3])
-                                                      0.380    17.055 r  u_diex/OUTB_reg[1]_i_9/CO[3]
-                         net (fo=1, routed)           0.000    17.055    u_diex/OUTB_reg[1]_i_9_n_0
-    SLICE_X42Y31         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117    17.172 r  u_diex/OUTB_reg[1]_i_6/CO[3]
-                         net (fo=1, routed)           0.000    17.172    u_diex/OUTB_reg[1]_i_6_n_0
-    SLICE_X42Y32         CARRY4 (Prop_carry4_CI_CO[1])
-                                                      0.157    17.329 r  u_diex/OUTB_reg[1]_i_4__0/CO[1]
-                         net (fo=12, routed)          0.998    18.328    u_diex/u_alu/data6[1]
-    SLICE_X35Y29         LUT4 (Prop_lut4_I2_O)        0.332    18.660 r  u_diex/OUTB[1]_i_2/O
-                         net (fo=3, routed)           0.746    19.406    u_mux_alu_calc/ALU_OUT[1]
-    SLICE_X34Y33         LUT6 (Prop_lut6_I3_O)        0.124    19.530 r  u_mux_alu_calc/OUTB[1]_rep__0_i_1/O
-                         net (fo=1, routed)           0.000    19.530    u_exmem/OUTB_reg[1]_rep__0_0
-    SLICE_X34Y33         FDRE                                         r  u_exmem/OUTB_reg[1]_rep__0/D
+                                                      0.157     7.409 r  u_diex/OUTB_reg[5]_i_4/CO[1]
+                         net (fo=12, routed)          1.636     9.045    u_diex/u_alu/data6[5]
+    SLICE_X37Y29         LUT3 (Prop_lut3_I0_O)        0.329     9.374 r  u_diex/OUTB[4]_i_14/O
+                         net (fo=1, routed)           0.000     9.374    u_diex/OUTB[4]_i_14_n_0
+    SLICE_X37Y29         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.401     9.775 r  u_diex/OUTB_reg[4]_i_9/CO[3]
+                         net (fo=1, routed)           0.000     9.775    u_diex/OUTB_reg[4]_i_9_n_0
+    SLICE_X37Y30         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     9.889 r  u_diex/OUTB_reg[4]_i_6/CO[3]
+                         net (fo=1, routed)           0.000     9.889    u_diex/OUTB_reg[4]_i_6_n_0
+    SLICE_X37Y31         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.157    10.046 r  u_diex/OUTB_reg[4]_i_4/CO[1]
+                         net (fo=12, routed)          1.021    11.067    u_diex/u_alu/data6[4]
+    SLICE_X38Y30         LUT3 (Prop_lut3_I0_O)        0.329    11.396 r  u_diex/OUTB[3]_i_24/O
+                         net (fo=1, routed)           0.000    11.396    u_diex/OUTB[3]_i_24_n_0
+    SLICE_X38Y30         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.376    11.772 r  u_diex/OUTB_reg[3]_i_11/CO[3]
+                         net (fo=1, routed)           0.000    11.772    u_diex/OUTB_reg[3]_i_11_n_0
+    SLICE_X38Y31         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    11.889 r  u_diex/OUTB_reg[3]_i_6/CO[3]
+                         net (fo=1, routed)           0.000    11.889    u_diex/OUTB_reg[3]_i_6_n_0
+    SLICE_X38Y32         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.157    12.046 r  u_diex/OUTB_reg[3]_i_4/CO[1]
+                         net (fo=12, routed)          1.521    13.567    u_diex/u_alu/data6[3]
+    SLICE_X39Y29         LUT3 (Prop_lut3_I0_O)        0.332    13.899 r  u_diex/OUTB[2]_i_24/O
+                         net (fo=1, routed)           0.000    13.899    u_diex/OUTB[2]_i_24_n_0
+    SLICE_X39Y29         CARRY4 (Prop_carry4_S[2]_CO[3])
+                                                      0.398    14.297 r  u_diex/OUTB_reg[2]_i_17/CO[3]
+                         net (fo=1, routed)           0.000    14.297    u_diex/OUTB_reg[2]_i_17_n_0
+    SLICE_X39Y30         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    14.411 r  u_diex/OUTB_reg[2]_i_7/CO[3]
+                         net (fo=1, routed)           0.000    14.411    u_diex/OUTB_reg[2]_i_7_n_0
+    SLICE_X39Y31         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.157    14.568 r  u_diex/OUTB_reg[2]_i_4__0/CO[1]
+                         net (fo=12, routed)          1.313    15.882    u_diex/u_alu/data6[2]
+    SLICE_X41Y28         LUT3 (Prop_lut3_I0_O)        0.329    16.211 r  u_diex/OUTB[1]_i_14/O
+                         net (fo=1, routed)           0.000    16.211    u_diex/OUTB[1]_i_14_n_0
+    SLICE_X41Y28         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.401    16.612 r  u_diex/OUTB_reg[1]_i_9/CO[3]
+                         net (fo=1, routed)           0.000    16.612    u_diex/OUTB_reg[1]_i_9_n_0
+    SLICE_X41Y29         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    16.726 r  u_diex/OUTB_reg[1]_i_6/CO[3]
+                         net (fo=1, routed)           0.000    16.726    u_diex/OUTB_reg[1]_i_6_n_0
+    SLICE_X41Y30         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.157    16.883 r  u_diex/OUTB_reg[1]_i_4__0/CO[1]
+                         net (fo=12, routed)          0.668    17.550    u_diex/u_alu/data6[1]
+    SLICE_X40Y30         LUT4 (Prop_lut4_I2_O)        0.329    17.879 r  u_diex/OUTB[1]_i_2/O
+                         net (fo=3, routed)           0.825    18.705    u_mux_alu_calc/ALU_OUT[1]
+    SLICE_X40Y23         LUT6 (Prop_lut6_I3_O)        0.124    18.829 r  u_mux_alu_calc/OUTB[1]_rep__0_i_1/O
+                         net (fo=1, routed)           0.000    18.829    u_exmem/OUTB_reg[1]_rep__0_0
+    SLICE_X40Y23         FDRE                                         r  u_exmem/OUTB_reg[1]_rep__0/D
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 u_diex/OUTC_reg[4]/C
-                            (rising edge-triggered cell FDRE)
-  Destination:            u_exmem/OUTB_reg[2]/D
-  Path Group:             (none)
-  Path Type:              Max at Slow Process Corner
-  Data Path Delay:        17.616ns  (logic 6.833ns (38.789%)  route 10.783ns (61.211%))
-  Logic Levels:           24  (CARRY4=14 FDRE=1 LUT2=1 LUT3=4 LUT4=2 LUT6=2)
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-    SLICE_X36Y33         FDRE                         0.000     0.000 r  u_diex/OUTC_reg[4]/C
-    SLICE_X36Y33         FDRE (Prop_fdre_C_Q)         0.456     0.456 f  u_diex/OUTC_reg[4]/Q
-                         net (fo=20, routed)          1.637     2.093    u_diex/EXC[4]
-    SLICE_X33Y31         LUT6 (Prop_lut6_I5_O)        0.124     2.217 r  u_diex/OUTB[7]_i_11/O
-                         net (fo=6, routed)           0.853     3.070    u_diex/OUTB[7]_i_11_n_0
-    SLICE_X34Y32         LUT4 (Prop_lut4_I2_O)        0.124     3.194 r  u_diex/OUTB[6]_i_33/O
-                         net (fo=13, routed)          0.916     4.110    u_diex/u_alu/data6[7]
-    SLICE_X34Y33         LUT2 (Prop_lut2_I1_O)        0.156     4.266 r  u_diex/OUTB[6]_i_20/O
-                         net (fo=1, routed)           0.572     4.838    u_diex/OUTB[6]_i_20_n_0
-    SLICE_X35Y33         CARRY4 (Prop_carry4_DI[0]_CO[3])
-                                                      0.757     5.595 r  u_diex/OUTB_reg[6]_i_7/CO[3]
-                         net (fo=1, routed)           0.000     5.595    u_diex/OUTB_reg[6]_i_7_n_0
-    SLICE_X35Y34         CARRY4 (Prop_carry4_CI_CO[0])
-                                                      0.271     5.866 r  u_diex/OUTB_reg[6]_i_4/CO[0]
-                         net (fo=12, routed)          1.173     7.039    u_diex/u_alu/data6[6]
-    SLICE_X36Y32         LUT3 (Prop_lut3_I0_O)        0.373     7.412 r  u_diex/OUTB[5]_i_16/O
-                         net (fo=1, routed)           0.000     7.412    u_diex/OUTB[5]_i_16_n_0
-    SLICE_X36Y32         CARRY4 (Prop_carry4_S[1]_CO[3])
-                                                      0.550     7.962 r  u_diex/OUTB_reg[5]_i_9/CO[3]
-                         net (fo=1, routed)           0.000     7.962    u_diex/OUTB_reg[5]_i_9_n_0
-    SLICE_X36Y33         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     8.076 r  u_diex/OUTB_reg[5]_i_6/CO[3]
-                         net (fo=1, routed)           0.000     8.076    u_diex/OUTB_reg[5]_i_6_n_0
-    SLICE_X36Y34         CARRY4 (Prop_carry4_CI_CO[1])
-                                                      0.157     8.233 r  u_diex/OUTB_reg[5]_i_4/CO[1]
-                         net (fo=12, routed)          1.472     9.705    u_diex/u_alu/data6[5]
-    SLICE_X36Y28         LUT3 (Prop_lut3_I0_O)        0.329    10.034 r  u_diex/OUTB[4]_i_16/O
-                         net (fo=1, routed)           0.000    10.034    u_diex/OUTB[4]_i_16_n_0
-    SLICE_X36Y28         CARRY4 (Prop_carry4_S[1]_CO[3])
-                                                      0.550    10.584 r  u_diex/OUTB_reg[4]_i_9/CO[3]
-                         net (fo=1, routed)           0.000    10.584    u_diex/OUTB_reg[4]_i_9_n_0
-    SLICE_X36Y29         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    10.698 r  u_diex/OUTB_reg[4]_i_6/CO[3]
-                         net (fo=1, routed)           0.000    10.698    u_diex/OUTB_reg[4]_i_6_n_0
-    SLICE_X36Y30         CARRY4 (Prop_carry4_CI_CO[1])
-                                                      0.157    10.855 r  u_diex/OUTB_reg[4]_i_4/CO[1]
-                         net (fo=12, routed)          1.228    12.084    u_diex/u_alu/data6[4]
-    SLICE_X39Y28         LUT3 (Prop_lut3_I0_O)        0.329    12.413 r  u_diex/OUTB[3]_i_26/O
-                         net (fo=1, routed)           0.000    12.413    u_diex/OUTB[3]_i_26_n_0
-    SLICE_X39Y28         CARRY4 (Prop_carry4_S[1]_CO[3])
-                                                      0.550    12.963 r  u_diex/OUTB_reg[3]_i_11/CO[3]
-                         net (fo=1, routed)           0.000    12.963    u_diex/OUTB_reg[3]_i_11_n_0
-    SLICE_X39Y29         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    13.077 r  u_diex/OUTB_reg[3]_i_6/CO[3]
-                         net (fo=1, routed)           0.000    13.077    u_diex/OUTB_reg[3]_i_6_n_0
-    SLICE_X39Y30         CARRY4 (Prop_carry4_CI_CO[1])
-                                                      0.157    13.234 r  u_diex/OUTB_reg[3]_i_4/CO[1]
-                         net (fo=12, routed)          1.065    14.298    u_diex/u_alu/data6[3]
-    SLICE_X40Y29         LUT3 (Prop_lut3_I0_O)        0.329    14.627 r  u_diex/OUTB[2]_i_24/O
-                         net (fo=1, routed)           0.000    14.627    u_diex/OUTB[2]_i_24_n_0
-    SLICE_X40Y29         CARRY4 (Prop_carry4_S[2]_CO[3])
-                                                      0.398    15.025 r  u_diex/OUTB_reg[2]_i_17/CO[3]
-                         net (fo=1, routed)           0.000    15.025    u_diex/OUTB_reg[2]_i_17_n_0
-    SLICE_X40Y30         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    15.139 r  u_diex/OUTB_reg[2]_i_7/CO[3]
-                         net (fo=1, routed)           0.000    15.139    u_diex/OUTB_reg[2]_i_7_n_0
-    SLICE_X40Y31         CARRY4 (Prop_carry4_CI_CO[1])
-                                                      0.157    15.296 r  u_diex/OUTB_reg[2]_i_4__0/CO[1]
-                         net (fo=12, routed)          0.890    16.186    u_diex/u_alu/data6[2]
-    SLICE_X35Y30         LUT4 (Prop_lut4_I2_O)        0.329    16.515 r  u_diex/OUTB[2]_i_2/O
-                         net (fo=3, routed)           0.977    17.492    u_mux_alu_calc/ALU_OUT[2]
-    SLICE_X33Y33         LUT6 (Prop_lut6_I3_O)        0.124    17.616 r  u_mux_alu_calc/OUTB[2]_i_1/O
-                         net (fo=1, routed)           0.000    17.616    u_exmem/POST_ALU_CALC_B[2]
-    SLICE_X33Y33         FDRE                                         r  u_exmem/OUTB_reg[2]/D
-  -------------------------------------------------------------------    -------------------
-
-Slack:                    inf
-  Source:                 u_diex/OUTC_reg[4]/C
+  Source:                 u_diex/OUTC_reg[1]/C
                             (rising edge-triggered cell FDRE)
   Destination:            u_exmem/OUTB_reg[2]_rep/D
   Path Group:             (none)
   Path Type:              Max at Slow Process Corner
-  Data Path Delay:        17.582ns  (logic 6.833ns (38.863%)  route 10.749ns (61.137%))
+  Data Path Delay:        16.788ns  (logic 6.284ns (37.431%)  route 10.504ns (62.569%))
   Logic Levels:           24  (CARRY4=14 FDRE=1 LUT2=1 LUT3=4 LUT4=2 LUT6=2)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X36Y33         FDRE                         0.000     0.000 r  u_diex/OUTC_reg[4]/C
-    SLICE_X36Y33         FDRE (Prop_fdre_C_Q)         0.456     0.456 f  u_diex/OUTC_reg[4]/Q
-                         net (fo=20, routed)          1.637     2.093    u_diex/EXC[4]
-    SLICE_X33Y31         LUT6 (Prop_lut6_I5_O)        0.124     2.217 r  u_diex/OUTB[7]_i_11/O
-                         net (fo=6, routed)           0.853     3.070    u_diex/OUTB[7]_i_11_n_0
-    SLICE_X34Y32         LUT4 (Prop_lut4_I2_O)        0.124     3.194 r  u_diex/OUTB[6]_i_33/O
-                         net (fo=13, routed)          0.916     4.110    u_diex/u_alu/data6[7]
-    SLICE_X34Y33         LUT2 (Prop_lut2_I1_O)        0.156     4.266 r  u_diex/OUTB[6]_i_20/O
-                         net (fo=1, routed)           0.572     4.838    u_diex/OUTB[6]_i_20_n_0
-    SLICE_X35Y33         CARRY4 (Prop_carry4_DI[0]_CO[3])
-                                                      0.757     5.595 r  u_diex/OUTB_reg[6]_i_7/CO[3]
-                         net (fo=1, routed)           0.000     5.595    u_diex/OUTB_reg[6]_i_7_n_0
-    SLICE_X35Y34         CARRY4 (Prop_carry4_CI_CO[0])
-                                                      0.271     5.866 r  u_diex/OUTB_reg[6]_i_4/CO[0]
-                         net (fo=12, routed)          1.173     7.039    u_diex/u_alu/data6[6]
-    SLICE_X36Y32         LUT3 (Prop_lut3_I0_O)        0.373     7.412 r  u_diex/OUTB[5]_i_16/O
-                         net (fo=1, routed)           0.000     7.412    u_diex/OUTB[5]_i_16_n_0
-    SLICE_X36Y32         CARRY4 (Prop_carry4_S[1]_CO[3])
-                                                      0.550     7.962 r  u_diex/OUTB_reg[5]_i_9/CO[3]
-                         net (fo=1, routed)           0.000     7.962    u_diex/OUTB_reg[5]_i_9_n_0
+    SLICE_X38Y26         FDRE                         0.000     0.000 r  u_diex/OUTC_reg[1]/C
+    SLICE_X38Y26         FDRE (Prop_fdre_C_Q)         0.478     0.478 f  u_diex/OUTC_reg[1]/Q
+                         net (fo=31, routed)          1.523     2.001    u_diex/EXC[1]
+    SLICE_X39Y32         LUT6 (Prop_lut6_I2_O)        0.301     2.302 r  u_diex/OUTB[7]_i_11/O
+                         net (fo=6, routed)           0.680     2.983    u_diex/OUTB[7]_i_11_n_0
+    SLICE_X38Y33         LUT4 (Prop_lut4_I2_O)        0.124     3.107 r  u_diex/OUTB[6]_i_33/O
+                         net (fo=13, routed)          0.638     3.744    u_diex/u_alu/data6[7]
+    SLICE_X38Y34         LUT2 (Prop_lut2_I1_O)        0.124     3.868 r  u_diex/OUTB[6]_i_19/O
+                         net (fo=1, routed)           0.532     4.401    u_diex/OUTB[6]_i_19_n_0
+    SLICE_X37Y34         CARRY4 (Prop_carry4_DI[1]_CO[3])
+                                                      0.507     4.908 r  u_diex/OUTB_reg[6]_i_7/CO[3]
+                         net (fo=1, routed)           0.000     4.908    u_diex/OUTB_reg[6]_i_7_n_0
+    SLICE_X37Y35         CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.271     5.179 r  u_diex/OUTB_reg[6]_i_4/CO[0]
+                         net (fo=12, routed)          1.185     6.364    u_diex/u_alu/data6[6]
+    SLICE_X36Y32         LUT3 (Prop_lut3_I0_O)        0.373     6.737 r  u_diex/OUTB[5]_i_14/O
+                         net (fo=1, routed)           0.000     6.737    u_diex/OUTB[5]_i_14_n_0
+    SLICE_X36Y32         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.401     7.138 r  u_diex/OUTB_reg[5]_i_9/CO[3]
+                         net (fo=1, routed)           0.000     7.138    u_diex/OUTB_reg[5]_i_9_n_0
     SLICE_X36Y33         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     8.076 r  u_diex/OUTB_reg[5]_i_6/CO[3]
-                         net (fo=1, routed)           0.000     8.076    u_diex/OUTB_reg[5]_i_6_n_0
+                                                      0.114     7.252 r  u_diex/OUTB_reg[5]_i_6/CO[3]
+                         net (fo=1, routed)           0.000     7.252    u_diex/OUTB_reg[5]_i_6_n_0
     SLICE_X36Y34         CARRY4 (Prop_carry4_CI_CO[1])
-                                                      0.157     8.233 r  u_diex/OUTB_reg[5]_i_4/CO[1]
-                         net (fo=12, routed)          1.472     9.705    u_diex/u_alu/data6[5]
-    SLICE_X36Y28         LUT3 (Prop_lut3_I0_O)        0.329    10.034 r  u_diex/OUTB[4]_i_16/O
-                         net (fo=1, routed)           0.000    10.034    u_diex/OUTB[4]_i_16_n_0
-    SLICE_X36Y28         CARRY4 (Prop_carry4_S[1]_CO[3])
-                                                      0.550    10.584 r  u_diex/OUTB_reg[4]_i_9/CO[3]
-                         net (fo=1, routed)           0.000    10.584    u_diex/OUTB_reg[4]_i_9_n_0
-    SLICE_X36Y29         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    10.698 r  u_diex/OUTB_reg[4]_i_6/CO[3]
-                         net (fo=1, routed)           0.000    10.698    u_diex/OUTB_reg[4]_i_6_n_0
-    SLICE_X36Y30         CARRY4 (Prop_carry4_CI_CO[1])
-                                                      0.157    10.855 r  u_diex/OUTB_reg[4]_i_4/CO[1]
-                         net (fo=12, routed)          1.228    12.084    u_diex/u_alu/data6[4]
-    SLICE_X39Y28         LUT3 (Prop_lut3_I0_O)        0.329    12.413 r  u_diex/OUTB[3]_i_26/O
-                         net (fo=1, routed)           0.000    12.413    u_diex/OUTB[3]_i_26_n_0
-    SLICE_X39Y28         CARRY4 (Prop_carry4_S[1]_CO[3])
-                                                      0.550    12.963 r  u_diex/OUTB_reg[3]_i_11/CO[3]
-                         net (fo=1, routed)           0.000    12.963    u_diex/OUTB_reg[3]_i_11_n_0
-    SLICE_X39Y29         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    13.077 r  u_diex/OUTB_reg[3]_i_6/CO[3]
-                         net (fo=1, routed)           0.000    13.077    u_diex/OUTB_reg[3]_i_6_n_0
-    SLICE_X39Y30         CARRY4 (Prop_carry4_CI_CO[1])
-                                                      0.157    13.234 r  u_diex/OUTB_reg[3]_i_4/CO[1]
-                         net (fo=12, routed)          1.065    14.298    u_diex/u_alu/data6[3]
-    SLICE_X40Y29         LUT3 (Prop_lut3_I0_O)        0.329    14.627 r  u_diex/OUTB[2]_i_24/O
-                         net (fo=1, routed)           0.000    14.627    u_diex/OUTB[2]_i_24_n_0
-    SLICE_X40Y29         CARRY4 (Prop_carry4_S[2]_CO[3])
-                                                      0.398    15.025 r  u_diex/OUTB_reg[2]_i_17/CO[3]
-                         net (fo=1, routed)           0.000    15.025    u_diex/OUTB_reg[2]_i_17_n_0
-    SLICE_X40Y30         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    15.139 r  u_diex/OUTB_reg[2]_i_7/CO[3]
-                         net (fo=1, routed)           0.000    15.139    u_diex/OUTB_reg[2]_i_7_n_0
-    SLICE_X40Y31         CARRY4 (Prop_carry4_CI_CO[1])
-                                                      0.157    15.296 r  u_diex/OUTB_reg[2]_i_4__0/CO[1]
-                         net (fo=12, routed)          0.890    16.186    u_diex/u_alu/data6[2]
-    SLICE_X35Y30         LUT4 (Prop_lut4_I2_O)        0.329    16.515 r  u_diex/OUTB[2]_i_2/O
-                         net (fo=3, routed)           0.943    17.458    u_mux_alu_calc/ALU_OUT[2]
-    SLICE_X34Y34         LUT6 (Prop_lut6_I3_O)        0.124    17.582 r  u_mux_alu_calc/OUTB[2]_rep_i_1/O
-                         net (fo=1, routed)           0.000    17.582    u_exmem/OUTB_reg[2]_rep_0
-    SLICE_X34Y34         FDRE                                         r  u_exmem/OUTB_reg[2]_rep/D
+                                                      0.157     7.409 r  u_diex/OUTB_reg[5]_i_4/CO[1]
+                         net (fo=12, routed)          1.636     9.045    u_diex/u_alu/data6[5]
+    SLICE_X37Y29         LUT3 (Prop_lut3_I0_O)        0.329     9.374 r  u_diex/OUTB[4]_i_14/O
+                         net (fo=1, routed)           0.000     9.374    u_diex/OUTB[4]_i_14_n_0
+    SLICE_X37Y29         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.401     9.775 r  u_diex/OUTB_reg[4]_i_9/CO[3]
+                         net (fo=1, routed)           0.000     9.775    u_diex/OUTB_reg[4]_i_9_n_0
+    SLICE_X37Y30         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     9.889 r  u_diex/OUTB_reg[4]_i_6/CO[3]
+                         net (fo=1, routed)           0.000     9.889    u_diex/OUTB_reg[4]_i_6_n_0
+    SLICE_X37Y31         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.157    10.046 r  u_diex/OUTB_reg[4]_i_4/CO[1]
+                         net (fo=12, routed)          1.021    11.067    u_diex/u_alu/data6[4]
+    SLICE_X38Y30         LUT3 (Prop_lut3_I0_O)        0.329    11.396 r  u_diex/OUTB[3]_i_24/O
+                         net (fo=1, routed)           0.000    11.396    u_diex/OUTB[3]_i_24_n_0
+    SLICE_X38Y30         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.376    11.772 r  u_diex/OUTB_reg[3]_i_11/CO[3]
+                         net (fo=1, routed)           0.000    11.772    u_diex/OUTB_reg[3]_i_11_n_0
+    SLICE_X38Y31         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    11.889 r  u_diex/OUTB_reg[3]_i_6/CO[3]
+                         net (fo=1, routed)           0.000    11.889    u_diex/OUTB_reg[3]_i_6_n_0
+    SLICE_X38Y32         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.157    12.046 r  u_diex/OUTB_reg[3]_i_4/CO[1]
+                         net (fo=12, routed)          1.521    13.567    u_diex/u_alu/data6[3]
+    SLICE_X39Y29         LUT3 (Prop_lut3_I0_O)        0.332    13.899 r  u_diex/OUTB[2]_i_24/O
+                         net (fo=1, routed)           0.000    13.899    u_diex/OUTB[2]_i_24_n_0
+    SLICE_X39Y29         CARRY4 (Prop_carry4_S[2]_CO[3])
+                                                      0.398    14.297 r  u_diex/OUTB_reg[2]_i_17/CO[3]
+                         net (fo=1, routed)           0.000    14.297    u_diex/OUTB_reg[2]_i_17_n_0
+    SLICE_X39Y30         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    14.411 r  u_diex/OUTB_reg[2]_i_7/CO[3]
+                         net (fo=1, routed)           0.000    14.411    u_diex/OUTB_reg[2]_i_7_n_0
+    SLICE_X39Y31         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.157    14.568 r  u_diex/OUTB_reg[2]_i_4__0/CO[1]
+                         net (fo=12, routed)          0.323    14.891    u_diex/u_alu/data6[2]
+    SLICE_X40Y31         LUT4 (Prop_lut4_I2_O)        0.329    15.220 r  u_diex/OUTB[2]_i_2/O
+                         net (fo=3, routed)           1.444    16.664    u_mux_alu_calc/ALU_OUT[2]
+    SLICE_X41Y25         LUT6 (Prop_lut6_I3_O)        0.124    16.788 r  u_mux_alu_calc/OUTB[2]_rep_i_1/O
+                         net (fo=1, routed)           0.000    16.788    u_exmem/OUTB_reg[2]_rep_0
+    SLICE_X41Y25         FDRE                                         r  u_exmem/OUTB_reg[2]_rep/D
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 u_diex/OUTC_reg[4]/C
+  Source:                 u_diex/OUTC_reg[1]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            u_exmem/OUTB_reg[2]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        16.657ns  (logic 6.284ns (37.725%)  route 10.373ns (62.275%))
+  Logic Levels:           24  (CARRY4=14 FDRE=1 LUT2=1 LUT3=4 LUT4=2 LUT6=2)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X38Y26         FDRE                         0.000     0.000 r  u_diex/OUTC_reg[1]/C
+    SLICE_X38Y26         FDRE (Prop_fdre_C_Q)         0.478     0.478 f  u_diex/OUTC_reg[1]/Q
+                         net (fo=31, routed)          1.523     2.001    u_diex/EXC[1]
+    SLICE_X39Y32         LUT6 (Prop_lut6_I2_O)        0.301     2.302 r  u_diex/OUTB[7]_i_11/O
+                         net (fo=6, routed)           0.680     2.983    u_diex/OUTB[7]_i_11_n_0
+    SLICE_X38Y33         LUT4 (Prop_lut4_I2_O)        0.124     3.107 r  u_diex/OUTB[6]_i_33/O
+                         net (fo=13, routed)          0.638     3.744    u_diex/u_alu/data6[7]
+    SLICE_X38Y34         LUT2 (Prop_lut2_I1_O)        0.124     3.868 r  u_diex/OUTB[6]_i_19/O
+                         net (fo=1, routed)           0.532     4.401    u_diex/OUTB[6]_i_19_n_0
+    SLICE_X37Y34         CARRY4 (Prop_carry4_DI[1]_CO[3])
+                                                      0.507     4.908 r  u_diex/OUTB_reg[6]_i_7/CO[3]
+                         net (fo=1, routed)           0.000     4.908    u_diex/OUTB_reg[6]_i_7_n_0
+    SLICE_X37Y35         CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.271     5.179 r  u_diex/OUTB_reg[6]_i_4/CO[0]
+                         net (fo=12, routed)          1.185     6.364    u_diex/u_alu/data6[6]
+    SLICE_X36Y32         LUT3 (Prop_lut3_I0_O)        0.373     6.737 r  u_diex/OUTB[5]_i_14/O
+                         net (fo=1, routed)           0.000     6.737    u_diex/OUTB[5]_i_14_n_0
+    SLICE_X36Y32         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.401     7.138 r  u_diex/OUTB_reg[5]_i_9/CO[3]
+                         net (fo=1, routed)           0.000     7.138    u_diex/OUTB_reg[5]_i_9_n_0
+    SLICE_X36Y33         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.252 r  u_diex/OUTB_reg[5]_i_6/CO[3]
+                         net (fo=1, routed)           0.000     7.252    u_diex/OUTB_reg[5]_i_6_n_0
+    SLICE_X36Y34         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.157     7.409 r  u_diex/OUTB_reg[5]_i_4/CO[1]
+                         net (fo=12, routed)          1.636     9.045    u_diex/u_alu/data6[5]
+    SLICE_X37Y29         LUT3 (Prop_lut3_I0_O)        0.329     9.374 r  u_diex/OUTB[4]_i_14/O
+                         net (fo=1, routed)           0.000     9.374    u_diex/OUTB[4]_i_14_n_0
+    SLICE_X37Y29         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.401     9.775 r  u_diex/OUTB_reg[4]_i_9/CO[3]
+                         net (fo=1, routed)           0.000     9.775    u_diex/OUTB_reg[4]_i_9_n_0
+    SLICE_X37Y30         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     9.889 r  u_diex/OUTB_reg[4]_i_6/CO[3]
+                         net (fo=1, routed)           0.000     9.889    u_diex/OUTB_reg[4]_i_6_n_0
+    SLICE_X37Y31         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.157    10.046 r  u_diex/OUTB_reg[4]_i_4/CO[1]
+                         net (fo=12, routed)          1.021    11.067    u_diex/u_alu/data6[4]
+    SLICE_X38Y30         LUT3 (Prop_lut3_I0_O)        0.329    11.396 r  u_diex/OUTB[3]_i_24/O
+                         net (fo=1, routed)           0.000    11.396    u_diex/OUTB[3]_i_24_n_0
+    SLICE_X38Y30         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.376    11.772 r  u_diex/OUTB_reg[3]_i_11/CO[3]
+                         net (fo=1, routed)           0.000    11.772    u_diex/OUTB_reg[3]_i_11_n_0
+    SLICE_X38Y31         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    11.889 r  u_diex/OUTB_reg[3]_i_6/CO[3]
+                         net (fo=1, routed)           0.000    11.889    u_diex/OUTB_reg[3]_i_6_n_0
+    SLICE_X38Y32         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.157    12.046 r  u_diex/OUTB_reg[3]_i_4/CO[1]
+                         net (fo=12, routed)          1.521    13.567    u_diex/u_alu/data6[3]
+    SLICE_X39Y29         LUT3 (Prop_lut3_I0_O)        0.332    13.899 r  u_diex/OUTB[2]_i_24/O
+                         net (fo=1, routed)           0.000    13.899    u_diex/OUTB[2]_i_24_n_0
+    SLICE_X39Y29         CARRY4 (Prop_carry4_S[2]_CO[3])
+                                                      0.398    14.297 r  u_diex/OUTB_reg[2]_i_17/CO[3]
+                         net (fo=1, routed)           0.000    14.297    u_diex/OUTB_reg[2]_i_17_n_0
+    SLICE_X39Y30         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    14.411 r  u_diex/OUTB_reg[2]_i_7/CO[3]
+                         net (fo=1, routed)           0.000    14.411    u_diex/OUTB_reg[2]_i_7_n_0
+    SLICE_X39Y31         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.157    14.568 r  u_diex/OUTB_reg[2]_i_4__0/CO[1]
+                         net (fo=12, routed)          0.323    14.891    u_diex/u_alu/data6[2]
+    SLICE_X40Y31         LUT4 (Prop_lut4_I2_O)        0.329    15.220 r  u_diex/OUTB[2]_i_2/O
+                         net (fo=3, routed)           1.313    16.533    u_mux_alu_calc/ALU_OUT[2]
+    SLICE_X40Y26         LUT6 (Prop_lut6_I3_O)        0.124    16.657 r  u_mux_alu_calc/OUTB[2]_i_1/O
+                         net (fo=1, routed)           0.000    16.657    u_exmem/POST_ALU_CALC_B[2]
+    SLICE_X40Y26         FDRE                                         r  u_exmem/OUTB_reg[2]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 u_diex/OUTC_reg[1]/C
                             (rising edge-triggered cell FDRE)
   Destination:            u_exmem/OUTB_reg[2]_rep__0/D
   Path Group:             (none)
   Path Type:              Max at Slow Process Corner
-  Data Path Delay:        17.582ns  (logic 6.833ns (38.863%)  route 10.749ns (61.137%))
+  Data Path Delay:        15.947ns  (logic 6.284ns (39.405%)  route 9.663ns (60.595%))
   Logic Levels:           24  (CARRY4=14 FDRE=1 LUT2=1 LUT3=4 LUT4=2 LUT6=2)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X36Y33         FDRE                         0.000     0.000 r  u_diex/OUTC_reg[4]/C
-    SLICE_X36Y33         FDRE (Prop_fdre_C_Q)         0.456     0.456 f  u_diex/OUTC_reg[4]/Q
-                         net (fo=20, routed)          1.637     2.093    u_diex/EXC[4]
-    SLICE_X33Y31         LUT6 (Prop_lut6_I5_O)        0.124     2.217 r  u_diex/OUTB[7]_i_11/O
-                         net (fo=6, routed)           0.853     3.070    u_diex/OUTB[7]_i_11_n_0
-    SLICE_X34Y32         LUT4 (Prop_lut4_I2_O)        0.124     3.194 r  u_diex/OUTB[6]_i_33/O
-                         net (fo=13, routed)          0.916     4.110    u_diex/u_alu/data6[7]
-    SLICE_X34Y33         LUT2 (Prop_lut2_I1_O)        0.156     4.266 r  u_diex/OUTB[6]_i_20/O
-                         net (fo=1, routed)           0.572     4.838    u_diex/OUTB[6]_i_20_n_0
-    SLICE_X35Y33         CARRY4 (Prop_carry4_DI[0]_CO[3])
-                                                      0.757     5.595 r  u_diex/OUTB_reg[6]_i_7/CO[3]
-                         net (fo=1, routed)           0.000     5.595    u_diex/OUTB_reg[6]_i_7_n_0
-    SLICE_X35Y34         CARRY4 (Prop_carry4_CI_CO[0])
-                                                      0.271     5.866 r  u_diex/OUTB_reg[6]_i_4/CO[0]
-                         net (fo=12, routed)          1.173     7.039    u_diex/u_alu/data6[6]
-    SLICE_X36Y32         LUT3 (Prop_lut3_I0_O)        0.373     7.412 r  u_diex/OUTB[5]_i_16/O
-                         net (fo=1, routed)           0.000     7.412    u_diex/OUTB[5]_i_16_n_0
-    SLICE_X36Y32         CARRY4 (Prop_carry4_S[1]_CO[3])
-                                                      0.550     7.962 r  u_diex/OUTB_reg[5]_i_9/CO[3]
-                         net (fo=1, routed)           0.000     7.962    u_diex/OUTB_reg[5]_i_9_n_0
+    SLICE_X38Y26         FDRE                         0.000     0.000 r  u_diex/OUTC_reg[1]/C
+    SLICE_X38Y26         FDRE (Prop_fdre_C_Q)         0.478     0.478 f  u_diex/OUTC_reg[1]/Q
+                         net (fo=31, routed)          1.523     2.001    u_diex/EXC[1]
+    SLICE_X39Y32         LUT6 (Prop_lut6_I2_O)        0.301     2.302 r  u_diex/OUTB[7]_i_11/O
+                         net (fo=6, routed)           0.680     2.983    u_diex/OUTB[7]_i_11_n_0
+    SLICE_X38Y33         LUT4 (Prop_lut4_I2_O)        0.124     3.107 r  u_diex/OUTB[6]_i_33/O
+                         net (fo=13, routed)          0.638     3.744    u_diex/u_alu/data6[7]
+    SLICE_X38Y34         LUT2 (Prop_lut2_I1_O)        0.124     3.868 r  u_diex/OUTB[6]_i_19/O
+                         net (fo=1, routed)           0.532     4.401    u_diex/OUTB[6]_i_19_n_0
+    SLICE_X37Y34         CARRY4 (Prop_carry4_DI[1]_CO[3])
+                                                      0.507     4.908 r  u_diex/OUTB_reg[6]_i_7/CO[3]
+                         net (fo=1, routed)           0.000     4.908    u_diex/OUTB_reg[6]_i_7_n_0
+    SLICE_X37Y35         CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.271     5.179 r  u_diex/OUTB_reg[6]_i_4/CO[0]
+                         net (fo=12, routed)          1.185     6.364    u_diex/u_alu/data6[6]
+    SLICE_X36Y32         LUT3 (Prop_lut3_I0_O)        0.373     6.737 r  u_diex/OUTB[5]_i_14/O
+                         net (fo=1, routed)           0.000     6.737    u_diex/OUTB[5]_i_14_n_0
+    SLICE_X36Y32         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.401     7.138 r  u_diex/OUTB_reg[5]_i_9/CO[3]
+                         net (fo=1, routed)           0.000     7.138    u_diex/OUTB_reg[5]_i_9_n_0
     SLICE_X36Y33         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     8.076 r  u_diex/OUTB_reg[5]_i_6/CO[3]
-                         net (fo=1, routed)           0.000     8.076    u_diex/OUTB_reg[5]_i_6_n_0
+                                                      0.114     7.252 r  u_diex/OUTB_reg[5]_i_6/CO[3]
+                         net (fo=1, routed)           0.000     7.252    u_diex/OUTB_reg[5]_i_6_n_0
     SLICE_X36Y34         CARRY4 (Prop_carry4_CI_CO[1])
-                                                      0.157     8.233 r  u_diex/OUTB_reg[5]_i_4/CO[1]
-                         net (fo=12, routed)          1.472     9.705    u_diex/u_alu/data6[5]
-    SLICE_X36Y28         LUT3 (Prop_lut3_I0_O)        0.329    10.034 r  u_diex/OUTB[4]_i_16/O
-                         net (fo=1, routed)           0.000    10.034    u_diex/OUTB[4]_i_16_n_0
-    SLICE_X36Y28         CARRY4 (Prop_carry4_S[1]_CO[3])
-                                                      0.550    10.584 r  u_diex/OUTB_reg[4]_i_9/CO[3]
-                         net (fo=1, routed)           0.000    10.584    u_diex/OUTB_reg[4]_i_9_n_0
-    SLICE_X36Y29         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    10.698 r  u_diex/OUTB_reg[4]_i_6/CO[3]
-                         net (fo=1, routed)           0.000    10.698    u_diex/OUTB_reg[4]_i_6_n_0
-    SLICE_X36Y30         CARRY4 (Prop_carry4_CI_CO[1])
-                                                      0.157    10.855 r  u_diex/OUTB_reg[4]_i_4/CO[1]
-                         net (fo=12, routed)          1.228    12.084    u_diex/u_alu/data6[4]
-    SLICE_X39Y28         LUT3 (Prop_lut3_I0_O)        0.329    12.413 r  u_diex/OUTB[3]_i_26/O
-                         net (fo=1, routed)           0.000    12.413    u_diex/OUTB[3]_i_26_n_0
-    SLICE_X39Y28         CARRY4 (Prop_carry4_S[1]_CO[3])
-                                                      0.550    12.963 r  u_diex/OUTB_reg[3]_i_11/CO[3]
-                         net (fo=1, routed)           0.000    12.963    u_diex/OUTB_reg[3]_i_11_n_0
-    SLICE_X39Y29         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    13.077 r  u_diex/OUTB_reg[3]_i_6/CO[3]
-                         net (fo=1, routed)           0.000    13.077    u_diex/OUTB_reg[3]_i_6_n_0
-    SLICE_X39Y30         CARRY4 (Prop_carry4_CI_CO[1])
-                                                      0.157    13.234 r  u_diex/OUTB_reg[3]_i_4/CO[1]
-                         net (fo=12, routed)          1.065    14.298    u_diex/u_alu/data6[3]
-    SLICE_X40Y29         LUT3 (Prop_lut3_I0_O)        0.329    14.627 r  u_diex/OUTB[2]_i_24/O
-                         net (fo=1, routed)           0.000    14.627    u_diex/OUTB[2]_i_24_n_0
-    SLICE_X40Y29         CARRY4 (Prop_carry4_S[2]_CO[3])
-                                                      0.398    15.025 r  u_diex/OUTB_reg[2]_i_17/CO[3]
-                         net (fo=1, routed)           0.000    15.025    u_diex/OUTB_reg[2]_i_17_n_0
-    SLICE_X40Y30         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    15.139 r  u_diex/OUTB_reg[2]_i_7/CO[3]
-                         net (fo=1, routed)           0.000    15.139    u_diex/OUTB_reg[2]_i_7_n_0
-    SLICE_X40Y31         CARRY4 (Prop_carry4_CI_CO[1])
-                                                      0.157    15.296 r  u_diex/OUTB_reg[2]_i_4__0/CO[1]
-                         net (fo=12, routed)          0.890    16.186    u_diex/u_alu/data6[2]
-    SLICE_X35Y30         LUT4 (Prop_lut4_I2_O)        0.329    16.515 r  u_diex/OUTB[2]_i_2/O
-                         net (fo=3, routed)           0.943    17.458    u_mux_alu_calc/ALU_OUT[2]
-    SLICE_X34Y34         LUT6 (Prop_lut6_I3_O)        0.124    17.582 r  u_mux_alu_calc/OUTB[2]_rep__0_i_1/O
-                         net (fo=1, routed)           0.000    17.582    u_exmem/OUTB_reg[2]_rep__0_0
-    SLICE_X34Y34         FDRE                                         r  u_exmem/OUTB_reg[2]_rep__0/D
+                                                      0.157     7.409 r  u_diex/OUTB_reg[5]_i_4/CO[1]
+                         net (fo=12, routed)          1.636     9.045    u_diex/u_alu/data6[5]
+    SLICE_X37Y29         LUT3 (Prop_lut3_I0_O)        0.329     9.374 r  u_diex/OUTB[4]_i_14/O
+                         net (fo=1, routed)           0.000     9.374    u_diex/OUTB[4]_i_14_n_0
+    SLICE_X37Y29         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.401     9.775 r  u_diex/OUTB_reg[4]_i_9/CO[3]
+                         net (fo=1, routed)           0.000     9.775    u_diex/OUTB_reg[4]_i_9_n_0
+    SLICE_X37Y30         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     9.889 r  u_diex/OUTB_reg[4]_i_6/CO[3]
+                         net (fo=1, routed)           0.000     9.889    u_diex/OUTB_reg[4]_i_6_n_0
+    SLICE_X37Y31         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.157    10.046 r  u_diex/OUTB_reg[4]_i_4/CO[1]
+                         net (fo=12, routed)          1.021    11.067    u_diex/u_alu/data6[4]
+    SLICE_X38Y30         LUT3 (Prop_lut3_I0_O)        0.329    11.396 r  u_diex/OUTB[3]_i_24/O
+                         net (fo=1, routed)           0.000    11.396    u_diex/OUTB[3]_i_24_n_0
+    SLICE_X38Y30         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.376    11.772 r  u_diex/OUTB_reg[3]_i_11/CO[3]
+                         net (fo=1, routed)           0.000    11.772    u_diex/OUTB_reg[3]_i_11_n_0
+    SLICE_X38Y31         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    11.889 r  u_diex/OUTB_reg[3]_i_6/CO[3]
+                         net (fo=1, routed)           0.000    11.889    u_diex/OUTB_reg[3]_i_6_n_0
+    SLICE_X38Y32         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.157    12.046 r  u_diex/OUTB_reg[3]_i_4/CO[1]
+                         net (fo=12, routed)          1.521    13.567    u_diex/u_alu/data6[3]
+    SLICE_X39Y29         LUT3 (Prop_lut3_I0_O)        0.332    13.899 r  u_diex/OUTB[2]_i_24/O
+                         net (fo=1, routed)           0.000    13.899    u_diex/OUTB[2]_i_24_n_0
+    SLICE_X39Y29         CARRY4 (Prop_carry4_S[2]_CO[3])
+                                                      0.398    14.297 r  u_diex/OUTB_reg[2]_i_17/CO[3]
+                         net (fo=1, routed)           0.000    14.297    u_diex/OUTB_reg[2]_i_17_n_0
+    SLICE_X39Y30         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    14.411 r  u_diex/OUTB_reg[2]_i_7/CO[3]
+                         net (fo=1, routed)           0.000    14.411    u_diex/OUTB_reg[2]_i_7_n_0
+    SLICE_X39Y31         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.157    14.568 r  u_diex/OUTB_reg[2]_i_4__0/CO[1]
+                         net (fo=12, routed)          0.323    14.891    u_diex/u_alu/data6[2]
+    SLICE_X40Y31         LUT4 (Prop_lut4_I2_O)        0.329    15.220 r  u_diex/OUTB[2]_i_2/O
+                         net (fo=3, routed)           0.603    15.823    u_mux_alu_calc/ALU_OUT[2]
+    SLICE_X39Y28         LUT6 (Prop_lut6_I3_O)        0.124    15.947 r  u_mux_alu_calc/OUTB[2]_rep__0_i_1/O
+                         net (fo=1, routed)           0.000    15.947    u_exmem/OUTB_reg[2]_rep__0_0
+    SLICE_X39Y28         FDRE                                         r  u_exmem/OUTB_reg[2]_rep__0/D
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 IRST
-                            (input port)
-  Destination:            u_data_memory/mem_reg[114][2]/R
+  Source:                 u_exmem/OUTOP_reg[1]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            u_data_memory/mem_reg[119][0]/CE
   Path Group:             (none)
   Path Type:              Max at Slow Process Corner
-  Data Path Delay:        16.297ns  (logic 1.451ns (8.905%)  route 14.846ns (91.095%))
-  Logic Levels:           1  (IBUF=1)
+  Data Path Delay:        15.603ns  (logic 0.828ns (5.307%)  route 14.775ns (94.693%))
+  Logic Levels:           4  (FDRE=1 LUT2=1 LUT6=2)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    W19                                               0.000     0.000 r  IRST (IN)
-                         net (fo=0)                   0.000     0.000    IRST
-    W19                  IBUF (Prop_ibuf_I_O)         1.451     1.451 r  IRST_IBUF_inst/O
-                         net (fo=2236, routed)       14.846    16.297    u_data_memory/IRST_IBUF
-    SLICE_X40Y61         FDRE                                         r  u_data_memory/mem_reg[114][2]/R
+    SLICE_X39Y23         FDRE                         0.000     0.000 r  u_exmem/OUTOP_reg[1]/C
+    SLICE_X39Y23         FDRE (Prop_fdre_C_Q)         0.456     0.456 r  u_exmem/OUTOP_reg[1]/Q
+                         net (fo=19, routed)          1.158     1.614    u_mux_ab_mem/MEMOP[1]
+    SLICE_X34Y22         LUT6 (Prop_lut6_I5_O)        0.124     1.738 r  u_mux_ab_mem/mem[0][7]_i_5/O
+                         net (fo=634, routed)         9.041    10.779    u_exmem/MEM_ADDR[1]
+    SLICE_X54Y16         LUT2 (Prop_lut2_I0_O)        0.124    10.903 f  u_exmem/mem[19][7]_i_2/O
+                         net (fo=38, routed)          3.106    14.008    u_exmem/mem[19][7]_i_2_n_0
+    SLICE_X36Y11         LUT6 (Prop_lut6_I2_O)        0.124    14.132 r  u_exmem/mem[119][7]_i_1/O
+                         net (fo=8, routed)           1.471    15.603    u_data_memory/mem_reg[119][0]_0[0]
+    SLICE_X28Y13         FDRE                                         r  u_data_memory/mem_reg[119][0]/CE
   -------------------------------------------------------------------    -------------------
 
 
@@ -1033,37 +1047,109 @@ Slack:                    inf
 Min Delay Paths
 --------------------------------------------------------------------------------------
 Slack:                    inf
-  Source:                 u_diex/OUTA_reg[0]/C
+  Source:                 u_register_file/QA_reg[6]/C
                             (rising edge-triggered cell FDRE)
-  Destination:            u_exmem/OUTA_reg[0]/D
+  Destination:            u_diex/OUTB_reg[6]/D
   Path Group:             (none)
   Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.247ns  (logic 0.128ns (51.736%)  route 0.119ns (48.264%))
-  Logic Levels:           1  (FDRE=1)
+  Data Path Delay:        0.245ns  (logic 0.191ns (77.982%)  route 0.054ns (22.018%))
+  Logic Levels:           2  (FDRE=1 LUT4=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X40Y41         FDRE                         0.000     0.000 r  u_diex/OUTA_reg[0]/C
-    SLICE_X40Y41         FDRE (Prop_fdre_C_Q)         0.128     0.128 r  u_diex/OUTA_reg[0]/Q
-                         net (fo=1, routed)           0.119     0.247    u_exmem/EXA[0]
-    SLICE_X40Y41         FDRE                                         r  u_exmem/OUTA_reg[0]/D
+    SLICE_X32Y24         FDRE                         0.000     0.000 r  u_register_file/QA_reg[6]/C
+    SLICE_X32Y24         FDRE (Prop_fdre_C_Q)         0.146     0.146 r  u_register_file/QA_reg[6]/Q
+                         net (fo=1, routed)           0.054     0.200    u_mux_rf_afc/Q[6]
+    SLICE_X33Y24         LUT4 (Prop_lut4_I0_O)        0.045     0.245 r  u_mux_rf_afc/OUTB[6]_i_1/O
+                         net (fo=1, routed)           0.000     0.245    u_diex/POST_RF_MUX_B[6]
+    SLICE_X33Y24         FDRE                                         r  u_diex/OUTB_reg[6]/D
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 u_diex/OUTA_reg[7]/C
+  Source:                 u_register_file/QA_reg[0]/C
                             (rising edge-triggered cell FDRE)
-  Destination:            u_exmem/OUTA_reg[7]/D
+  Destination:            u_diex/OUTB_reg[0]/D
   Path Group:             (none)
   Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.258ns  (logic 0.141ns (54.753%)  route 0.117ns (45.247%))
+  Data Path Delay:        0.245ns  (logic 0.191ns (77.974%)  route 0.054ns (22.026%))
+  Logic Levels:           2  (FDRE=1 LUT4=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X32Y24         FDRE                         0.000     0.000 r  u_register_file/QA_reg[0]/C
+    SLICE_X32Y24         FDRE (Prop_fdre_C_Q)         0.146     0.146 r  u_register_file/QA_reg[0]/Q
+                         net (fo=1, routed)           0.054     0.200    u_mux_rf_afc/Q[0]
+    SLICE_X33Y24         LUT4 (Prop_lut4_I0_O)        0.045     0.245 r  u_mux_rf_afc/OUTB[0]_i_1/O
+                         net (fo=1, routed)           0.000     0.245    u_diex/POST_RF_MUX_B[0]
+    SLICE_X33Y24         FDRE                                         r  u_diex/OUTB_reg[0]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 div/counter_reg[13]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            div/ClockOut_reg/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.259ns  (logic 0.141ns (54.442%)  route 0.118ns (45.558%))
   Logic Levels:           1  (FDRE=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X36Y37         FDRE                         0.000     0.000 r  u_diex/OUTA_reg[7]/C
-    SLICE_X36Y37         FDRE (Prop_fdre_C_Q)         0.141     0.141 r  u_diex/OUTA_reg[7]/Q
-                         net (fo=1, routed)           0.117     0.258    u_exmem/EXA[7]
-    SLICE_X36Y37         FDRE                                         r  u_exmem/OUTA_reg[7]/D
+    SLICE_X36Y45         FDRE                         0.000     0.000 r  div/counter_reg[13]/C
+    SLICE_X36Y45         FDRE (Prop_fdre_C_Q)         0.141     0.141 r  div/counter_reg[13]/Q
+                         net (fo=2, routed)           0.118     0.259    div/p_0_in
+    SLICE_X37Y45         FDRE                                         r  div/ClockOut_reg/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 u_register_file/QB_reg[7]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            u_diex/OUTC_reg[7]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.273ns  (logic 0.167ns (61.134%)  route 0.106ns (38.866%))
+  Logic Levels:           1  (FDRE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X38Y25         FDRE                         0.000     0.000 r  u_register_file/QB_reg[7]/C
+    SLICE_X38Y25         FDRE (Prop_fdre_C_Q)         0.167     0.167 r  u_register_file/QB_reg[7]/Q
+                         net (fo=1, routed)           0.106     0.273    u_diex/Q[7]
+    SLICE_X38Y26         FDRE                                         r  u_diex/OUTC_reg[7]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 u_diex/OUTA_reg[6]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            u_exmem/OUTA_reg[6]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.274ns  (logic 0.164ns (59.853%)  route 0.110ns (40.147%))
+  Logic Levels:           1  (FDRE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X34Y19         FDRE                         0.000     0.000 r  u_diex/OUTA_reg[6]/C
+    SLICE_X34Y19         FDRE (Prop_fdre_C_Q)         0.164     0.164 r  u_diex/OUTA_reg[6]/Q
+                         net (fo=1, routed)           0.110     0.274    u_exmem/EXA[6]
+    SLICE_X34Y19         FDRE                                         r  u_exmem/OUTA_reg[6]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 u_exmem/OUTB_reg[0]_rep/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            u_data_memory/mem_reg[77][0]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.274ns  (logic 0.141ns (51.458%)  route 0.133ns (48.542%))
+  Logic Levels:           1  (FDRE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X41Y23         FDRE                         0.000     0.000 r  u_exmem/OUTB_reg[0]_rep/C
+    SLICE_X41Y23         FDRE (Prop_fdre_C_Q)         0.141     0.141 r  u_exmem/OUTB_reg[0]_rep/Q
+                         net (fo=85, routed)          0.133     0.274    u_data_memory/mem_reg[136][3]_0[0]
+    SLICE_X43Y23         FDRE                                         r  u_data_memory/mem_reg[77][0]/D
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
@@ -1072,100 +1158,51 @@ Slack:                    inf
   Destination:            u_pc/aleasFreeCnt_reg[5]/D
   Path Group:             (none)
   Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.262ns  (logic 0.141ns (53.794%)  route 0.121ns (46.206%))
+  Data Path Delay:        0.274ns  (logic 0.141ns (51.436%)  route 0.133ns (48.564%))
   Logic Levels:           1  (FDRE=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X29Y33         FDRE                         0.000     0.000 r  u_pc/cnt_reg[5]/C
-    SLICE_X29Y33         FDRE (Prop_fdre_C_Q)         0.141     0.141 r  u_pc/cnt_reg[5]/Q
-                         net (fo=3, routed)           0.121     0.262    u_pc/cnt_reg[5]
-    SLICE_X28Y32         FDRE                                         r  u_pc/aleasFreeCnt_reg[5]/D
+    SLICE_X29Y23         FDRE                         0.000     0.000 r  u_pc/cnt_reg[5]/C
+    SLICE_X29Y23         FDRE (Prop_fdre_C_Q)         0.141     0.141 r  u_pc/cnt_reg[5]/Q
+                         net (fo=3, routed)           0.133     0.274    u_pc/cnt_reg[5]
+    SLICE_X28Y23         FDRE                                         r  u_pc/aleasFreeCnt_reg[5]/D
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 u_pc/cnt_reg[1]/C
+  Source:                 u_pc/FLUSH_reg/C
                             (rising edge-triggered cell FDRE)
-  Destination:            u_pc/aleasFreeCnt_reg[1]/D
+  Destination:            u_diex/OUTOP_reg[3]/R
   Path Group:             (none)
   Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.264ns  (logic 0.141ns (53.422%)  route 0.123ns (46.578%))
+  Data Path Delay:        0.276ns  (logic 0.141ns (51.083%)  route 0.135ns (48.917%))
   Logic Levels:           1  (FDRE=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X28Y33         FDRE                         0.000     0.000 r  u_pc/cnt_reg[1]/C
-    SLICE_X28Y33         FDRE (Prop_fdre_C_Q)         0.141     0.141 r  u_pc/cnt_reg[1]/Q
-                         net (fo=4, routed)           0.123     0.264    u_pc/cnt_reg[1]
-    SLICE_X29Y32         FDRE                                         r  u_pc/aleasFreeCnt_reg[1]/D
+    SLICE_X31Y27         FDRE                         0.000     0.000 r  u_pc/FLUSH_reg/C
+    SLICE_X31Y27         FDRE (Prop_fdre_C_Q)         0.141     0.141 r  u_pc/FLUSH_reg/Q
+                         net (fo=80, routed)          0.135     0.276    u_diex/FLUSH_CMD
+    SLICE_X33Y27         FDRE                                         r  u_diex/OUTOP_reg[3]/R
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 u_memre/OUTB_reg[1]/C
+  Source:                 u_register_file/QA_reg[2]/C
                             (rising edge-triggered cell FDRE)
-  Destination:            u_register_file/mem_reg[6][1]/D
+  Destination:            u_diex/OUTB_reg[2]/D
   Path Group:             (none)
   Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.265ns  (logic 0.141ns (53.133%)  route 0.124ns (46.867%))
-  Logic Levels:           1  (FDRE=1)
+  Data Path Delay:        0.278ns  (logic 0.191ns (68.679%)  route 0.087ns (31.321%))
+  Logic Levels:           2  (FDRE=1 LUT4=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X39Y42         FDRE                         0.000     0.000 r  u_memre/OUTB_reg[1]/C
-    SLICE_X39Y42         FDRE (Prop_fdre_C_Q)         0.141     0.141 r  u_memre/OUTB_reg[1]/Q
-                         net (fo=18, routed)          0.124     0.265    u_register_file/D[1]
-    SLICE_X38Y41         FDRE                                         r  u_register_file/mem_reg[6][1]/D
-  -------------------------------------------------------------------    -------------------
-
-Slack:                    inf
-  Source:                 u_pc/cnt_reg[7]/C
-                            (rising edge-triggered cell FDRE)
-  Destination:            u_pc/aleasFreeCnt_reg[7]/D
-  Path Group:             (none)
-  Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.274ns  (logic 0.141ns (51.464%)  route 0.133ns (48.536%))
-  Logic Levels:           1  (FDRE=1)
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-    SLICE_X29Y31         FDRE                         0.000     0.000 r  u_pc/cnt_reg[7]/C
-    SLICE_X29Y31         FDRE (Prop_fdre_C_Q)         0.141     0.141 r  u_pc/cnt_reg[7]/Q
-                         net (fo=3, routed)           0.133     0.274    u_pc/cnt_reg[7]
-    SLICE_X28Y30         FDRE                                         r  u_pc/aleasFreeCnt_reg[7]/D
-  -------------------------------------------------------------------    -------------------
-
-Slack:                    inf
-  Source:                 u_memre/OUTB_reg[2]/C
-                            (rising edge-triggered cell FDRE)
-  Destination:            u_register_file/mem_reg[0][2]/D
-  Path Group:             (none)
-  Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.275ns  (logic 0.141ns (51.207%)  route 0.134ns (48.793%))
-  Logic Levels:           1  (FDRE=1)
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-    SLICE_X39Y43         FDRE                         0.000     0.000 r  u_memre/OUTB_reg[2]/C
-    SLICE_X39Y43         FDRE (Prop_fdre_C_Q)         0.141     0.141 r  u_memre/OUTB_reg[2]/Q
-                         net (fo=18, routed)          0.134     0.275    u_register_file/D[2]
-    SLICE_X36Y42         FDRE                                         r  u_register_file/mem_reg[0][2]/D
-  -------------------------------------------------------------------    -------------------
-
-Slack:                    inf
-  Source:                 u_pc/cnt_reg[7]/C
-                            (rising edge-triggered cell FDRE)
-  Destination:            u_pc/aleasFreeCnt_reg[7]_lopt_replica/D
-  Path Group:             (none)
-  Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.277ns  (logic 0.141ns (50.917%)  route 0.136ns (49.083%))
-  Logic Levels:           1  (FDRE=1)
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-    SLICE_X29Y31         FDRE                         0.000     0.000 r  u_pc/cnt_reg[7]/C
-    SLICE_X29Y31         FDRE (Prop_fdre_C_Q)         0.141     0.141 r  u_pc/cnt_reg[7]/Q
-                         net (fo=3, routed)           0.136     0.277    u_pc/cnt_reg[7]
-    SLICE_X28Y30         FDRE                                         r  u_pc/aleasFreeCnt_reg[7]_lopt_replica/D
+    SLICE_X35Y24         FDRE                         0.000     0.000 r  u_register_file/QA_reg[2]/C
+    SLICE_X35Y24         FDRE (Prop_fdre_C_Q)         0.146     0.146 r  u_register_file/QA_reg[2]/Q
+                         net (fo=1, routed)           0.087     0.233    u_mux_rf_afc/Q[2]
+    SLICE_X34Y24         LUT4 (Prop_lut4_I0_O)        0.045     0.278 r  u_mux_rf_afc/OUTB[2]_i_1/O
+                         net (fo=1, routed)           0.000     0.278    u_diex/POST_RF_MUX_B[2]
+    SLICE_X34Y24         FDRE                                         r  u_diex/OUTB_reg[2]/D
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
@@ -1174,32 +1211,15 @@ Slack:                    inf
   Destination:            u_diex/OUTC_reg[0]/D
   Path Group:             (none)
   Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.277ns  (logic 0.167ns (60.288%)  route 0.110ns (39.712%))
+  Data Path Delay:        0.279ns  (logic 0.167ns (59.856%)  route 0.112ns (40.144%))
   Logic Levels:           1  (FDRE=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X34Y38         FDRE                         0.000     0.000 r  u_register_file/QB_reg[0]/C
-    SLICE_X34Y38         FDRE (Prop_fdre_C_Q)         0.167     0.167 r  u_register_file/QB_reg[0]/Q
-                         net (fo=1, routed)           0.110     0.277    u_diex/Q[0]
-    SLICE_X34Y37         FDRE                                         r  u_diex/OUTC_reg[0]/D
-  -------------------------------------------------------------------    -------------------
-
-Slack:                    inf
-  Source:                 u_pc/cnt_reg[3]/C
-                            (rising edge-triggered cell FDRE)
-  Destination:            u_pc/aleasFreeCnt_reg[3]/D
-  Path Group:             (none)
-  Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.278ns  (logic 0.141ns (50.748%)  route 0.137ns (49.252%))
-  Logic Levels:           1  (FDRE=1)
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-    SLICE_X29Y33         FDRE                         0.000     0.000 r  u_pc/cnt_reg[3]/C
-    SLICE_X29Y33         FDRE (Prop_fdre_C_Q)         0.141     0.141 r  u_pc/cnt_reg[3]/Q
-                         net (fo=3, routed)           0.137     0.278    u_pc/cnt_reg[3]
-    SLICE_X28Y32         FDRE                                         r  u_pc/aleasFreeCnt_reg[3]/D
+    SLICE_X38Y25         FDRE                         0.000     0.000 r  u_register_file/QB_reg[0]/C
+    SLICE_X38Y25         FDRE (Prop_fdre_C_Q)         0.167     0.167 r  u_register_file/QB_reg[0]/Q
+                         net (fo=1, routed)           0.112     0.279    u_diex/Q[0]
+    SLICE_X38Y26         FDRE                                         r  u_diex/OUTC_reg[0]/D
   -------------------------------------------------------------------    -------------------
 
 

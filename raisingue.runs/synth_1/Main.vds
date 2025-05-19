@@ -3,18 +3,18 @@
 # SW Build 3865809 on Sun May  7 15:04:56 MDT 2023
 # IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
 # SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
-# Start of session at: Mon May 19 16:53:16 2025
-# Process ID: 10863
-# Current directory: /home/user/INSA/S8/projetSude/raisingue/raisingue.runs/synth_1
+# Start of session at: Mon May 19 19:33:49 2025
+# Process ID: 26466
+# Current directory: /home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.runs/synth_1
 # Command line: vivado -log Main.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Main.tcl
-# Log file: /home/user/INSA/S8/projetSude/raisingue/raisingue.runs/synth_1/Main.vds
-# Journal file: /home/user/INSA/S8/projetSude/raisingue/raisingue.runs/synth_1/vivado.jou
-# Running On: totoshe, OS: Linux, CPU Frequency: 2583.465 MHz, CPU Physical cores: 2, Host memory: 6080 MB
+# Log file: /home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.runs/synth_1/Main.vds
+# Journal file: /home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.runs/synth_1/vivado.jou
+# Running On: georges, OS: Linux, CPU Frequency: 4099.912 MHz, CPU Physical cores: 6, Host memory: 16565 MB
 #-----------------------------------------------------------
 source Main.tcl -notrace
-create_project: Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1270.945 ; gain = 0.023 ; free physical = 1212 ; free virtual = 3343
-Command: read_checkpoint -auto_incremental -incremental /home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/utils_1/imports/synth_1/Main.dcp
-INFO: [Vivado 12-5825] Read reference checkpoint from /home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/utils_1/imports/synth_1/Main.dcp for incremental synthesis
+create_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1272.980 ; gain = 0.023 ; free physical = 9560 ; free virtual = 25854
+Command: read_checkpoint -auto_incremental -incremental /home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/utils_1/imports/synth_1/Main.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from /home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/utils_1/imports/synth_1/Main.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
 Command: synth_design -top Main -part xc7a35tcpg236-1
 Starting synth_design
@@ -25,124 +25,126 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 11669
+INFO: [Synth 8-7075] Helper process launched with PID 26872
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1980.691 ; gain = 378.770 ; free physical = 152 ; free virtual = 2303
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1976.789 ; gain = 378.738 ; free physical = 8494 ; free virtual = 24817
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'Main' [/home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/sources_1/new/Main.vhd:18]
-INFO: [Synth 8-638] synthesizing module 'prescaler' [/home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/sources_1/new/prescaler.vhd:14]
+INFO: [Synth 8-638] synthesizing module 'Main' [/home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/sources_1/new/Main.vhd:18]
+INFO: [Synth 8-638] synthesizing module 'prescaler' [/home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/sources_1/new/prescaler.vhd:14]
 	Parameter g_num_bits bound to: 14 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'prescaler' (0#1) [/home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/sources_1/new/prescaler.vhd:14]
-INFO: [Synth 8-638] synthesizing module 'PC' [/home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/sources_1/new/PC.vhd:17]
-INFO: [Synth 8-256] done synthesizing module 'PC' (0#1) [/home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/sources_1/new/PC.vhd:17]
-INFO: [Synth 8-638] synthesizing module 'Instruction_Memory' [/home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/sources_1/new/Instruction_Memory.vhd:14]
-INFO: [Synth 8-256] done synthesizing module 'Instruction_Memory' (0#1) [/home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/sources_1/new/Instruction_Memory.vhd:14]
-INFO: [Synth 8-638] synthesizing module 'Decoder' [/home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/sources_1/new/Decoder.vhd:18]
-INFO: [Synth 8-256] done synthesizing module 'Decoder' (0#1) [/home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/sources_1/new/Decoder.vhd:18]
-INFO: [Synth 8-638] synthesizing module 'Register_File' [/home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/sources_1/new/Register_File.vhd:26]
-INFO: [Synth 8-256] done synthesizing module 'Register_File' (0#1) [/home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/sources_1/new/Register_File.vhd:26]
-INFO: [Synth 8-638] synthesizing module 'MUX_RF_AFC' [/home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/sources_1/new/MUX_RF_AFC.vhd:11]
-INFO: [Synth 8-256] done synthesizing module 'MUX_RF_AFC' (0#1) [/home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/sources_1/new/MUX_RF_AFC.vhd:11]
-INFO: [Synth 8-638] synthesizing module 'DIEXer' [/home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/sources_1/new/DIEXer.vhd:19]
-INFO: [Synth 8-256] done synthesizing module 'DIEXer' (0#1) [/home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/sources_1/new/DIEXer.vhd:19]
-INFO: [Synth 8-638] synthesizing module 'OP_to_ALUOP' [/home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/sources_1/new/OP_to_ALUOP.vhd:9]
-INFO: [Synth 8-256] done synthesizing module 'OP_to_ALUOP' (0#1) [/home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/sources_1/new/OP_to_ALUOP.vhd:9]
-INFO: [Synth 8-638] synthesizing module 'ALU' [/home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/sources_1/new/ALU.vhd:21]
-INFO: [Synth 8-226] default block is never used [/home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/sources_1/new/ALU.vhd:25]
-INFO: [Synth 8-256] done synthesizing module 'ALU' (0#1) [/home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/sources_1/new/ALU.vhd:21]
-INFO: [Synth 8-638] synthesizing module 'Flag_Memory' [/home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/sources_1/new/flagMemory.vhd:16]
-INFO: [Synth 8-256] done synthesizing module 'Flag_Memory' (0#1) [/home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/sources_1/new/flagMemory.vhd:16]
-INFO: [Synth 8-638] synthesizing module 'MUX_ALU_CALC' [/home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/sources_1/new/MUX_ALU_CALC.vhd:12]
-INFO: [Synth 8-256] done synthesizing module 'MUX_ALU_CALC' (0#1) [/home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/sources_1/new/MUX_ALU_CALC.vhd:12]
-INFO: [Synth 8-638] synthesizing module 'EXMEMer' [/home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/sources_1/new/EXMEMer.vhd:17]
-INFO: [Synth 8-256] done synthesizing module 'EXMEMer' (0#1) [/home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/sources_1/new/EXMEMer.vhd:17]
-INFO: [Synth 8-638] synthesizing module 'MUX_AB_MEM' [/home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/sources_1/new/MUX_AB_MEM.vhd:11]
-INFO: [Synth 8-256] done synthesizing module 'MUX_AB_MEM' (0#1) [/home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/sources_1/new/MUX_AB_MEM.vhd:11]
-INFO: [Synth 8-638] synthesizing module 'OP_TO_MEMOP' [/home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/sources_1/new/OP_TO_MEMOP.vhd:9]
-INFO: [Synth 8-256] done synthesizing module 'OP_TO_MEMOP' (0#1) [/home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/sources_1/new/OP_TO_MEMOP.vhd:9]
-INFO: [Synth 8-638] synthesizing module 'Data_Memory' [/home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/sources_1/new/Data_Memory.vhd:18]
-INFO: [Synth 8-256] done synthesizing module 'Data_Memory' (0#1) [/home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/sources_1/new/Data_Memory.vhd:18]
-INFO: [Synth 8-638] synthesizing module 'MUX_MEM_B' [/home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/sources_1/new/MUX_MEM_B.vhd:11]
-INFO: [Synth 8-256] done synthesizing module 'MUX_MEM_B' (0#1) [/home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/sources_1/new/MUX_MEM_B.vhd:11]
-INFO: [Synth 8-638] synthesizing module 'MEMREr' [/home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/sources_1/new/MEMREr.vhd:17]
-INFO: [Synth 8-256] done synthesizing module 'MEMREr' (0#1) [/home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/sources_1/new/MEMREr.vhd:17]
-INFO: [Synth 8-638] synthesizing module 'OP_TO_RFW' [/home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/sources_1/new/OP_TO_RFW.vhd:9]
-INFO: [Synth 8-256] done synthesizing module 'OP_TO_RFW' (0#1) [/home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/sources_1/new/OP_TO_RFW.vhd:9]
-INFO: [Synth 8-638] synthesizing module 'stdout' [/home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/sources_1/new/stdout.vhd:16]
-INFO: [Synth 8-256] done synthesizing module 'stdout' (0#1) [/home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/sources_1/new/stdout.vhd:16]
-INFO: [Synth 8-638] synthesizing module 'seven_seg_controller' [/home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/sources_1/new/seven_seg_controller.vhd:15]
-INFO: [Synth 8-226] default block is never used [/home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/sources_1/new/seven_seg_controller.vhd:47]
-INFO: [Synth 8-226] default block is never used [/home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/sources_1/new/seven_seg_controller.vhd:55]
-INFO: [Synth 8-256] done synthesizing module 'seven_seg_controller' (0#1) [/home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/sources_1/new/seven_seg_controller.vhd:15]
-INFO: [Synth 8-638] synthesizing module 'stdin' [/home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/sources_1/new/stdin.vhd:12]
-INFO: [Synth 8-256] done synthesizing module 'stdin' (0#1) [/home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/sources_1/new/stdin.vhd:12]
-INFO: [Synth 8-256] done synthesizing module 'Main' (0#1) [/home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/sources_1/new/Main.vhd:18]
-WARNING: [Synth 8-6014] Unused sequential element output_reg was removed.  [/home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/sources_1/new/flagMemory.vhd:24]
-WARNING: [Synth 8-6014] Unused sequential element output0_reg was removed.  [/home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/sources_1/new/stdout.vhd:27]
-WARNING: [Synth 8-6014] Unused sequential element mem1_reg was removed.  [/home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/sources_1/new/stdout.vhd:28]
-WARNING: [Synth 8-6014] Unused sequential element mem2_reg was removed.  [/home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/sources_1/new/stdout.vhd:29]
+INFO: [Synth 8-256] done synthesizing module 'prescaler' (0#1) [/home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/sources_1/new/prescaler.vhd:14]
+INFO: [Synth 8-638] synthesizing module 'PC' [/home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/sources_1/new/PC.vhd:17]
+INFO: [Synth 8-256] done synthesizing module 'PC' (0#1) [/home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/sources_1/new/PC.vhd:17]
+INFO: [Synth 8-638] synthesizing module 'Instruction_Memory' [/home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/sources_1/new/Instruction_Memory.vhd:14]
+INFO: [Synth 8-256] done synthesizing module 'Instruction_Memory' (0#1) [/home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/sources_1/new/Instruction_Memory.vhd:14]
+INFO: [Synth 8-638] synthesizing module 'Decoder' [/home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/sources_1/new/Decoder.vhd:18]
+INFO: [Synth 8-256] done synthesizing module 'Decoder' (0#1) [/home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/sources_1/new/Decoder.vhd:18]
+INFO: [Synth 8-638] synthesizing module 'Register_File' [/home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/sources_1/new/Register_File.vhd:26]
+INFO: [Synth 8-256] done synthesizing module 'Register_File' (0#1) [/home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/sources_1/new/Register_File.vhd:26]
+INFO: [Synth 8-638] synthesizing module 'MUX_RF_AFC' [/home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/sources_1/new/MUX_RF_AFC.vhd:11]
+INFO: [Synth 8-256] done synthesizing module 'MUX_RF_AFC' (0#1) [/home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/sources_1/new/MUX_RF_AFC.vhd:11]
+INFO: [Synth 8-638] synthesizing module 'DIEXer' [/home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/sources_1/new/DIEXer.vhd:19]
+INFO: [Synth 8-256] done synthesizing module 'DIEXer' (0#1) [/home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/sources_1/new/DIEXer.vhd:19]
+INFO: [Synth 8-638] synthesizing module 'OP_to_ALUOP' [/home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/sources_1/new/OP_to_ALUOP.vhd:9]
+INFO: [Synth 8-256] done synthesizing module 'OP_to_ALUOP' (0#1) [/home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/sources_1/new/OP_to_ALUOP.vhd:9]
+INFO: [Synth 8-638] synthesizing module 'ALU' [/home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/sources_1/new/ALU.vhd:21]
+INFO: [Synth 8-226] default block is never used [/home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/sources_1/new/ALU.vhd:25]
+INFO: [Synth 8-256] done synthesizing module 'ALU' (0#1) [/home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/sources_1/new/ALU.vhd:21]
+INFO: [Synth 8-638] synthesizing module 'Flag_Memory' [/home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/sources_1/new/flagMemory.vhd:16]
+INFO: [Synth 8-256] done synthesizing module 'Flag_Memory' (0#1) [/home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/sources_1/new/flagMemory.vhd:16]
+INFO: [Synth 8-638] synthesizing module 'MUX_ALU_CALC' [/home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/sources_1/new/MUX_ALU_CALC.vhd:12]
+INFO: [Synth 8-256] done synthesizing module 'MUX_ALU_CALC' (0#1) [/home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/sources_1/new/MUX_ALU_CALC.vhd:12]
+INFO: [Synth 8-638] synthesizing module 'EXMEMer' [/home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/sources_1/new/EXMEMer.vhd:17]
+INFO: [Synth 8-256] done synthesizing module 'EXMEMer' (0#1) [/home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/sources_1/new/EXMEMer.vhd:17]
+INFO: [Synth 8-638] synthesizing module 'MUX_AB_MEM' [/home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/sources_1/new/MUX_AB_MEM.vhd:11]
+INFO: [Synth 8-256] done synthesizing module 'MUX_AB_MEM' (0#1) [/home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/sources_1/new/MUX_AB_MEM.vhd:11]
+INFO: [Synth 8-638] synthesizing module 'OP_TO_MEMOP' [/home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/sources_1/new/OP_TO_MEMOP.vhd:9]
+INFO: [Synth 8-256] done synthesizing module 'OP_TO_MEMOP' (0#1) [/home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/sources_1/new/OP_TO_MEMOP.vhd:9]
+INFO: [Synth 8-638] synthesizing module 'Data_Memory' [/home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/sources_1/new/Data_Memory.vhd:18]
+INFO: [Synth 8-256] done synthesizing module 'Data_Memory' (0#1) [/home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/sources_1/new/Data_Memory.vhd:18]
+INFO: [Synth 8-638] synthesizing module 'MUX_MEM_B' [/home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/sources_1/new/MUX_MEM_B.vhd:11]
+INFO: [Synth 8-256] done synthesizing module 'MUX_MEM_B' (0#1) [/home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/sources_1/new/MUX_MEM_B.vhd:11]
+INFO: [Synth 8-638] synthesizing module 'MEMREr' [/home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/sources_1/new/MEMREr.vhd:17]
+INFO: [Synth 8-256] done synthesizing module 'MEMREr' (0#1) [/home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/sources_1/new/MEMREr.vhd:17]
+INFO: [Synth 8-638] synthesizing module 'OP_TO_RFW' [/home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/sources_1/new/OP_TO_RFW.vhd:9]
+INFO: [Synth 8-256] done synthesizing module 'OP_TO_RFW' (0#1) [/home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/sources_1/new/OP_TO_RFW.vhd:9]
+INFO: [Synth 8-638] synthesizing module 'stdout' [/home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/sources_1/new/stdout.vhd:16]
+INFO: [Synth 8-256] done synthesizing module 'stdout' (0#1) [/home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/sources_1/new/stdout.vhd:16]
+INFO: [Synth 8-638] synthesizing module 'seven_seg_controller' [/home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/sources_1/new/seven_seg_controller.vhd:15]
+INFO: [Synth 8-226] default block is never used [/home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/sources_1/new/seven_seg_controller.vhd:47]
+INFO: [Synth 8-226] default block is never used [/home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/sources_1/new/seven_seg_controller.vhd:55]
+INFO: [Synth 8-256] done synthesizing module 'seven_seg_controller' (0#1) [/home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/sources_1/new/seven_seg_controller.vhd:15]
+INFO: [Synth 8-638] synthesizing module 'stdin' [/home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/sources_1/new/stdin.vhd:12]
+INFO: [Synth 8-256] done synthesizing module 'stdin' (0#1) [/home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/sources_1/new/stdin.vhd:12]
+INFO: [Synth 8-256] done synthesizing module 'Main' (0#1) [/home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/sources_1/new/Main.vhd:18]
+WARNING: [Synth 8-6014] Unused sequential element output_reg was removed.  [/home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/sources_1/new/flagMemory.vhd:24]
+WARNING: [Synth 8-6014] Unused sequential element output0_reg was removed.  [/home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/sources_1/new/stdout.vhd:27]
+WARNING: [Synth 8-6014] Unused sequential element mem1_reg was removed.  [/home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/sources_1/new/stdout.vhd:28]
+WARNING: [Synth 8-6014] Unused sequential element mem2_reg was removed.  [/home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/sources_1/new/stdout.vhd:29]
 WARNING: [Synth 8-7129] Port INA[7] in module MEMREr is either unconnected or has no load
 WARNING: [Synth 8-7129] Port INA[6] in module MEMREr is either unconnected or has no load
 WARNING: [Synth 8-7129] Port INA[5] in module MEMREr is either unconnected or has no load
 WARNING: [Synth 8-7129] Port INA[4] in module MEMREr is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2096.660 ; gain = 494.738 ; free physical = 130 ; free virtual = 2197
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2092.727 ; gain = 494.676 ; free physical = 8355 ; free virtual = 24682
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2111.504 ; gain = 509.582 ; free physical = 119 ; free virtual = 2187
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2107.570 ; gain = 509.520 ; free physical = 8348 ; free virtual = 24675
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2111.504 ; gain = 509.582 ; free physical = 119 ; free virtual = 2187
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2107.570 ; gain = 509.520 ; free physical = 8348 ; free virtual = 24675
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2111.504 ; gain = 0.000 ; free physical = 126 ; free virtual = 2194
+Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2107.570 ; gain = 0.000 ; free physical = 8348 ; free virtual = 24675
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [/home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/constrs_1/new/basys3_constraints.xdc]
-Finished Parsing XDC File [/home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/constrs_1/new/basys3_constraints.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/user/INSA/S8/projetSude/raisingue/raisingue.srcs/constrs_1/new/basys3_constraints.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Main_propImpl.xdc].
+Parsing XDC File [/home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/constrs_1/new/basys3_constraints.xdc]
+Finished Parsing XDC File [/home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/constrs_1/new/basys3_constraints.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/constrs_1/new/basys3_constraints.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Main_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/Main_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2223.238 ; gain = 0.000 ; free physical = 102 ; free virtual = 2185
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2249.320 ; gain = 0.000 ; free physical = 8252 ; free virtual = 24592
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2223.238 ; gain = 0.000 ; free physical = 134 ; free virtual = 2208
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2249.320 ; gain = 0.000 ; free physical = 8252 ; free virtual = 24592
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 2223.238 ; gain = 621.316 ; free physical = 122 ; free virtual = 2144
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2249.320 ; gain = 651.270 ; free physical = 8260 ; free virtual = 24601
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 2223.238 ; gain = 621.316 ; free physical = 122 ; free virtual = 2144
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2249.320 ; gain = 651.270 ; free physical = 8260 ; free virtual = 24601
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 2223.238 ; gain = 621.316 ; free physical = 122 ; free virtual = 2144
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2249.320 ; gain = 651.270 ; free physical = 8260 ; free virtual = 24601
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 2223.238 ; gain = 621.316 ; free physical = 131 ; free virtual = 2148
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2249.320 ; gain = 651.270 ; free physical = 8256 ; free virtual = 24598
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
+	   2 Input   11 Bit       Adders := 1     
 	   2 Input    8 Bit       Adders := 3     
 	   3 Input    8 Bit       Adders := 1     
 	   2 Input    2 Bit       Adders := 1     
 +---Registers : 
+	               11 Bit    Registers := 1     
 	                8 Bit    Registers := 290   
 	                4 Bit    Registers := 1     
 	                2 Bit    Registers := 1     
@@ -176,25 +178,25 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 2223.238 ; gain = 621.316 ; free physical = 126 ; free virtual = 2134
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 2249.320 ; gain = 651.270 ; free physical = 8225 ; free virtual = 24615
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:42 ; elapsed = 00:00:43 . Memory (MB): peak = 2223.238 ; gain = 621.316 ; free physical = 106 ; free virtual = 2126
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 2249.320 ; gain = 651.270 ; free physical = 8205 ; free virtual = 24595
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:43 ; elapsed = 00:00:45 . Memory (MB): peak = 2223.238 ; gain = 621.316 ; free physical = 150 ; free virtual = 2146
+Finished Timing Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 2249.320 ; gain = 651.270 ; free physical = 8204 ; free virtual = 24597
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 2223.238 ; gain = 621.316 ; free physical = 149 ; free virtual = 2145
+Finished Technology Mapping : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 2249.320 ; gain = 651.270 ; free physical = 8202 ; free virtual = 24598
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -212,37 +214,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:50 ; elapsed = 00:00:51 . Memory (MB): peak = 2223.238 ; gain = 621.316 ; free physical = 136 ; free virtual = 2133
+Finished IO Insertion : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 2249.320 ; gain = 651.270 ; free physical = 8077 ; free virtual = 24503
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:50 ; elapsed = 00:00:51 . Memory (MB): peak = 2223.238 ; gain = 621.316 ; free physical = 136 ; free virtual = 2133
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 2249.320 ; gain = 651.270 ; free physical = 8077 ; free virtual = 24503
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:50 ; elapsed = 00:00:52 . Memory (MB): peak = 2223.238 ; gain = 621.316 ; free physical = 136 ; free virtual = 2133
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 2249.320 ; gain = 651.270 ; free physical = 8078 ; free virtual = 24504
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:50 ; elapsed = 00:00:52 . Memory (MB): peak = 2223.238 ; gain = 621.316 ; free physical = 136 ; free virtual = 2133
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 2249.320 ; gain = 651.270 ; free physical = 8078 ; free virtual = 24504
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:50 ; elapsed = 00:00:52 . Memory (MB): peak = 2223.238 ; gain = 621.316 ; free physical = 136 ; free virtual = 2133
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 2249.320 ; gain = 651.270 ; free physical = 8084 ; free virtual = 24510
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:50 ; elapsed = 00:00:52 . Memory (MB): peak = 2223.238 ; gain = 621.316 ; free physical = 136 ; free virtual = 2133
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 2249.320 ; gain = 651.270 ; free physical = 8084 ; free virtual = 24510
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -259,42 +261,42 @@ Report Cell Usage:
 |      |Cell   |Count |
 +------+-------+------+
 |1     |BUFG   |     2|
-|2     |CARRY4 |    40|
+|2     |CARRY4 |    35|
 |3     |LUT1   |     3|
-|4     |LUT2   |   107|
-|5     |LUT3   |    73|
-|6     |LUT4   |    71|
-|7     |LUT5   |    55|
-|8     |LUT6   |  1003|
+|4     |LUT2   |   108|
+|5     |LUT3   |    76|
+|6     |LUT4   |    72|
+|7     |LUT5   |    56|
+|8     |LUT6   |  1005|
 |9     |MUXF7  |   318|
 |10    |MUXF8  |   150|
-|11    |FDRE   |  2367|
+|11    |FDRE   |  2358|
 |12    |IBUF   |    18|
 |13    |OBUF   |    27|
 +------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:50 ; elapsed = 00:00:52 . Memory (MB): peak = 2223.238 ; gain = 621.316 ; free physical = 136 ; free virtual = 2133
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 2249.320 ; gain = 651.270 ; free physical = 8084 ; free virtual = 24510
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:47 ; elapsed = 00:00:49 . Memory (MB): peak = 2223.238 ; gain = 509.582 ; free physical = 136 ; free virtual = 2133
-Synthesis Optimization Complete : Time (s): cpu = 00:00:50 ; elapsed = 00:00:52 . Memory (MB): peak = 2223.246 ; gain = 621.316 ; free physical = 136 ; free virtual = 2133
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 2249.320 ; gain = 509.520 ; free physical = 8084 ; free virtual = 24509
+Synthesis Optimization Complete : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 2249.320 ; gain = 651.270 ; free physical = 8084 ; free virtual = 24509
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2223.246 ; gain = 0.000 ; free physical = 411 ; free virtual = 2410
-INFO: [Netlist 29-17] Analyzing 508 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2249.320 ; gain = 0.000 ; free physical = 8357 ; free virtual = 24785
+INFO: [Netlist 29-17] Analyzing 503 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2223.246 ; gain = 0.000 ; free physical = 397 ; free virtual = 2407
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2249.320 ; gain = 0.000 ; free physical = 8354 ; free virtual = 24782
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete | Checksum: 234b1470
+Synth Design complete | Checksum: c8c09869
 INFO: [Common 17-83] Releasing license: Synthesis
 68 Infos, 9 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:00 ; elapsed = 00:00:58 . Memory (MB): peak = 2223.246 ; gain = 944.363 ; free physical = 397 ; free virtual = 2407
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1801.783; main = 1483.558; forked = 365.412
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3181.020; main = 2223.242; forked = 957.777
-INFO: [Common 17-1381] The checkpoint '/home/user/INSA/S8/projetSude/raisingue/raisingue.runs/synth_1/Main.dcp' has been generated.
+synth_design: Time (s): cpu = 00:00:31 ; elapsed = 00:00:30 . Memory (MB): peak = 2249.320 ; gain = 973.371 ; free physical = 8354 ; free virtual = 24783
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1854.553; main = 1529.553; forked = 378.483
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3188.004; main = 2249.324; forked = 970.695
+INFO: [Common 17-1381] The checkpoint '/home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.runs/synth_1/Main.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file Main_utilization_synth.rpt -pb Main_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Mon May 19 16:54:30 2025...
+INFO: [Common 17-206] Exiting Vivado at Mon May 19 19:34:27 2025...
