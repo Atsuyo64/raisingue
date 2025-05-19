@@ -2,9 +2,9 @@
 # Connecte le signal leds[7:0] aux 8 LEDs de la carte
 
 ## Horloge
-#set_property -dict { PACKAGE_PIN W5   IOSTANDARD LVCMOS33 } [get_ports { CLK }]; # Horloge 100MHz
-set_property -dict {PACKAGE_PIN W5 IOSTANDARD LVCMOS33 } [get_ports {PCLOCK} ]
-create_clock -add -name sysclk_pin -period 10.00 -waveform { 0 5 } [get_ports {PCLOCK} ]
+set_property -dict { PACKAGE_PIN W5   IOSTANDARD LVCMOS33 } [get_ports { PCLOCK }]; # Horloge 100MHz
+#set_property -dict {PACKAGE_PIN W5 IOSTANDARD LVCMOS33 } [get_ports {PCLOCK} ]
+#create_clock -add -name sysclk_pin -period 10.00 -waveform { 0 5 } [get_ports {PCLOCK} ]
 
 ## Bouton Reset
 

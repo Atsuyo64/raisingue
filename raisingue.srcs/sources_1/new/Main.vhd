@@ -88,7 +88,7 @@ BEGIN
     u_instruction_memory : ENTITY work.Instruction_Memory
         PORT MAP(
             addr => pc,
-            CLK => CLK,
+--            CLK => CLK,
             Dout => instruction
         );
     u_decoder : ENTITY work.Decoder
