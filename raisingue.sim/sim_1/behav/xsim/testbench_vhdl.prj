@@ -17,6 +17,7 @@ vhdl xil_defaultlib  \
 "../../../../raisingue.srcs/sources_1/new/OP_to_ALUOP.vhd" \
 "../../../../raisingue.srcs/sources_1/new/flagMemory.vhd" \
 "../../../../raisingue.srcs/sources_1/new/OP_TO_MEMOP.vhd" \
+"../../../../raisingue.srcs/sources_1/new/mux_mem_input.vhd" \
 "../../../../raisingue.srcs/sources_1/new/OP_TO_RFW.vhd" \
 "../../../../raisingue.srcs/sources_1/new/stdout.vhd" \
 "../../../../raisingue.srcs/sources_1/new/seven_seg_controller.vhd" \

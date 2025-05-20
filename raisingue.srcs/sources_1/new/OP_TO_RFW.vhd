@@ -8,5 +8,5 @@ end OP_TO_RFW;
 
 architecture Behavioral of OP_TO_RFW is
 begin
-    RFW <= '0' when OP = x"0a" or OP = "UUUUUUUU" or OP = x"00" or OP = x"09" or OP = x"0c" else '1'; --write always except when store (op = 10)
+    RFW <= '0' when OP = x"0a" or OP = "UUUUUUUU" or OP = x"00" or OP = x"09" or OP = x"0c" or OP = x"14" else '1'; --write always except when store (op = 10)
 end Behavioral;

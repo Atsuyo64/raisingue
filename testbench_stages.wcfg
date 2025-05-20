@@ -10,13 +10,13 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="2,438.088 ns"></ZoomStartTime>
-      <ZoomEndTime time="2,973.494 ns"></ZoomEndTime>
-      <Cursor1Time time="6,200.000 ns"></Cursor1Time>
+      <ZoomStartTime time="8,414.532 ns"></ZoomStartTime>
+      <ZoomEndTime time="9,117.094 ns"></ZoomEndTime>
+      <Cursor1Time time="9,000.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="133"></NameColumnWidth>
-      <ValueColumnWidth column_width="63"></ValueColumnWidth>
+      <NameColumnWidth column_width="132"></NameColumnWidth>
+      <ValueColumnWidth column_width="60"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="31" />
    <wvobject type="logic" fp_name="/testbench/uut/PCLOCK">

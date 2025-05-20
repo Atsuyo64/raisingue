@@ -32,6 +32,7 @@ ARCHITECTURE Structural OF Main IS
     SIGNAL EXOP : STD_LOGIC_VECTOR(7 DOWNTO 0) := (OTHERS => '0');
     SIGNAL MEMA : STD_LOGIC_VECTOR(7 DOWNTO 0) := (OTHERS => '0');
     SIGNAL MEMB : STD_LOGIC_VECTOR(7 DOWNTO 0) := (OTHERS => '0');
+    SIGNAL MEMC : STD_LOGIC_VECTOR(7 DOWNTO 0) := (OTHERS => '0');
     SIGNAL MEMOP : STD_LOGIC_VECTOR(7 DOWNTO 0) := (OTHERS => '0');
     SIGNAL REB : STD_LOGIC_VECTOR(7 DOWNTO 0) := (OTHERS => '0');
     SIGNAL REOP : STD_LOGIC_VECTOR(7 DOWNTO 0) := (OTHERS => '0');
@@ -49,6 +50,8 @@ ARCHITECTURE Structural OF Main IS
     SIGNAL MEM_OUT : STD_LOGIC_VECTOR (7 DOWNTO 0) := (OTHERS => '0');
     SIGNAL POST_MEM_B : STD_LOGIC_VECTOR (7 DOWNTO 0) := (OTHERS => '0');
     SIGNAL MEM_RW : STD_LOGIC := '0';
+    
+    SIGNAL MEM_IN : STD_LOGIC_VECTOR(7 DOWNTO 0) := (OTHERS => '0');
     SIGNAL NOZ_ALU : STD_LOGIC := '0';
     SIGNAL NOZ_MEM_FLAG : STD_LOGIC := '0';
     SIGNAL FLUSH_CMD : STD_LOGIC := '0';
@@ -176,9 +179,11 @@ BEGIN
             FLUSH => FLUSH_CMD,
             INA => EXA,
             INB => POST_ALU_CALC_B,
+            INC => EXC,
             INOP => EXOP,
             OUTA => MEMA,
             OUTB => MEMB,
+            OUTC => MEMC,
             OUTOP => MEMOP
         );
     u_mux_ab_mem : ENTITY work.MUX_AB_MEM
@@ -193,10 +198,17 @@ BEGIN
             OP => MEMOP,
             RW => MEM_RW
         );
+    u_mux_bc_mem_input : ENTITY work.MUX_BC_MEM_INPUT
+        PORT MAP(
+                OP => MEMOP,
+                B => MEMB,
+                C => MEMC,
+                DOUT => MEM_IN
+            );
     u_data_memory : ENTITY work.Data_Memory
         PORT MAP(
             addr => MEM_ADDR,
-            Din => MEMB,
+            Din => MEM_IN,
             RW => MEM_RW,
             RST => RST,
             CLK => CLK,

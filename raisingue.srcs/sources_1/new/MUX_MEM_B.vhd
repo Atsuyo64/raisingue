@@ -10,5 +10,5 @@ end MUX_MEM_B;
 
 architecture Behavioral of MUX_MEM_B is
 begin
-    DOUT <= MEM when OP = x"0b" else B;
+    DOUT <= MEM when OP = x"0b" or OP = x"15" else B;
 end Behavioral;

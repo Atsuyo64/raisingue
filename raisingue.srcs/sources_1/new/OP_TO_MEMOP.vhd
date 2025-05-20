@@ -8,5 +8,5 @@ end OP_TO_MEMOP;
 
 architecture Behavioral of OP_TO_MEMOP is
 begin
-    RW <= '0' when OP = x"0a" else '1'; -- 10 == store
+    RW <= '0' when OP = x"0a" or OP = x"14" else '1'; -- 10 == store / 20 == srf
 end Behavioral;
