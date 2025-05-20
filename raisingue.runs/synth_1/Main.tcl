@@ -70,6 +70,7 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a35tcpg236-1
 
@@ -102,6 +103,7 @@ read_vhdl -library xil_defaultlib {
   /home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/sources_1/new/OP_to_ALUOP.vhd
   /home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/sources_1/new/flagMemory.vhd
   /home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/sources_1/new/OP_TO_MEMOP.vhd
+  /home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/sources_1/new/mux_mem_input.vhd
   /home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/sources_1/new/OP_TO_RFW.vhd
   /home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/sources_1/new/stdout.vhd
   /home/user/Documents/Scolaire/S7/projetSude/raisingue/raisingue.srcs/sources_1/new/seven_seg_controller.vhd
