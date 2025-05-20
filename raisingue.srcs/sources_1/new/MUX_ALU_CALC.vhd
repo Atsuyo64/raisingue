@@ -16,6 +16,12 @@ begin
         ALU_OUT when x"02",
         ALU_OUT when x"03",
         ALU_OUT when x"04",
+        ALU_OUT when x"0e",
+        ALU_OUT when x"0f",
+        ALU_OUT when x"10",
+        ALU_OUT when x"11",
+        ALU_OUT when x"12",
+        ALU_OUT when x"13",
         stdinput when x"0d",
         B when others;
 end Behavioral;
